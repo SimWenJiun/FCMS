@@ -1,1 +1,1 @@
-This the Github repository for FoodEdge Gourmet Food Catering Management System.
+This is the Github repository for FoodEdge Gourmet Food Catering Management System.
