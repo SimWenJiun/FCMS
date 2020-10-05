@@ -1,1 +1,0 @@
-This is for JavaScript files only.
