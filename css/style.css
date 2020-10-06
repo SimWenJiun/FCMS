@@ -164,3 +164,26 @@ header div{
 /**************************************/
 
 /*Add fonts and other styles below*/
+
+/*menu page*/
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 40%;
+  padding: 10px;
+ 
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column >img{
+	width:100px;
+	height:100px;
+	object-fit:cover;
+}
