@@ -56,7 +56,7 @@ header div{
 	padding-left: 50px;
 }
 
-#home, #services, #contactus {
+#home, #services, #profile {
 	background-color: #E71825;
 	width: auto;
 	height: 20px;
@@ -110,7 +110,7 @@ header div{
 	color: #000000;
 }
 
-#home:hover, #services:hover, #contactus:hover {
+#home:hover, #services:hover, #profile:hover {
 	background-color: #FFFFFF;
 	color: #000000;
 }
@@ -187,3 +187,51 @@ header div{
 	height:100px;
 	object-fit:cover;
 }
+
+
+/*login.html*/
+#login, #password {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+
+#loginbut, #submitbut {
+	background-color: #E71825;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+
+#loginbut:hover {
+	opacity: 0.8;
+}
+
+#submitbut:hover {
+	opacity: 0.8;
+}
+
+#loginbox {
+	margin: auto;
+	width: 30%;
+	padding: 26px;
+	text-align: center;
+	border: 1px solid #E71825;
+}
+
+#forgot {
+	float: right;
+}
+
+#avatar {
+	width: 40%;
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+

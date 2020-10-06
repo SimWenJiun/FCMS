@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta name="DP2 - Group 3" content="FoodEdge Gourmet - Home"/>
+		<meta name="DP2 - Group 3" content="FoodEdge Gourmet - typehere"<!-- CHANGE CONTENT "typehere" PART TO PAGE NAME -->
 		<link href="css/style.css" rel="stylesheet" type="text/css"/>
-		<title>FoodeEdge Gourmet - Home</title>
+		<title>FoodeEdge Gourmet - typehere</title><!-- CHANGE TITLE "typehere" PART TO PAGE NAME -->
 		<link rel="icon" href="img/Icon.png">
 	</head>
 
@@ -30,7 +30,6 @@
 					<ul>
 						<li>Food & Beverages Menu
 							<ul>
-								<li><a href="menupage.html">Food/Beverages Menu</a></li>
 								<li><a href="breakfastset.html">Breakfast Set</a></li>
 								<li><a href="lunchseta.html">Lunch Set A</a></li>
 								<li><a href="lunchsetb.html">Lunch Set B</a></li>
@@ -47,11 +46,22 @@
 		</header>
 		
 		<div id="body">
-			<p>Welcome To FoodEdge Gourmet HomePage</p>
-			<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-			<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-			<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-			<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+			<div id="loginbox">
+				<h1>User Login</h1>
+				<img src="img/avatar.png" alt="User avatar" id="avatar">
+				<form action="home.html" method="post">
+					<label for="login"><b>Username</b></label>
+					<input type="text" name="uname" id="login">
+					
+					<label for="password"><b>Password</b></label>
+					<input type="password" name="pword" id="password">
+					
+					<button type="submit" id="loginbut">Login</button>
+					<span id="forgot"><a href="">Forgot password?</a></span>
+					
+					<button type="submit" formaction="registration.html" id="submitbut">Sign Up</button>
+				</form>
+			</div>
 		</div>
 		
 		<footer>
@@ -64,4 +74,7 @@
 			<aside>© 2020 FoodEdge Gourmet. All Rights Reserved</aside>
 		</footer>
 	</body>
+</html>
+	
+</body>
 </html>
