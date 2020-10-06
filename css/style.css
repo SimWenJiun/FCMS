@@ -145,6 +145,20 @@ header div{
 	border-top: 5px solid #D4B8B8;
 }
 
+#bodyhome {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+	background-color: #FFFFFF;
+	border: 1px solid #E71825;
+	height: auto;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
 #body {
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -232,5 +246,35 @@ header div{
 	width: 40%;
 	margin-top: 20px;
 	margin-bottom: 50px;
+}
+
+/*editselection.html*/
+table, th, td {
+	padding: 5px;
+	text-align: left;
+}
+
+
+
+#editselection h1 {
+	margin: auto;
+	padding: 20px;
+	text-align: center;
+}
+
+#editselection {
+	margin: auto;
+	padding: 20px;
+	text-align: left;
+}
+
+#submiteditselection {
+	background-color: #E71825;
+	color: white;
+	padding: 14px 20px;
+	margin-top: 40px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
 }
 
