@@ -160,7 +160,7 @@ header div{
 }
 
 #body {
-	font-family:kalisto-mt;
+	font-family:Calibri;
 	color:black;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -251,33 +251,56 @@ header div{
 }
 
 /*editselection.html*/
-table, th, td {
-	padding: 5px;
-	text-align: left;
-}
-
-
-
-#editselection h1 {
-	margin: auto;
-	padding: 20px;
-	text-align: center;
-}
-
 #editselection {
 	margin: auto;
 	padding: 20px;
-	text-align: left;
+	text-align: center;
+	border: 1px solid #E71825;
 }
 
-#submiteditselection {
+#item1qty, #item2qty, #item3qty, #item4qty, #item5qty, #item6qty {
+	text-align:center;
+	width: 80px;
+}
+
+#containeritem1 tr td > ul, #containeritem2 tr td > ul, #containeritem3 tr td > ul, #containeritem4 tr td > ul, #containeritem5 tr td > ul, #containeritem6 tr td > ul {
+	margin-left: 20px;
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+	width: 250px;
+	margin-top: 50px;
+}
+
+#containeritem1, #containeritem2, #containeritem3, #containeritem4, #containeritem5, #containeritem6 {
+	border: 1px solid #E71825;
+	border-collapse: collapse;
+}
+
+#containeritem1 tr td img, #containeritem2 tr td img, #containeritem3 tr td img, #containeritem4 tr td img, #containeritem5 tr td img, #containeritem6 tr td img {
+	padding-left: 20px;
+	padding-top: 20px;
+	padding-bottom: 15px;
+	padding-right: 10px;
+}
+
+#containeritem1 tr td table, #containeritem2 tr td table, #containeritem3 tr td table, #containeritem4 tr td table, #containeritem5 tr td table, #containeritem6 tr td table {
+	padding-right: 10px;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+#saveselection {
 	background-color: #E71825;
 	color: white;
 	padding: 14px 20px;
-	margin-top: 40px;
 	border: none;
 	cursor: pointer;
 	width: 100%;
+	margin-top: 10px;
 }
 
 /*breakfastset selectionpage.html*/

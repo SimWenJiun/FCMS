@@ -25,7 +25,7 @@
 				</div>
 				
 				<div id="services"><a href="services.html">Services</a></div>
-				
+	
 				<div id="menu">
 					<ul>
 						<li><a href="menupage.html">Food & Beverages Menu</a>
@@ -48,77 +48,176 @@
 		<div id="body">
 			<div id="editselection">
 				<h1>Edit Selection</h1>
-				<br/>
-				<form action="userhome.html" method="post">		
-
-					<table style="width:100%">
-					  <tr>
-						<th>Menu Items</th>
-						<th>Quantity Avaliable</th>
-					  </tr>
-					  <tr>
+				<br/>					
+				<table id="containeritem1" style="width:100%">
+					<tr>
 						<td>
-							<input type="checkbox" id="item1" name="item1" value="Breakfast Set">
-							<label for="item1"> Breakfast Set</label><br>
+							<img src="img/smallbreakfast.jpg" alt="reduce" id="reduceqty" height="100px"/>
+							<ul>							
+								<li>Breakfast Set</li>
+								<li>RM19.99</li>
+							</ul>
 						</td>
 						<td>
-							<p id="item1quantityleft">1000</p>
+							<table>
+								<th>
+								  <tr>
+									<th id="qtyheading" colspan="3">Quantity</th>
+								  </tr>
+								</th>
+								<td>
+								  <tr>
+									<td><img src="img/negative.png" alt="reduce" id="reduceqty" height="20px" onclick="decqty1()"/></td>
+									<td><input type="number" name="item1qty" id="item1qty" value="1" min="0" max="999" required="required"></td>
+									<td><img src="img/positive.png" alt="add" id="increaseqty" height="20px" onclick="incqty1()"/></td>
+								  </tr>
+								</td>
+							</table>
 						</td>
-					  </tr>
-					  <tr>
+					</tr>
+				</table>
+				
+				<table id="containeritem2" style="width:100%">
+					<tr>
 						<td>
-							<input type="checkbox" id="item2" name="item2" value="Lunch Set A">
-							<label for="item2"> Lunch Set A</label><br>
-						</td>
-						<td>
-							<p id="item2quantityleft">1000</p>
-						</td>
-					  </tr>
-					  <tr>
-						<td>
-							<input type="checkbox" id="item3" name="item3" value="Lunch Set B">
-							<label for="item3"> Lunch Set B</label><br>
-						</td>
-						<td>						
-							<p id="item3quantityleft">1000</p>
-						</td>
-					  </tr>
-					  <tr>
-						<td>
-							<input type="checkbox" id="item2" name="item2" value="Lunch Set C">
-							<label for="item4"> Lunch Set C</label><br>
-						</td>
-						<td>
-							<p id="item4quantityleft">1000</p>
-						</td>
-					  </tr>
-					  <tr>
-						<td>
-							<input type="checkbox" id="item3" name="item3" value="Dinner Set A">
-							<label for="item5"> Dinner Set A</label><br>
+							<img src="img/smalllunchA.jpg" alt="reduce" id="reduceqty" height="100px"/>
+							<ul>							
+								<li>Lunch Set A</li>
+								<li>RM24.99</li>
+							</ul>
 						</td>
 						<td>
-							<p id="item5quantityleft">1000</p>
+							<table>
+								<th>
+								  <tr>
+									<th id="qtyheading" colspan="3">Quantity</th>
+								  </tr>
+								</th>
+								<td>
+								  <tr>
+									<td><img src="img/negative.png" alt="reduce" id="reduceqty" height="20px" onclick="decqty2()"/></td>
+									<td><input type="number" name="item2qty" id="item2qty" value="1" min="0" max="999" required="required"></td>
+									<td><img src="img/positive.png" alt="add" id="increaseqty" height="20px" onclick="incqty2()"/></td>
+								  </tr>
+								</td>
+							</table>
 						</td>
-					  </tr>
-					  <tr>
+					</tr>
+				</table>
+				
+				<table id="containeritem3" style="width:100%">
+					<tr>
 						<td>
-							<input type="checkbox" id="item3" name="item3" value="Beverage Of The Day">
-							<label for="item6"> Beverage Of The Day</label><br>
+							<img src="img/smalllunchB.jpg" alt="reduce" id="reduceqty" height="100px"/>
+							<ul>							
+								<li>Lunch Set B</li>
+								<li>RM28.99</li>
+							</ul>
 						</td>
 						<td>
-							<p id="item6quantityleft">1000</p>
+							<table>
+								<th>
+								  <tr>
+									<th id="qtyheading" colspan="3">Quantity</th>
+								  </tr>
+								</th>
+								<td>
+								  <tr>
+									<td><img src="img/negative.png" alt="reduce" id="reduceqty" height="20px" onclick="decqty3()"/></td>
+									<td><input type="number" name="item3qty" id="item3qty" value="1" min="0" max="999" required="required"></td>
+									<td><img src="img/positive.png" alt="add" id="increaseqty" height="20px" onclick="incqty3()"/></td>
+								  </tr>
+								</td>
+							</table>
 						</td>
-					  </tr>
-					</table>
-					
-					<br/>
-					
-					<label for="numberofguests"><b>Enter Number Of Guests: </b></label>
-					<input type="text" name="numberofguests" id="numberofguests">
-					
-					<button type="submit" formaction="displayselection.html" id="submiteditselection">Save Changes</button>
-				</form>
+					</tr>
+				</table>
+				
+				<table id="containeritem4" style="width:100%">
+					<tr>
+						<td>
+							<img src="img/smalllunchC.jpg" alt="reduce" id="reduceqty" height="100px" onclick="incqty6()"/>
+							<ul>							
+								<li>Lunch Set C (100% Vegan Friendly)</li>
+								<li>RM22.99</li>
+							</ul>
+						</td>
+						<td>
+							<table>
+								<th>
+								  <tr>
+									<th id="qtyheading" colspan="3">Quantity</th>
+								  </tr>
+								</th>
+								<td>
+								  <tr>
+									<td><img src="img/negative.png" alt="reduce" id="reduceqty" height="20px" onclick="decqty4()"/></td>
+									<td><input type="number" name="item4qty" id="item4qty" value="1" min="0" max="999" required="required"></td>
+									<td><img src="img/positive.png" alt="add" id="increaseqty" height="20px" onclick="incqty4()"/></td>
+								  </tr>
+								</td>
+							</table>
+						</td>
+					</tr>
+				</table>
+				
+				<table id="containeritem5" style="width:100%">
+					<tr>
+						<td>
+							<img src="img/smalldinner.jpg" alt="reduce" id="reduceqty" height="100px"/>
+							<ul>							
+								<li>Dinner Set A</li>
+								<li>RM35.99</li>
+							</ul>
+						</td>
+						<td>
+							<table>
+								<th>
+								  <tr>
+									<th id="qtyheading" colspan="3">Quantity</th>
+								  </tr>
+								</th>
+								<td>
+								  <tr>
+									<td><img src="img/negative.png" alt="reduce" id="reduceqty" height="20px" onclick="decqty5()"/></td>
+									<td><input type="number" name="item5qty" id="item5qty" value="1" min="0" max="999" required="required"></td>
+									<td><img src="img/positive.png" alt="add" id="increaseqty" height="20px" onclick="incqty5()"/></td>
+								  </tr>
+								</td>
+							</table>
+						</td>
+					</tr>		
+				</table>					  
+				
+				<table id="containeritem6" style="width:100%">
+					<tr>
+						<td>
+							<img src="img/smallbeverages.jpg" alt="reduce" id="reduceqty" height="100px"/>
+							<ul>							
+								<li>Beverage of the day</li>
+								<li>RM10.99</li>
+							</ul>
+						</td>
+						<td>
+							<table>
+								<th>
+								  <tr>
+									<th id="qtyheading" colspan="3">Quantity</th>
+								  </tr>
+								</th>
+								<td>
+								  <tr>
+									<td><img src="img/negative.png" alt="reduce" id="reduceqty" height="20px" onclick="decqty6()"/></td>
+									<td><input type="number" name="item6qty" id="item6qty" value="1" min="0" max="999" required="required"></td>
+									<td><img src="img/positive.png" alt="add" id="increaseqty" height="20px" onclick="incqty6()"/></td>
+								  </tr>
+								</td>
+							</table>
+						</td>
+					</tr>
+				</table>
+				
+				<button type="button" id="saveselection">Save Changes</button>
 			</div>
 		</div>
 		
@@ -129,7 +228,117 @@
 				<a href="aboutus.html">About Us</a>
 			</nav>
 			
-			<aside>© 2020 FoodEdge Gourmet. All Rights Reserved</aside>
+			<aside>© 2020 FoodEdge Gourmet. All Rights Reserved</aside>			
 		</footer>
+		<script>
+			function incqty1()
+			{
+				var temp = document.getElementById("item1qty").value;
+				if(temp < 999)
+				{
+					temp = ++temp;
+					document.getElementById("item1qty").value = new Number(temp);
+				}
+			}
+			function incqty2()
+			{
+				var temp = document.getElementById("item2qty").value;
+				if(temp < 999)
+				{
+					temp = ++temp;
+					document.getElementById("item2qty").value = new Number(temp);
+				}
+			}
+			function incqty3()
+			{
+				var temp = document.getElementById("item3qty").value;
+				if(temp < 999)
+				{
+					temp = ++temp;
+					document.getElementById("item3qty").value = new Number(temp);
+				}
+			}
+			function incqty4()
+			{
+				var temp = document.getElementById("item4qty").value;
+				if(temp < 999)
+				{
+					temp = ++temp;
+					document.getElementById("item4qty").value = new Number(temp);
+				}
+			}
+			function incqty5()
+			{
+				var temp = document.getElementById("item5qty").value;
+				if(temp < 999)
+				{
+					temp = ++temp;
+					document.getElementById("item5qty").value = new Number(temp);
+				}
+			}
+			function incqty6()
+			{
+				var temp = document.getElementById("item6qty").value;
+				if(temp < 999)
+				{
+					temp = ++temp;
+					document.getElementById("item6qty").value = new Number(temp);
+				}
+			}
+			function decqty1()
+			{
+				var temp = document.getElementById("item1qty").value;
+				if(temp > 0)
+				{
+					temp = --temp;
+					document.getElementById("item1qty").value = new Number(temp);
+				}
+			}
+			function decqty2()
+			{
+				var temp = document.getElementById("item2qty").value;
+				if(temp > 0)
+				{
+					temp = --temp;
+					document.getElementById("item2qty").value = new Number(temp);
+				}
+			}
+			function decqty3()
+			{
+				var temp = document.getElementById("item3qty").value;
+				if(temp > 0)
+				{
+					temp = --temp;
+					document.getElementById("item3qty").value = new Number(temp);
+				}
+			}
+			function decqty4()
+			{
+				var temp = document.getElementById("item4qty").value;
+				if(temp > 0)
+				{
+					temp = --temp;
+					document.getElementById("item4qty").value = new Number(temp);
+				}
+			}
+			function decqty5()
+			{
+				var temp = document.getElementById("item5qty").value;
+				if(temp > 0)
+				{
+					temp = --temp;
+					document.getElementById("item5qty").value = new Number(temp);
+				}
+			}
+			function decqty6()
+			{
+				var temp = document.getElementById("item6qty").value;
+				if(temp > 0)
+				{
+					temp = --temp;
+					document.getElementById("item6qty").value = new Number(temp);
+				}
+			}
+		</script>
 	</body>
 </html>
