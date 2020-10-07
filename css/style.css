@@ -160,6 +160,8 @@ header div{
 }
 
 #body {
+	font-family:kalisto-mt;
+	color:black;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	padding-left: 30px;
@@ -278,3 +280,22 @@ table, th, td {
 	width: 100%;
 }
 
+/*breakfastset selectionpage.html*/
+#product-content{
+	margin:auto;
+	text-align:center;
+}
+	
+#product_details ul li{
+	position:relative;
+}
+
+#enquirenow{
+	background-color: #E71825;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
