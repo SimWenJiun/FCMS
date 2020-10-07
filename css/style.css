@@ -299,3 +299,31 @@ table, th, td {
     cursor: pointer;
     width: 100%;
 }
+
+/* Container holding the image and the text in aboutUs page */
+#titleOverlay{
+	position: relative;
+	margin-top:20px;
+	text-align: center;
+	color: white;
+}
+
+
+/* Centered text */
+#centered {
+  position: absolute;
+  font-size: 30px;
+  background-color:#000000;
+  opacity:60%;
+  border-color: #FFFFFF;
+  border-style: inset;
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#para {
+	margin-top:20px;
+	text-align:justify;
+}
