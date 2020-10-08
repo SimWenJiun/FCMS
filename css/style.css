@@ -350,3 +350,66 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 	margin-top:20px;
 	text-align:justify;
 }
+
+/* User profile page */
+.proftitle, .profcontent {
+	font-size: 20px;
+}
+
+.proftitle {
+	font-weight: bold;
+	color: #E71825;
+}
+
+.profcontent {
+
+}
+
+#profpic img {
+	height: 60%;
+	width: 60%;
+	border-radius: 100%;
+	border: 5px solid #E71825;
+}
+
+#profpic {
+	width: 50%;
+	margin: auto;
+	padding-left: 10%;
+	padding-top: 1%;
+	float: left;
+}
+
+#profilebody {
+	width: 100%;
+	padding-left: 20%;
+	padding-right: 20%;
+	line-height: 30px;
+}
+
+#profcontainer {
+	width: 100%;
+}
+
+#profmember {
+	width: 100%;
+	padding-top: 3%;
+	padding-bottom: 2%;
+}
+
+#profabout {
+	width: 40%;
+	float: left;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+#profcontact {
+	width: 40%;
+	float: left;
+}
+
+#profedit {
+	width: 100%;
+	margin-left: 3%;
+}
