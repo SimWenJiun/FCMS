@@ -1,4 +1,16 @@
-<!DOCTYPE html>
+<?php
+$message="";
+if(count($_POST)>0) {
+	$conn = mysqli_connect();
+	$result = mysqli_query($conn,"SELECT * FROM Customers WHERE customer_email='" . $_POST["uname"] . "' and customer_password = '". $_POST["pword"]."'");
+	$count  = mysqli_num_rows($result);
+	if($count==0) {
+		$message = "Invalid email or password!";
+	} else {
+		$message = "Login successful!";
+	}
+}
+?>
 <html lang="en">
 	<head>
 		<meta name="DP2 - Group 3" content="FoodEdge Gourmet - Login"/>
@@ -49,7 +61,8 @@
 			<div id="loginbox">
 				<h1>User Login</h1>
 				<img src="img/avatar.png" alt="User avatar" id="avatar">
-				<form action="home.html" method="post">
+				<form action="" method="post">
+				<div class="message"><?php if($message!="") { echo $message; } ?></div>
 					<label for="login"><b>Username</b></label>
 					<input type="text" name="uname" id="login">
 					
