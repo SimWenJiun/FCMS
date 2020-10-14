@@ -1,7 +1,7 @@
 <?php
 $message="";
 if(count($_POST)>0) {
-	$conn = mysqli_connect();
+	$conn = mysqli_connect("sql12.freesqldatabase.com", "sql12369317", "KGUuPpDYfu", "sql12369317");
 	$result = mysqli_query($conn,"SELECT * FROM Customers WHERE customer_email='" . $_POST["uname"] . "' and customer_password = '". $_POST["pword"]."'");
 	$count  = mysqli_num_rows($result);
 	if($count==0) {
