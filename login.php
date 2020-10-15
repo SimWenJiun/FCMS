@@ -47,13 +47,15 @@ if(count($_POST)>0) {
 								<li><a href="lunchsetb.html">Lunch Set B</a></li>
 								<li><a href="lunchsetc.html">Lunch Set C</a></li>
 								<li><a href="dinnerseta.html">Dinner Set A</a></li>
-								<li><a href="bevverageoftheday.html">Beverage of the day</a></li>
+								<li><a href="beverageoftheday.html">Beverage of the day</a></li>
 							</ul>
 						</li>
 					</ul>
 				</div>
 				
 				<div id="profile"><a href="profile.html">My Profile</a></div>
+				
+				<div id="selection"><a href="editselection.html">Selection</a></div>
 			</div>
 		</header>
 		

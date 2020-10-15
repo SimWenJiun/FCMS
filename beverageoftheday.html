@@ -5,6 +5,7 @@
 		<link href="css/style.css" rel="stylesheet" type="text/css"/>
 		<title>FoodeEdge Gourmet - beverageoftheday.html</title><!-- CHANGE TITLE "typehere" PART TO PAGE NAME -->
 		<link rel="icon" href="img/Icon.png">
+		<script src="script/script.js"></script>
 	</head>
 
 	<body>
@@ -42,6 +43,8 @@
 				</div>
 				
 				<div id="profile"><a href="profile.html">My Profile</a></div>
+				
+				<div id="selection"><a href="editselection.html">Selection</a></div>
 			</div>
 		</header>
 		
@@ -72,7 +75,7 @@
 					</div>
 					<div id="enquire">
 						<form action="editselection.html" method="post">
-							<button type="submit" formaction="editselection.html" id="enquirenow">Add to selection</button>
+							<button onclick="botdselected()" formaction="editselection.html" id="enquirenow">Add to selection</button>
 						</form>
 					</div>
 				</div>

@@ -5,9 +5,10 @@
 		<link href="css/style.css" rel="stylesheet" type="text/css"/>
 		<title>FoodeEdge Gourmet - Edit Selection</title>
 		<link rel="icon" href="img/Icon.png">
+		<script src="script/script.js"></script>
 	</head>
 
-	<body>
+	<body onload="loadselection()">
 		<header>
 			<div id="logoholder"><a href="home.html"><img src="img/Logo.jpg" alt="FoodEdge Gourmet" id="logo"/></a></div>
 			
@@ -25,7 +26,7 @@
 				</div>
 				
 				<div id="services"><a href="services.html">Services</a></div>
-	
+				
 				<div id="menu">
 					<ul>
 						<li><a href="menupage.html">Food & Beverages Menu</a>
@@ -35,20 +36,23 @@
 								<li><a href="lunchsetb.html">Lunch Set B</a></li>
 								<li><a href="lunchsetc.html">Lunch Set C</a></li>
 								<li><a href="dinnerseta.html">Dinner Set A</a></li>
-								<li><a href="bevverageoftheday.html">Beverage of the day</a></li>
+								<li><a href="beverageoftheday.html">Beverage of the day</a></li>
 							</ul>
 						</li>
 					</ul>
 				</div>
 				
 				<div id="profile"><a href="profile.html">My Profile</a></div>
+				
+				<div id="selection"><a href="editselection.html">Selection</a></div>
 			</div>
 		</header>
 		
 		<div id="body">
 			<div id="editselection">
-				<h1>Edit Selection</h1>
-				<br/>					
+				<h1>Selection</h1>
+				<br/>
+				
 				<table id="containeritem1" style="width:100%">
 					<tr>
 						<td>
@@ -68,7 +72,7 @@
 								<td>
 								  <tr>
 									<td><img src="img/negative.png" alt="reduce" id="reduceqty" height="20px" onclick="decqty1()"/></td>
-									<td><input type="number" name="item1qty" id="item1qty" value="1" min="0" max="999" required="required"></td>
+									<td><input type="number" name="bsqty" id="bsqty" min="0" max="999" required="required"></td>
 									<td><img src="img/positive.png" alt="add" id="increaseqty" height="20px" onclick="incqty1()"/></td>
 								  </tr>
 								</td>
@@ -96,7 +100,7 @@
 								<td>
 								  <tr>
 									<td><img src="img/negative.png" alt="reduce" id="reduceqty" height="20px" onclick="decqty2()"/></td>
-									<td><input type="number" name="item2qty" id="item2qty" value="1" min="0" max="999" required="required"></td>
+									<td><input type="number" name="lsaqty" id="lsaqty" min="0" max="999" required="required"></td>
 									<td><img src="img/positive.png" alt="add" id="increaseqty" height="20px" onclick="incqty2()"/></td>
 								  </tr>
 								</td>
@@ -124,7 +128,7 @@
 								<td>
 								  <tr>
 									<td><img src="img/negative.png" alt="reduce" id="reduceqty" height="20px" onclick="decqty3()"/></td>
-									<td><input type="number" name="item3qty" id="item3qty" value="1" min="0" max="999" required="required"></td>
+									<td><input type="number" name="lsbqty" id="lsbqty" min="0" max="999" required="required"></td>
 									<td><img src="img/positive.png" alt="add" id="increaseqty" height="20px" onclick="incqty3()"/></td>
 								  </tr>
 								</td>
@@ -136,7 +140,7 @@
 				<table id="containeritem4" style="width:100%">
 					<tr>
 						<td>
-							<img src="img/smalllunchC.jpg" alt="reduce" id="reduceqty" height="100px" onclick="incqty6()"/>
+							<img src="img/smalllunchC.jpg" alt="reduce" id="reduceqty" height="100px"/>
 							<ul>							
 								<li>Lunch Set C (100% Vegan Friendly)</li>
 								<li>RM22.99</li>
@@ -152,7 +156,7 @@
 								<td>
 								  <tr>
 									<td><img src="img/negative.png" alt="reduce" id="reduceqty" height="20px" onclick="decqty4()"/></td>
-									<td><input type="number" name="item4qty" id="item4qty" value="1" min="0" max="999" required="required"></td>
+									<td><input type="number" name="lscqty" id="lscqty" min="0" max="999" required="required"></td>
 									<td><img src="img/positive.png" alt="add" id="increaseqty" height="20px" onclick="incqty4()"/></td>
 								  </tr>
 								</td>
@@ -180,7 +184,7 @@
 								<td>
 								  <tr>
 									<td><img src="img/negative.png" alt="reduce" id="reduceqty" height="20px" onclick="decqty5()"/></td>
-									<td><input type="number" name="item5qty" id="item5qty" value="1" min="0" max="999" required="required"></td>
+									<td><input type="number" name="dsaqty" id="dsaqty" min="0" max="999" required="required"></td>
 									<td><img src="img/positive.png" alt="add" id="increaseqty" height="20px" onclick="incqty5()"/></td>
 								  </tr>
 								</td>
@@ -208,7 +212,7 @@
 								<td>
 								  <tr>
 									<td><img src="img/negative.png" alt="reduce" id="reduceqty" height="20px" onclick="decqty6()"/></td>
-									<td><input type="number" name="item6qty" id="item6qty" value="1" min="0" max="999" required="required"></td>
+									<td><input type="number" name="botdqty" id="botdqty" min="0" max="999" required="required"></td>
 									<td><img src="img/positive.png" alt="add" id="increaseqty" height="20px" onclick="incqty6()"/></td>
 								  </tr>
 								</td>
@@ -217,7 +221,13 @@
 					</tr>
 				</table>
 				
-				<button type="button" id="saveselection">Save Changes</button>
+				<div id="emptyselection">
+					<p>No Items Selected. Please Select Items from Food & Beverages Menu<p>
+				</div>
+				
+				<form action="home.html" method="post">
+					<button onclick="saveselections()" formaction="home.html" id="saveselection">Save Changes</button>
+				</form>
 			</div>
 		</div>
 		
@@ -230,115 +240,5 @@
 			
 			<aside>© 2020 FoodEdge Gourmet. All Rights Reserved</aside>			
 		</footer>
-		<script>
-			function incqty1()
-			{
-				var temp = document.getElementById("item1qty").value;
-				if(temp < 999)
-				{
-					temp = ++temp;
-					document.getElementById("item1qty").value = new Number(temp);
-				}
-			}
-			function incqty2()
-			{
-				var temp = document.getElementById("item2qty").value;
-				if(temp < 999)
-				{
-					temp = ++temp;
-					document.getElementById("item2qty").value = new Number(temp);
-				}
-			}
-			function incqty3()
-			{
-				var temp = document.getElementById("item3qty").value;
-				if(temp < 999)
-				{
-					temp = ++temp;
-					document.getElementById("item3qty").value = new Number(temp);
-				}
-			}
-			function incqty4()
-			{
-				var temp = document.getElementById("item4qty").value;
-				if(temp < 999)
-				{
-					temp = ++temp;
-					document.getElementById("item4qty").value = new Number(temp);
-				}
-			}
-			function incqty5()
-			{
-				var temp = document.getElementById("item5qty").value;
-				if(temp < 999)
-				{
-					temp = ++temp;
-					document.getElementById("item5qty").value = new Number(temp);
-				}
-			}
-			function incqty6()
-			{
-				var temp = document.getElementById("item6qty").value;
-				if(temp < 999)
-				{
-					temp = ++temp;
-					document.getElementById("item6qty").value = new Number(temp);
-				}
-			}
-			function decqty1()
-			{
-				var temp = document.getElementById("item1qty").value;
-				if(temp > 0)
-				{
-					temp = --temp;
-					document.getElementById("item1qty").value = new Number(temp);
-				}
-			}
-			function decqty2()
-			{
-				var temp = document.getElementById("item2qty").value;
-				if(temp > 0)
-				{
-					temp = --temp;
-					document.getElementById("item2qty").value = new Number(temp);
-				}
-			}
-			function decqty3()
-			{
-				var temp = document.getElementById("item3qty").value;
-				if(temp > 0)
-				{
-					temp = --temp;
-					document.getElementById("item3qty").value = new Number(temp);
-				}
-			}
-			function decqty4()
-			{
-				var temp = document.getElementById("item4qty").value;
-				if(temp > 0)
-				{
-					temp = --temp;
-					document.getElementById("item4qty").value = new Number(temp);
-				}
-			}
-			function decqty5()
-			{
-				var temp = document.getElementById("item5qty").value;
-				if(temp > 0)
-				{
-					temp = --temp;
-					document.getElementById("item5qty").value = new Number(temp);
-				}
-			}
-			function decqty6()
-			{
-				var temp = document.getElementById("item6qty").value;
-				if(temp > 0)
-				{
-					temp = --temp;
-					document.getElementById("item6qty").value = new Number(temp);
-				}
-			}
-		</script>
 	</body>
 </html>

@@ -56,7 +56,7 @@ header div{
 	padding-left: 50px;
 }
 
-#home, #services, #profile {
+#home, #services, #profile, #selection {
 	background-color: #E71825;
 	width: auto;
 	height: 20px;
@@ -110,7 +110,7 @@ header div{
 	color: #000000;
 }
 
-#home:hover, #services:hover, #profile:hover {
+#home:hover, #services:hover, #profile:hover, #selection:hover {
 	background-color: #FFFFFF;
 	color: #000000;
 }
@@ -258,7 +258,7 @@ header div{
 	border: 1px solid #E71825;
 }
 
-#item1qty, #item2qty, #item3qty, #item4qty, #item5qty, #item6qty {
+#botdqty, #lsaqty, #lsbqty, #lscqty, #dsaqty, #bsqty {
 	text-align:center;
 	width: 80px;
 }
@@ -301,6 +301,11 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 	cursor: pointer;
 	width: 100%;
 	margin-top: 10px;
+}
+
+#emptyselection {
+	width: 700px;
+	height: 50px;
 }
 
 /*breakfastset selectionpage.html*/
