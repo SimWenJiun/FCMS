@@ -352,6 +352,20 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 
 /* User profile page */
+#profilebody {
+	font-family:Calibri;
+	color:black;
+	background-color: #FFFFFF;
+	border: 1px solid #E71825;
+	height: auto;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	padding: 5% 15%;
+	line-height: 30px;
+}
+
 .proftitle, .profcontent {
 	font-size: 20px;
 }
@@ -366,50 +380,120 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 
 #profpic img {
-	height: 60%;
-	width: 60%;
+	height: 250px;
+	width: 250px;
 	border-radius: 100%;
 	border: 5px solid #E71825;
 }
 
 #profpic {
-	width: 50%;
-	margin: auto;
-	padding-left: 10%;
-	padding-top: 1%;
-	float: left;
+	text-align: center;
 }
 
-#profilebody {
-	width: 100%;
-	padding-left: 20%;
-	padding-right: 20%;
-	line-height: 30px;
-}
 
 #profcontainer {
-	width: 100%;
-}
-
-#profmember {
-	width: 100%;
-	padding-top: 3%;
-	padding-bottom: 2%;
-}
-
-#profabout {
-	width: 40%;
-	float: left;
+	width: 80%;
 	padding-left: 10%;
 	padding-right: 10%;
 }
 
-#profcontact {
-	width: 40%;
-	float: left;
+#profilebody h1 {
+	margin-left: 10%;
+	font-size: 40px;
+	margin-bottom: 1%;
 }
 
-#profedit {
+#profilebody #profdesc {
+	margin-left: 10%;
+	font-size: 22px;
+	margin-bottom: 2%;
+}
+
+/* User Registration page */
+#regbody {
+	font-family:Calibri;
+	color:black;
+	background-color: #FFFFFF;
+	border: 1px solid #E71825;
+	height: auto;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	padding: 5% 15%;
+}
+
+#regbody p{
+	text-align: justify;
+	font-size: 18px;
+	margin-top: 1%;
+}
+
+#regbody form input{
+	width:100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: 2px solid #E71825;
+	border-radius: 4px;
+}
+
+#regbody form select{
+	width:40%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: 2px solid #E71825;
+	border-radius: 4px;
+}
+
+#regbody form input[type=date]{
+	width:65%;
+}
+
+#regbody form textarea{
 	width: 100%;
-	margin-left: 3%;
+	height: 150px;
+	padding: 12px 20px;
+	box-sizing: border-box;
+	border: 2px solid #E71825;
+	border-radius: 4px;
+	background-color: white;
+	font-size: 16px;
+	resize: none;
+	margin: 8px 0;
+}
+
+#regbody form fieldset{
+	padding: 1% 5%;
+	margin-top: 2%;
+}
+
+#regbody form fieldset legend{
+	font-size: 22px;
+	font-weight: bold;
+}
+
+#regbody form label{
+	font-size: 20px;
+}
+
+#signupbut {
+	float: right;
+	background-color: #FFFFFF;
+	border: 2px solid #E71825;
+	border-radius: 4px;
+	color: #E71825;
+	text-align: center;
+	font-size: 16px;
+	margin: 2% 0;
+	padding: 1% 2%;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	width: 20%;
+}
+
+#signupbut:hover {
+	background-color: #E71825;
+	color: #FFFFFF;
 }
