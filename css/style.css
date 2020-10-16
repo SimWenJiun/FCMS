@@ -47,6 +47,11 @@ header div{
 	float: left;
 }
 
+#homepageparagraph {
+	text-align: justify;
+	text-justify: inter-word;
+}
+
 #navigation {
 	margin-top: 45px;
     display: block;
@@ -146,10 +151,10 @@ header div{
 }
 
 #bodyhome {
-	padding-top: 10px;
-	padding-bottom: 10px;
-	padding-left: 30px;
-	padding-right: 30px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-left: 200px;
+	padding-right: 200px;
 	background-color: #FFFFFF;
 	border: 1px solid #E71825;
 	height: auto;
@@ -614,4 +619,57 @@ span.price {
   .col-25 {
     margin-bottom: 20px;
   }
+}
+
+/* Home Page Buttons*/
+
+#homepagemenu{
+	display: flex;
+    justify-content: space-between;
+	background-color: #EDEBEB;
+	border-radius: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#foodbutton {
+	position: relative;
+	width: 300px;
+	margin: 10px;
+}
+
+#foodbuttonimage {
+	opacity: 1;
+	display: block;
+	width: 100%;
+	height: auto;
+	transition: .5s ease;
+	backface-visibility: hidden;
+	border-radius: 10px;
+}
+
+#foodbuttonbox {
+	opacity: 0;
+	transition: .5s ease;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	text-align: center;
+}
+
+#foodbutton:hover #foodbuttonimage {
+	opacity: 0.2;
+}
+
+#foodbutton:hover #foodbuttonbox {
+	opacity: 1;
+}
+
+#foodbuttontext {
+	background-color: #E71825;
+	color: white;
+	font-size: 14px;
+	padding: 10px;
+	border-radius: 10px;
 }
