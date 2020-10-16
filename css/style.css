@@ -502,3 +502,28 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 	background-color: #E71825;
 	color: #FFFFFF;
 }
+
+#navigation #about {
+	background-color: #E71825;
+	width: auto;
+	height: 20px;
+	line-height: 20px;
+	position: relative;
+	text-align: center;
+	font-size: 20px;
+	color: #FFFFFF;
+	font-family: Calibri;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#navigation #about:hover {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+
+.message {
+	color: #E71825;
+}

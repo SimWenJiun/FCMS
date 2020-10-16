@@ -8,6 +8,7 @@ if(count($_POST)>0) {
 		$message = "Invalid username or password!";
 	} else {
 		$message = "Login successful!";
+		header("Location: home.html");
 	}
 }
 ?>
@@ -26,18 +27,6 @@ if(count($_POST)>0) {
 			<div id="navigation">
 				<div id="home"><a href="home.html">Home</a></div>
 				
-				<div id="aboutus">
-					<ul>
-						<li>About Us
-							<ul>
-								<li><a href="portfolio.html">Portfolio</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-				
-				<div id="services"><a href="services.html">Services</a></div>
-				
 				<div id="menu">
 					<ul>
 						<li><a href="menupage.html">Food & Beverages Menu</a>
@@ -53,9 +42,11 @@ if(count($_POST)>0) {
 					</ul>
 				</div>
 				
-				<div id="profile"><a href="profile.html">My Profile</a></div>
-				
 				<div id="selection"><a href="editselection.html">Selection</a></div>
+				
+				<div id="about"><a href="aboutus.html">About</a></div>
+				
+				<div id="profile"><a href="login.php">Login</a></div>
 			</div>
 		</header>
 		
