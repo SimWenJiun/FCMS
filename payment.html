@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="DP2 - Group 3" content="FoodEdge Gourmet - Menu"/>
+		<link href="css/style.css" rel="stylesheet" type="text/css"/>
+		<title>FoodeEdge Gourmet - Menu</title>
+		<link rel="icon" href="img/Icon.png">
+	</head>
+
+	<body>
+		<header>
+			<div id="logoholder"><a href="home.html"><img src="img/Logo.jpg" alt="FoodEdge Gourmet" id="logo"/></a></div>
+			
+			<div id="navigation">
+				<div id="home"><a href="home.html">Home</a></div>
+				
+				<div id="aboutus">
+					<ul>
+						<li>About Us
+							<ul>
+								<li><a href="portfolio.html">Portfolio</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				
+				<div id="services"><a href="services.html">Services</a></div>
+				
+				<div id="menu">
+					<ul>
+						<li><a href="menupage.html">Food & Beverages Menu</a>
+							<ul>							
+								<li><a href="breakfastset.html">Breakfast Set</a></li>
+								<li><a href="lunchseta.html">Lunch Set A</a></li>
+								<li><a href="lunchsetb.html">Lunch Set B</a></li>
+								<li><a href="lunchsetc.html">Lunch Set C</a></li>
+								<li><a href="dinnerseta.html">Dinner Set A</a></li>
+								<li><a href="beverageoftheday.html">Beverage of the day</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				
+				<div id="profile"><a href="profile.html">My Profile</a></div>
+			</div>
+		</header>
+		
+		<div id="body" class="row">
+		<div class="col-75">
+			<div class="container">
+				<form action="/action_page.php">
+
+					<div class="row">
+						<div class="col-50">
+							<h3>Billing Address</h3>
+							<label for="fname"><i class="fa fa-user"></i> Full Name</label>
+							<input type="text" id="fname" name="firstname" placeholder="full name as stated in IC">
+							<label for="email"><i class="fa fa-envelope"></i> Email</label>
+							<input type="text" id="email" name="email" placeholder="email address">
+							<label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+							<input type="text" id="adr" name="address" placeholder="address as stated in IC">
+							<label for="city"><i class="fa fa-institution"></i> City</label>
+							<input type="text" id="city" name="city" placeholder="city as stated in IC">
+
+							<div class="row">
+								<div class="col-50">
+									<label for="state">State</label>
+									<input type="text" id="state" name="state" placeholder="state as stated in IC">
+								</div>
+								<div class="col-50">
+									<label for="zip">Zip</label>
+									<input type="text" id="zip" name="zip" placeholder="zip as stated in IC">
+								</div>
+							</div>
+						</div>
+
+						<div class="col-50">
+						<h3>Payment</h3>
+						<label for="fname">Accepted Cards</label>
+						<div class="icon-container">
+							<img src="img/visa.png" alt="masterCard" id="imgVisa" height="70px" width="150px" class="fa fa-cc-visa" style="color:navy;"/>
+							<i class="fa fa-cc-amex" style="color:blue;"></i>
+							<img src="img/masterCard.png" alt="masterCard" id="imgMasterCard" height="70px" class="fa fa-cc-mastercard" style="color:red;"/>
+							<i class="fa fa-cc-discover" style="color:orange;"></i>
+						</div>
+						<label for="cname">Name on Card</label>
+						<input type="text" id="cname" name="cardname" placeholder="Camillus Hii King Lian">
+						<label for="ccnum">Credit card number</label>
+						<input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+						<label for="expmonth">Exp Month</label>
+						<input type="text" id="expmonth" name="expmonth" placeholder="September">
+
+						<div class="row">
+							<div class="col-50">
+								<label for="expyear">Exp Year</label>
+								<input type="text" id="expyear" name="expyear" placeholder="2018">
+							</div>
+							<div class="col-50">
+								<label for="cvv">CVV</label>
+								<input type="text" id="cvv" name="cvv" placeholder="352">
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<label>
+					<input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+				</label>
+				<input type="submit" value="Continue to checkout" class="btn">
+			</form>
+		</div>
+	</div>
+
+	<div class="col-25">
+		<div class="container">
+			<h4>Cart
+				<span class="price" style="color:black">
+					<i class="fa fa-shopping-cart"></i>
+					<b>4</b>
+				</span>
+				</h4>
+				<p><a href="#">Product 1</a> <span class="price">$0</span></p>
+				<p><a href="#">Product 2</a> <span class="price">$0</span></p>
+				<p><a href="#">Product 3</a> <span class="price">$0</span></p>
+				<p><a href="#">Product 4</a> <span class="price">$0</span></p>
+				<hr>
+				<p>Total <span class="price" style="color:black"><b>$0</b></span></p>
+			</div>
+		</div>
+	</div>
+		
+		<footer>
+			<nav>
+				<a href="privacypolicy.html">Privacy Policy | </a>
+				<a href="contactus.html">Contact Us | </a>
+				<a href="aboutus.html">About Us</a>
+			</nav>
+			
+			<aside>© 2020 FoodEdge Gourmet. All Rights Reserved</aside>
+		</footer>
+	</body>
+</html>
