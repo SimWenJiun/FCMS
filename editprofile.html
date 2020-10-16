@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="DP2 - Group 3" content="FoodEdge Gourmet - typehere"/><!-- CHANGE CONTENT "typehere" PART TO PAGE NAME -->
+		<link href="css/style.css" rel="stylesheet" type="text/css"/>
+		<title>FoodeEdge Gourmet - Edit Profile</title><!-- CHANGE TITLE "typehere" PART TO PAGE NAME -->
+		<link rel="icon" href="img/Icon.png">
+		<script src="script/script.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<div id="logoholder"><a href="home.html"><img src="img/Logo.jpg" alt="FoodEdge Gourmet" id="logo"/></a></div>
+			
+			<div id="navigation">
+				<div id="home"><a href="home.html">Home</a></div>
+				
+				<div id="aboutus">
+					<ul>
+						<li>About Us
+							<ul>
+								<li><a href="portfolio.html">Portfolio</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				
+				<div id="services"><a href="services.html">Services</a></div>
+				
+				<div id="menu">
+					<ul>
+						<li><a href="menupage.html">Food & Beverages Menu</a>
+							<ul>							
+								<li><a href="breakfastset.html">Breakfast Set</a></li>
+								<li><a href="lunchseta.html">Lunch Set A</a></li>
+								<li><a href="lunchsetb.html">Lunch Set B</a></li>
+								<li><a href="lunchsetc.html">Lunch Set C</a></li>
+								<li><a href="dinnerseta.html">Dinner Set A</a></li>
+								<li><a href="beverageoftheday.html">Beverage of the day</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				
+				<div id="profile"><a href="profile.html">My Profile</a></div>
+				
+				<div id="selection"><a href="editselection.html">Selection</a></div>
+			</div>
+		</header>
+		
+
+		<div id="editbody">
+			<h1>Edit Profile</h1>
+			
+			<form action="profile.html" method="">
+				<!--figure id="editpic">
+					<img src="img/kevin.png" alt="Profile picture" title="Profile Picture">
+				</figure-->
+				<input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display:none;">
+				<p><label for="file" style="cursor: pointer;">Upload Image</label></p>
+				<img src="img/kevin.png" id="output" width="200" height="200" style="border-radius:50%; object-fit:cover;"/>
+				<h2>About</h2>
+				<hr>
+				<label for="fname"><b>First Name</b></label><br>
+				<input type="text" name="fname" id="fname" value="Kevin"><br>
+				
+				<label for="lname"><b>Last Name</b></label><br>
+				<input type="text" name="lname" id="lname" value="Malone"><br>
+				
+				<h2>Contact</h2>
+				<hr>
+				<label for="email"><b>Email</b></label><br>
+				<input type="email" name="email" id="email" value="kevinmalone@gmail.com"><br>
+				
+				<label for="phone"><b>Phone Number</b></label><br>
+				<input type="tel" name="phone" id="phone" value="+60123456789" pattern="^(\+601)[0-46-9]-*[0-9]{7,8}$"><br>
+				
+				<label for="address"><b>Address</b></label><br>
+				<textarea name="address" id="address">456 Lorong 7 Jalan Batu Kawa 93250 Kuching Sarawak</textarea><br>
+				
+				<h2>Login Information</h2>
+				<hr>
+				<label for="uname"><b>Username</b></label><br>
+				<input type="uname" name="uname" id="uname" value="Kevfamouschili"><br>
+				
+				<label for="pword"><b>Password</b></label><br>
+				<input type="password" name="pword" id="pword"><br>
+				
+				<label for="cpword"><b>Confirmed Password</b></label><br>
+				<input type="password" name="cpword" id="cpword"><br>
+				
+				<button type="submit" name="save">Save Changes</button>
+				<button><a href="profile.html">Cancel</a></button>
+			</form>	
+		</div>	
+
+		
+		<footer>
+			<nav>
+				<a href="privacypolicy.html">Privacy Policy | </a>
+				<a href="contactus.html">Contact Us | </a>
+				<a href="aboutus.html">About Us</a>
+			</nav>
+			
+			<aside>© 2020 FoodEdge Gourmet. All Rights Reserved</aside>
+		</footer>
+	</body>
+</html>

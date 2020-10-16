@@ -294,3 +294,10 @@ function decqty6()
 	}
 }
 //Code Above For Selection Page and Related Functions
+
+/* Edit User page */
+var loadFile = function(event) {
+	var image = document.getElementById('output');
+	image.src = URL.createObjectURL(event.target.files[0]);
+};
+/* -------------- */
