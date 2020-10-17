@@ -339,3 +339,71 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
+
+function validateForm() {
+	var _name = document.forms["paymentForm"]["name"].value;
+	if (_name == "") {
+		alert("Name must be filled out");
+		return false;
+	}
+			
+	var _email = document.forms["paymentForm"]["email"].value;
+	if (_email == "") {
+		alert("Email must be filled out");
+		return false;
+	}
+			
+	var _address = document.forms["paymentForm"]["address"].value;
+	if (_address == "") {
+		alert("Address must be filled out");
+		return false;
+	}
+			
+	var _city = document.forms["paymentForm"]["city"].value;
+	if (_city == "") {
+		alert("City must be filled out");
+		return false;
+	}
+			
+	var _state = document.forms["paymentForm"]["state"].value;
+	if (_state == "") {
+		alert("State must be filled out");
+		return false;
+	}
+			
+	var _zip = document.forms["paymentForm"]["zip"].value;
+	if (_zip == "") {
+		alert("Zipcode must be filled out");
+		return false;
+	}
+			
+	var _cname = document.forms["paymentForm"]["cname"].value;
+	if (_cname == "") {
+		alert("Name on card must be filled out");
+		return false;
+	}
+			
+	var _ccnum = document.forms["paymentForm"]["ccnum"].value;
+	if (_ccnum == "") {
+		alert("Credit card number must be filled out");
+		return false;
+	}
+			
+	var _expmonth = document.forms["paymentForm"]["expmonth"].value;
+	if (_expmonth == "") {
+		alert("Expiry month must be filled out");
+		return false;
+	}
+			
+	var _expyear = document.forms["paymentForm"]["expyear"].value;
+	if (_expyear == "") {
+		alert("Expiry year must be filled out");
+		return false;
+	}
+			
+	var _cvv = document.forms["paymentForm"]["cvv"].value;
+	if (_cvv == "") {
+		alert("CVV must be filled out");
+		return false;
+	}
+}
