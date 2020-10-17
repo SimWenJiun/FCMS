@@ -162,15 +162,18 @@ function loadselection()
 	
 	var emptyselectiontoggle = document.getElementById("emptyselection");
 	var saveselectiontoggle = document.getElementById("saveselection");
+	var booknowtoggle = document.getElementById("booknow");
 	if(containercount  == 0)
 	{
 		emptyselectiontoggle.style.display = "block";
 		saveselectiontoggle.style.display = "none";
+		booknowtoggle.style.display = "none";
 	}
 	else
 	{
 		emptyselectiontoggle.style.display = "none";
 		saveselectiontoggle.style.display = "block";
+		booknowtoggle.style.display = "block";
 	}
 }
 
@@ -295,6 +298,133 @@ function decqty6()
 }
 //Code Above For Selection Page and Related Functions
 
+//Code Below For Submit Booking Page and Related Functions
+function loadbooking()
+{
+	var totalcost = 0;
+	var containercount = 0;
+	
+	var bscontainer = document.getElementById("sbcontaineritem1");
+	var bsprice = 19.99;
+	var bstotal = 0;
+	if(localStorage.bsqty == 0 || typeof(localStorage.getItem("bsqty"))=='undefined')
+	{
+		bscontainer.style.display = "none";
+	}
+	else
+	{
+		bscontainer.style.display = "block";
+		bstotal = bsprice * localStorage.bsqty;
+		totalcost = totalcost + bstotal;
+		document.getElementById("bsqtydiv").innerHTML = localStorage.bsqty;
+		containercount++;
+	}
+	
+	var lsacontainer = document.getElementById("sbcontaineritem2");
+	var lsaprice = 24.99;
+	var lsatotal = 0;
+	if(localStorage.lsaqty == 0 || typeof(localStorage.getItem("lsaqty"))=='undefined')
+	{
+		lsacontainer.style.display = "none";
+	}
+	else
+	{
+		lsacontainer.style.display = "block";
+		lsatotal = lsaprice * localStorage.lsaqty;
+		totalcost = totalcost + lsatotal;
+		document.getElementById("lsaqtydiv").innerHTML = localStorage.lsaqty;
+		containercount++;
+	}
+	
+	var lsbcontainer = document.getElementById("sbcontaineritem3");
+	var lsbprice = 28.99;
+	var lsbtotal = 0;
+	if(localStorage.lsbqty == 0 || typeof(localStorage.getItem("lsbqty"))=='undefined')
+	{
+		lsbcontainer.style.display = "none";
+	}
+	else
+	{
+		lsbcontainer.style.display = "block";
+		lsbtotal = lsbprice * localStorage.lsbqty;
+		totalcost = totalcost + lsbtotal;
+		document.getElementById("lsbqtydiv").innerHTML = localStorage.lsbqty;
+		containercount++;
+	}
+	
+	var lsccontainer = document.getElementById("sbcontaineritem4");
+	var lscprice = 22.99;
+	var lsctotal = 0;
+	if(localStorage.lscqty == 0 || typeof(localStorage.getItem("lscqty"))=='undefined')
+	{
+		lsccontainer.style.display = "none";
+	}
+	else
+	{
+		lsccontainer.style.display = "block";
+		lsctotal = lscprice * localStorage.lscqty;
+		totalcost = totalcost + lsctotal;
+		document.getElementById("lscqtydiv").innerHTML = localStorage.lscqty;
+		containercount++;
+	}
+	
+	var dsacontainer = document.getElementById("sbcontaineritem5");
+	var dsaprice = 35.99;
+	var dsatotal = 0;
+	if(localStorage.dsaqty == 0 || typeof(localStorage.getItem("dsaqty"))=='undefined')
+	{
+		dsacontainer.style.display = "none";
+	}
+	else
+	{
+		dsacontainer.style.display = "block";
+		dsatotal = dsaprice * localStorage.dsaqty;
+		totalcost = totalcost + dsatotal;
+		document.getElementById("dsaqtydiv").innerHTML = localStorage.dsaqty;
+		containercount++;
+	}
+	
+	var botdcontainer = document.getElementById("sbcontaineritem6");
+	var botdprice = 10.99;
+	var botdtotal = 0;
+	if(localStorage.botdqty == 0 || typeof(localStorage.getItem("botdqty"))=='undefined')
+	{
+		botdcontainer.style.display = "none";
+	}
+	else
+	{
+		botdcontainer.style.display = "block";
+		botdtotal = botdprice * localStorage.botdqty;
+		totalcost = totalcost + botdtotal;
+		document.getElementById("botdqtydiv").innerHTML = localStorage.botdqty;
+		containercount++;
+	}
+	
+	var emptyselectiontoggle = document.getElementById("emptyselection");
+	var noitemsselected = document.getElementById("noitemsselected");
+	if(containercount  == 0)
+	{
+		emptyselectiontoggle.style.display = "block";
+		noitemsselected.style.display = "none";
+	}
+	else
+	{
+		emptyselectiontoggle.style.display = "none";
+		noitemsselected.style.display = "block";
+	}
+	
+	document.getElementById("bstotal").innerHTML = bstotal.toFixed(2);
+	document.getElementById("lsatotal").innerHTML = lsatotal.toFixed(2);
+	document.getElementById("lsbtotal").innerHTML = lsbtotal.toFixed(2);
+	document.getElementById("lsctotal").innerHTML = lsctotal.toFixed(2);
+	document.getElementById("dsatotal").innerHTML = dsatotal.toFixed(2);
+	document.getElementById("botdtotal").innerHTML = botdtotal.toFixed(2);
+	document.getElementById("totalcost").innerHTML = totalcost.toFixed(2);
+}
+//Code Above For Submit Booking Page and Related Functions
+
+
+
 /* Edit User page */
 var loadFile = function(event) {
 	var image = document.getElementById('output');
@@ -406,4 +536,10 @@ function validateForm() {
 		alert("CVV must be filled out");
 		return false;
 	}
+}
+
+//Submit booking to kitchen function below
+function sbtk ()
+{
+	
 }

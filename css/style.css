@@ -407,7 +407,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   margin: 0; 
 }
 
-#saveselection {
+#saveselection, #booknow {
 	background-color: #E71825;
 	color: white;
 	padding: 14px 20px;
@@ -775,10 +775,69 @@ span.price {
 	opacity: 1;
 }
 
+/*Submit Booking Page*/
 #foodbuttontext {
 	background-color: #E71825;
 	color: white;
 	font-size: 14px;
 	padding: 10px;
 	border-radius: 10px;
+}
+
+#sbcontaineritem1, #sbcontaineritem2, #sbcontaineritem3, #sbcontaineritem4, #sbcontaineritem5, #sbcontaineritem6, #sbtotalcostcontainer {
+	background-color: #EDEBEB;
+	border-radius: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 10px;  
+	margin-left: 20px;
+	width: 500px;
+	padding: 10px;
+}
+
+#sbdetails {
+	display: inline-block;
+	margin-left: 10px;
+	transform: translateY(-20%);
+	list-style-type: none;
+}
+
+#sbdetailline {
+	display: flex;
+}			
+
+#submitbooking {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#sbheading {
+	text-align: center;
+}
+
+#sbimg {
+	border-radius: 10px;
+}
+
+#sbdetailline div {
+	color: #4CAF50;
+}
+
+#sbtkbutton, #backtoeditselectionbutton {
+	background-color: #E71825;
+	color: white;
+	padding: 14px 20px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	margin-top: 10px;
+}
+
+#totalcosttitle {
+	display: inline-block;
+}
+
+#totalcost {
+	display: inline-block;
 }
