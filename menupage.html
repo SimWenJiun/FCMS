@@ -3,6 +3,7 @@
 	<head>
 		<meta name="DP2 - Group 3" content="FoodEdge Gourmet - Menu"/>
 		<link href="css/style.css" rel="stylesheet" type="text/css"/>
+		<script src="script/script.js"></script>
 		<title>FoodeEdge Gourmet - Menu</title>
 		<link rel="icon" href="img/Icon.png">
 	</head>
@@ -38,49 +39,89 @@
 		</header>
 		
 		<div id="body" class="row">
-			<div>
-				<div class="column">
-					<a href = "breakfastset.html"><img src="img/breakfast.jpg" alt="Breakfast Set" style="width:100%", "height:100%"></a>
-					<h1>Breakfast Set</h1>
-					<p class="price">RM19.99/-</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor massa a luctus ultrices. Cras tincidunt lacus ultricies metus malesuada, ac euismod odio facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices ligula ac sapien gravida scelerisque. Donec quis maximus tellus, ut vulputate arcu. Nam in metus eros. Phasellus et lorem dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>					
-				</div>
-				
-				<div class="column">
-					<a href = "lunchseta.html"><img src="img/lunchA.jpg" alt="Lunch Set A" style="width:100%"></a>
-					<h1>Lunch Set A</h1>
-					<p class="price">RM24.99/-</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor massa a luctus ultrices. Cras tincidunt lacus ultricies metus malesuada, ac euismod odio facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices ligula ac sapien gravida scelerisque. Donec quis maximus tellus, ut vulputate arcu. Nam in metus eros. Phasellus et lorem dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>					
-				</div>
-				
-				<div class="column">
-					<a href = "lunchsetb.html"><img src="img/lunchB.jpeg" alt="Lunch Set B" style="width:100%"></a>
-					<h1>Lunch Set B</h1>
-					<p class="price">RM28.99/-</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor massa a luctus ultrices. Cras tincidunt lacus ultricies metus malesuada, ac euismod odio facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices ligula ac sapien gravida scelerisque. Donec quis maximus tellus, ut vulputate arcu. Nam in metus eros. Phasellus et lorem dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>					
-				</div>
-				
-				<div class="column">
-					<a href = "lunchsetc.html"><img src="img/lunchC.jpg" alt="Lunch Set C" style="width:100%"></a>
-					<h1>Lunch Set C (100% Vegan Friendly)</h1>
-					<p class="price">RM22.99/-</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor massa a luctus ultrices. Cras tincidunt lacus ultricies metus malesuada, ac euismod odio facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices ligula ac sapien gravida scelerisque. Donec quis maximus tellus, ut vulputate arcu. Nam in metus eros. Phasellus et lorem dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>					
-				</div>
-				
-				<div class="column">
-					<a href = "dinnerseta.html"><img src="img/dinner.jpg" alt="Dinner Set" style="width:100%"></a>
-					<h1>Dinner Set A</h1>
-					<p class="price">RM35.99/-</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor massa a luctus ultrices. Cras tincidunt lacus ultricies metus malesuada, ac euismod odio facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices ligula ac sapien gravida scelerisque. Donec quis maximus tellus, ut vulputate arcu. Nam in metus eros. Phasellus et lorem dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>					
-				</div>
-				
-				<div class="column">
-					<a href = "beverageoftheday.html"><img src="img/beverages.jpg" alt="Beverage of the day" style="width:100%"></a>
-					<h1>Beverage of the day</h1>
-					<p class="price">RM10.99/-</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor massa a luctus ultrices. Cras tincidunt lacus ultricies metus malesuada, ac euismod odio facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices ligula ac sapien gravida scelerisque. Donec quis maximus tellus, ut vulputate arcu. Nam in metus eros. Phasellus et lorem dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>					
-				</div>
+			  <div class="column">
+				<img src="img/breakfast.jpg" style="width:100%" onclick="openModal();currentSlide(1)" id="menu_pic" class="hover-shadow cursor">
+			  </div>
+			  <div class="column">
+				<img src="img/lunchA.jpg" style="width:100%" onclick="openModal();currentSlide(2)" id="menu_pic" class="hover-shadow cursor">
+			  </div>
+			  <div class="column">
+				<img src="img/lunchB.jpeg" style="width:100%" onclick="openModal();currentSlide(3)" id="menu_pic" class="hover-shadow cursor">
+			  </div>
+			  <div class="column">
+				<img src="img/lunchC.jpg" style="width:100%" onclick="openModal();currentSlide(4)" id="menu_pic" class="hover-shadow cursor">
+			  </div>
+			  <div class="column">
+				<img src="img/dinner.jpg" style="width:100%" onclick="openModal();currentSlide(5)" id="menu_pic" class="hover-shadow cursor">
+			  </div>
+			  <div class="column">
+				<img src="img/beverages.jpg" style="width:100%" onclick="openModal();currentSlide(6)" id="menu_pic" class="hover-shadow cursor">
+			  </div>
 			</div>
+
+			<div id="myModal" class="modal">
+			  <span class="close cursor" onclick="closeModal()">&times;</span>
+			  <div class="modal-content">
+
+				<div class="mySlides">
+				  <div class="numbertext">1 / 6</div>
+				  <img src="img/breakfast.jpg" style="width:100%" id="menu_pic">
+				</div>
+
+				<div class="mySlides">
+				  <div class="numbertext">2 / 6</div>
+				  <img src="img/lunchA.jpg" style="width:100%" id="menu_pic">
+				</div>
+
+				<div class="mySlides">
+				  <div class="numbertext">3 / 6</div>
+				  <img src="img/lunchB.jpeg" style="width:100%" id="menu_pic">
+				</div>
+				
+				<div class="mySlides">
+				  <div class="numbertext">4 / 6</div>
+				  <img src="img/lunchC.jpg" style="width:100%" id="menu_pic">
+				</div>
+				
+				<div class="mySlides">
+				  <div class="numbertext">5 / 6</div>
+				  <img src="img/dinner.jpg" style="width:100%" id="menu_pic">
+				</div>
+				
+				<div class="mySlides">
+				  <div class="numbertext">6 / 6</div>
+				  <img src="img/beverages.jpg" style="width:100%" id="menu_pic">
+				</div>
+				
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+				<div class="caption-container">
+				  <p id="caption"></p>
+				</div>
+
+
+				<div class="column">
+				  <img class="demo cursor" src="img/breakfast.jpg" style="width:100%" onclick="currentSlide(1)" alt="Breakfast Set" id="menu_pic">
+				</div>
+				<div class="column">
+				  <img class="demo cursor" src="img/lunchA.jpg" style="width:100%" onclick="currentSlide(2)" alt="Lunch Set A" id="menu_pic">
+				</div>
+				<div class="column">
+				  <img class="demo cursor" src="img/lunchB.jpeg" style="width:100%" onclick="currentSlide(3)" alt="Lunch Set B" id="menu_pic">
+				</div>
+				<div class="column">
+				  <img class="demo cursor" src="img/lunchC.jpg" style="width:100%" onclick="currentSlide(4)" alt="Lunch Set C (100% Vegan Friendly)" id="menu_pic">
+				</div>
+				<div class="column">
+				  <img class="demo cursor" src="img/dinner.jpg" style="width:100%" onclick="currentSlide(5)" alt="Dinner Set A" id="menu_pic">
+				</div>
+				<div class="column">
+				  <img class="demo cursor" src="img/beverages.jpg" style="width:100%" onclick="currentSlide(6)" alt="Beverage of the day" id="menu_pic">
+				</div>
+			  </div>
+			</div>
+		
 		</div>
 		
 		<footer>
