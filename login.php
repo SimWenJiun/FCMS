@@ -25,7 +25,7 @@ if(count($_POST)>0) {
 			<div id="logoholder"><a href="home.html"><img src="img/Logo.jpg" alt="FoodEdge Gourmet" id="logo"/></a></div>
 			
 			<div id="navigation">
-				<div id="home"><a href="home.html">Home</a></div>
+				<div id="home"><a href="index.html">Home</a></div>
 				
 				<div id="menu">
 					<ul>
