@@ -43,22 +43,22 @@
 			<h1>Edit Profile</h1>
 			
 			<form action="profile.html" method="">
-				<!--figure id="editpic">
-					<img src="img/kevin.png" alt="Profile picture" title="Profile Picture">
-				</figure-->
 				<input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display:none;">
-				<p><label for="file" style="cursor: pointer;">Upload Image</label></p>
+
 				<img src="img/kevin.png" id="output" width="200" height="200" style="border-radius:50%; object-fit:cover;"/>
+				<p><label for="file" id="upload" style="cursor: pointer;">Upload Image</label></p>				
+				<br>
 				<h2>About</h2>
-				<hr>
+				<hr><br>
 				<label for="fname"><b>First Name</b></label><br>
 				<input type="text" name="fname" id="fname" value="Kevin"><br>
 				
 				<label for="lname"><b>Last Name</b></label><br>
 				<input type="text" name="lname" id="lname" value="Malone"><br>
 				
+				<br>
 				<h2>Contact</h2>
-				<hr>
+				<hr><br>
 				<label for="email"><b>Email</b></label><br>
 				<input type="email" name="email" id="email" value="kevinmalone@gmail.com"><br>
 				
@@ -68,8 +68,9 @@
 				<label for="address"><b>Address</b></label><br>
 				<textarea name="address" id="address">456 Lorong 7 Jalan Batu Kawa 93250 Kuching Sarawak</textarea><br>
 				
+				<br>
 				<h2>Login Information</h2>
-				<hr>
+				<hr><br>
 				<label for="uname"><b>Username</b></label><br>
 				<input type="uname" name="uname" id="uname" value="Kevfamouschili"><br>
 				
@@ -79,9 +80,12 @@
 				<label for="cpword"><b>Confirmed Password</b></label><br>
 				<input type="password" name="cpword" id="cpword"><br>
 				
-				<button type="submit" name="save">Save Changes</button>
-				<button><a href="profile.html">Cancel</a></button>
-			</form>	
+				<button type="submit" name="cancel" formaction="profile.html">Cancel</button>
+				<button type="submit" name="save">Save</button>
+			</form>
+			<br>
+			<br>
+			
 		</div>	
 
 		
