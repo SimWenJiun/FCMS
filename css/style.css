@@ -961,3 +961,15 @@ span.price {
 #totalcost {
 	display: inline-block;
 }
+
+/*payment Confirmation page*/
+
+#paymentConf {
+	margin:auto;
+	text-align:center;
+}
+
+#emailP{
+	color: blue;
+	font-size: 15px;
+}
