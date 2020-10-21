@@ -65,7 +65,7 @@ if(count($_POST)>0) {
 					<button type="submit" id="loginbut">Login</button>
 					<span id="forgot"><a href="">Forgot password?</a></span>
 					
-					<button type="submit" formaction="registration.php" id="submitbut">Sign Up</button>
+					<button id="signup"><a href="registration.php">Sign Up</a></button>
 				</form>
 			</div>
 		</div>
