@@ -1,15 +1,18 @@
 <?php
+session_start();
 $message="";
 if(count($_POST)>0) {
 	$conn = mysqli_connect("sql12.freesqldatabase.com", "sql12369317", "KGUuPpDYfu", "sql12369317");
 	$result = mysqli_query($conn,"SELECT * FROM Customers WHERE customer_username='" . $_POST["uname"] . "' and customer_password = '". $_POST["pword"]."'");
-	$count  = mysqli_num_rows($result);
-	if($count==0) {
-		$message = "Invalid username or password!";
+	$row  = mysqli_fetch_array($result);
+	if(is_array($row)) {
+		$_SESSION["username"] = $row["customer_username"];
 	} else {
-		$message = "Login successful!";
-		header("Location: home.html");
+		$message = "Invalid Username or Password!";
 	}
+}
+if(isset($_SESSION["username"])) {
+	header("Location:index.html");
 }
 ?>
 <html lang="en">
