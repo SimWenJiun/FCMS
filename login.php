@@ -12,7 +12,7 @@ if(count($_POST)>0) {
 	}
 }
 if(isset($_SESSION["username"])) {
-	header("Location:index.html");
+	header("Location:profile.php");
 }
 ?>
 <html lang="en">
@@ -49,7 +49,7 @@ if(isset($_SESSION["username"])) {
 				
 				<div id="about"><a href="aboutus.html">About</a></div>
 				
-				<div id="profile"><a href="login.php">Login</a></div>
+				<div id="profile"><a href="login.php">Profile</a></div>
 			</div>
 		</header>
 		

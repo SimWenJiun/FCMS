@@ -125,7 +125,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				
 				<div id="about"><a href="aboutus.html">About</a></div>
 				
-				<div id="profile"><a href="login.php">Login</a></div>
+				<div id="profile"><a href="login.php">Profile</a></div>
 			</div>
 		</header>
 		

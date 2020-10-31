@@ -39,7 +39,7 @@ if(isset($_SESSION["username"])) {
 				
 				<div id="about"><a href="aboutus.html">About</a></div>
 				
-				<div id="profile"><a href="index.html">Sign Out</a></div>
+				<div id="profile"><a href="login.php">Profile</a></div>
 			</div>
 		</header>
 		
