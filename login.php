@@ -58,7 +58,6 @@ if(isset($_SESSION["username"])) {
 				<h1>User Login</h1>
 				<img src="img/avatar.png" alt="User avatar" id="avatar">
 				<form action="" method="post">
-				<div class="message"><?php if($message!="") { echo $message; } ?></div>
 					<label for="login"><b>Username</b></label>
 					<input type="text" name="uname" id="login">
 					
@@ -67,6 +66,7 @@ if(isset($_SESSION["username"])) {
 					
 					<button type="submit" id="loginbut">Login</button>
 					<span id="forgot"><a href="">Forgot password?</a></span>
+					<div class="message"><?php if($message!="") { echo $message; } ?></div>
 					
 					<button id="signup"><a href="registration.php">Sign Up</a></button>
 				</form>

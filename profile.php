@@ -47,7 +47,7 @@ if(isset($_SESSION["username"])) {
 		<div id="profilebody">
 		<?php if (mysqli_num_rows($result) >0) {
 				$row = mysqli_fetch_array($result) ?>
-			<h1>Hi Kevin,</h1>
+			<h1>Hi <?php echo $row["customer_firstname"]; ?>,</h1>
 			<p id="profdesc">Welcome to your FoodEdge Gourmet Profile page.</p>
 			<figure id="profpic">
 				<a href="editprofile.html" id="profedit">
@@ -87,6 +87,7 @@ if(isset($_SESSION["username"])) {
 					<span class="profcontent"><?php echo $row["customer_address"]; ?></span></p>
 				</div>
 				<br>
+				<button id="signup"><a href="logout.php">Log Out</a></button>
 			</div>
 		<?php } ?>
 		</div>	
