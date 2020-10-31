@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?php
+session_start();
+$conn = mysqli_connect("sql12.freesqldatabase.com", "sql12369317", "KGUuPpDYfu", "sql12369317");
+if(isset($_SESSION["username"])) {
+	$result = mysqli_query($conn,"SELECT * FROM Customers WHERE customer_username='" . $_SESSION["username"] . "'");
+}
+?>
 <html lang="en">
 	<head>
 		<meta name="DP2 - Group 3" content="FoodEdge Gourmet - typehere"/><!-- CHANGE CONTENT "typehere" PART TO PAGE NAME -->
@@ -39,6 +45,8 @@
 		
 
 		<div id="profilebody">
+		<?php if (mysqli_num_rows($result) >0) {
+				$row = mysqli_fetch_array($result) ?>
 			<h1>Hi Kevin,</h1>
 			<p id="profdesc">Welcome to your FoodEdge Gourmet Profile page.</p>
 			<figure id="profpic">
@@ -52,38 +60,37 @@
 					<h2>Membership</h2>
 					<hr>
 					<p><span class="proftitle">Member ID:</span><br>
-					<span class="profcontent">001246</span></p>
+					<span class="profcontent"><?php echo $row["customer_id"]; ?></span></p>
 					<p><span class="proftitle">Membership status:</span><br>
-					<span class="profcontent">Gold</span></p>
+					<span class="profcontent"><?php echo $row["membership_status"]; ?></span></p>
 					<p><span class="proftitle">Username:</span><br>
-					<span class="profcontent">Kevfamouschili</span></p>
+					<span class="profcontent"><?php echo $row["customer_username"]; ?></span></p>
 				</div>
 				<br>
 				<div id="profabout">
 					<h2>About</h2>
 					<hr>
 					<p><span class="proftitle">First Name:</span><br>
-					<span class="profcontent">Kevin</span></p>
+					<span class="profcontent"><?php echo $row["customer_firstname"]; ?></span></p>
 					<p><span class="proftitle">Last Name:</span><br>
-					<span class="profcontent">Malone</span></p>
-					<p><span class="proftitle">Date Join:</span><br>
-					<span class="profcontent">07/10/2020</span></p>
+					<span class="profcontent"><?php echo $row["customer_lastname"]; ?></span></p>
 				</div>
 				<br>
 				<div id="profcontact">
 					<h2>Contact</h2>
 					<hr>
 					<p><span class="proftitle">Email:</span><br>
-					<span class="profcontent">kevinmalone@gmail.com</span></p>
+					<span class="profcontent"><?php echo $row["customer_email"]; ?></span></p>
 					<p><span class="proftitle">Phone:</span><br>
-					<span class="profcontent">+60123456789</span></p>
+					<span class="profcontent"><?php echo $row["customer_phone"]; ?></span></p>
 					<p><span class="proftitle">Address:</span><br>
-					<span class="profcontent">456 Lorong 7 Jalan Batu Kawa 93250 Kuching Sarawak</span></p>
+					<span class="profcontent"><?php echo $row["customer_address"]; ?></span></p>
 				</div>
 				<br>
 			</div>
+		<?php } ?>
 		</div>	
-
+		
 		
 		<footer>
 			<nav>
