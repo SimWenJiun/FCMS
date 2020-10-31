@@ -66,10 +66,10 @@ if(isset($_SESSION["username"])) {
 					
 					<button type="submit" id="loginbut">Login</button>
 					<span id="forgot"><a href="">Forgot password?</a></span>
-					<div class="message"><?php if($message!="") { echo $message; } ?></div>
 					
-					<button id="signup"><a href="registration.php">Sign Up</a></button>
 				</form>
+				<button id="signup"><a href="registration.php">Sign Up</a></button>
+				<div class="message"><?php if($message!="") { echo $message; } ?></div>
 			</div>
 		</div>
 		

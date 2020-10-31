@@ -1,94 +1,17 @@
 <?php
-$conn = mysqli_connect("sql12.freesqldatabase.com", "sql12369317", "KGUuPpDYfu", "sql12369317");
- 
-// Define variables and initialize with empty values
-$username = $password = $confirm_password = "";
-$username_err = $password_err = $confirm_password_err = "";
- 
-// Processing form data when form is submitted
-if($_SERVER["REQUEST_METHOD"] == "POST"){
- 
-    // Validate username
-    if(empty(trim($_POST["uname"]))){
-        $username_err = "Please enter a username.";
-    } else{
-        // Prepare a select statement
-        $sql = "SELECT customer_username FROM Customers WHERE customer_username = ?";
-        
-        if($stmt = $mysqli->prepare($sql)){
-            // Bind variables to the prepared statement as parameters
-            $stmt->bind_param("s", $param_username);
-            
-            // Set parameters
-            $param_username = trim($_POST["uname"]);
-            
-            // Attempt to execute the prepared statement
-            if($stmt->execute()){
-                // store result
-                $stmt->store_result();
-                
-                if($stmt->num_rows == 1){
-                    $username_err = "This username is already taken.";
-                } else{
-                    $username = trim($_POST["uname"]);
-                }
-            } else{
-                echo "Oops! Something went wrong. Please try again later.";
-            }
-
-            // Close statement
-            $stmt->close();
-        }
-    }
-    
-    // Validate password
-    if(empty(trim($_POST["pword"]))){
-        $password_err = "Please enter a password.";     
-    } elseif(strlen(trim($_POST["pword"])) < 6){
-        $password_err = "Password must have atleast 6 characters.";
-    } else{
-        $password = trim($_POST["pword"]);
-    }
-    
-    // Validate confirm password
-    if(empty(trim($_POST["cpword"]))){
-        $confirm_password_err = "Please confirm password.";     
-    } else{
-        $confirm_password = trim($_POST["cpword"]);
-        if(empty($password_err) && ($password != $confirm_password)){
-            $confirm_password_err = "Password did not match.";
-        }
-    }
-    
-    // Check input errors before inserting in database
-    if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
-        
-        // Prepare an insert statement
-        $sql = "INSERT INTO Customers (customer_username, customer_password) VALUES (?, ?)";
-         
-        if($stmt = $mysqli->prepare($sql)){
-            // Bind variables to the prepared statement as parameters
-            $stmt->bind_param("ss", $param_username, $param_password);
-            
-            // Set parameters
-            $param_username = $username;
-            $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
-            
-            // Attempt to execute the prepared statement
-            if($stmt->execute()){
-                // Redirect to login page
-                header("location: login.php");
-            } else{
-                echo "Something went wrong. Please try again later.";
-            }
-
-            // Close statement
-            $stmt->close();
-        }
-    }
-    
-    // Close connection
-    $mysqli->close();
+$message = "";
+if(count($_POST)>0) {
+	$conn = mysqli_connect("sql12.freesqldatabase.com", "sql12369317", "KGUuPpDYfu", "sql12369317");
+	$result = mysqli_query($conn,"SELECT * FROM Customers WHERE customer_email='" . $_POST["email"] . "' and customer_username = '". $_POST["uname"]."'");
+	$row  = mysqli_fetch_array($result);
+	if(is_array($row)) {
+		$message = "Username or Email is already in use!";
+	} else {
+		extract($_POST);
+		$update = "INSERT INTO Customers(customer_firstname, customer_lastname, customer_username, customer_phone, customer_email, customer_password, customer_address) VALUES('$fname', '$lname', '$uname', '$phone', '$email', '$pword', '$address')";
+		$result = mysqli_query($conn, $update);
+		header("Location:index.html");
+	}
 }
 ?>
 <html lang="en">
@@ -132,7 +55,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		<div id="regbody">
 			<h1>User Registration</h1>
 			<p>Welcome to FoodEdge Gourmet Food Catering service. Sign up for FoodEdge Gourmet user to receive benefits. The benefits are free gifts, discounts, vouchers etc. Membership status are Silver, Gold and Platinum. Membership status will be increased through purchases of catering service. The higher membership status will gives more benefits to the user.</p>
-			<form action="home.html" method="post">
+			<form action="" method="post">
 				<fieldset>
 					<legend>Personal Information</legend>
 					<label for="fname"><b>First Name</b></label><br>
@@ -141,15 +64,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 					<label for="lname"><b>Last Name</b></label><br>
 					<input type="text" name="lname" id="lname"><br>
 					
-					<label for="gender"><b>Gender</b></label><br>
-					<select name="gender" id="gender">
-						<option value="Male">Male</option>
-						<option value="Female">Female</option>
-						<option value="Other">Other</option>
-					</select><br>
-					
-					<label for="birthday"><b>Birth Date</b></label><br>
-					<input type="date" name="birthday" id="birthday"><br>
 				</fieldset>
 				
 				<fieldset>
@@ -177,6 +91,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				</fieldset>
 				
 				<button type="submit" id="signupbut">Sign Up</button>
+				<div class="message"><?php if($message!="") { echo $message; } ?></div>
 			</form>
 			<br>
 			<br>
