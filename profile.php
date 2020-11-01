@@ -1,8 +1,8 @@
 <?php
 session_start();
 $conn = mysqli_connect("sql12.freesqldatabase.com", "sql12369317", "KGUuPpDYfu", "sql12369317");
-if(isset($_SESSION["username"])) {
-	$result = mysqli_query($conn,"SELECT * FROM Customers WHERE customer_username='" . $_SESSION["username"] . "'");
+if(isset($_SESSION["id"])) {
+	$result = mysqli_query($conn,"SELECT * FROM Customers WHERE customer_id='" . $_SESSION["id"] . "'");
 }
 ?>
 <html lang="en">
@@ -53,7 +53,7 @@ if(isset($_SESSION["username"])) {
 				<a href="editprofile.html" id="profedit">
 					<img src="img/kevin.png" alt="Profile picture" title="Edit profile">
 				</a>
-				<p><a href="editprofile.html">Edit Profile</a></p>
+				<p><a href="editprofile.php">Edit Profile</a></p>
 			</figure>
 			<div id="profcontainer">
 				<div id="profmember">
@@ -89,7 +89,8 @@ if(isset($_SESSION["username"])) {
 				<br>
 				<button id="signup"><a href="logout.php">Log Out</a></button>
 			</div>
-		<?php } ?>
+		<?php }
+		?>
 		</div>	
 		
 		

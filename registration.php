@@ -1,16 +1,28 @@
 <?php
-$message = "";
+$message = array();;
 if(count($_POST)>0) {
 	$conn = mysqli_connect("sql12.freesqldatabase.com", "sql12369317", "KGUuPpDYfu", "sql12369317");
-	$result = mysqli_query($conn,"SELECT * FROM Customers WHERE customer_email='" . $_POST["email"] . "' and customer_username = '". $_POST["uname"]."'");
-	$row  = mysqli_fetch_array($result);
-	if(is_array($row)) {
-		$message = "Username or Email is already in use!";
-	} else {
+	$email = mysqli_query($conn,"SELECT * FROM Customers WHERE customer_email='" . $_POST["email"] . "'");
+	$username = mysqli_query($conn,"SELECT * FROM Customers WHERE customer_email='" . $_POST["email"] . "'");
+	$phone = mysqli_query($conn,"SELECT * FROM Customers WHERE customer_email='" . $_POST["email"] . "'");
+	$cemail  = mysqli_fetch_array($email);
+	$cusername  = mysqli_fetch_array($username);
+	$cphone  = mysqli_fetch_array($phone);
+	if(is_array($cemail)) {
+	array_push($message, "Email is taken!");
+	}
+	if(is_array($cusername)) {
+		array_push($message, "Username is taken!");
+	}
+	if(is_array($cphone)) {
+		array_push($message, "Phone is taken!");
+	}
+	if(!is_array($cemail) && !is_array($cusername) && !is_array($cphone)){
 		extract($_POST);
 		$update = "INSERT INTO Customers(customer_firstname, customer_lastname, customer_username, customer_phone, customer_email, customer_password, customer_address) VALUES('$fname', '$lname', '$uname', '$phone', '$email', '$pword', '$address')";
 		$result = mysqli_query($conn, $update);
 		header("Location:index.html");
+		exit;
 	}
 }
 ?>
@@ -91,7 +103,7 @@ if(count($_POST)>0) {
 				</fieldset>
 				
 				<button type="submit" id="signupbut">Sign Up</button>
-				<div class="message"><?php if($message!="") { echo $message; } ?></div>
+				<div class="message"><?php if($message!="") { foreach ($message as $err) { echo $err, '<br/>'; } } ?></div>
 			</form>
 			<br>
 			<br>

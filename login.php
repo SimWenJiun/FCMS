@@ -6,13 +6,14 @@ if(count($_POST)>0) {
 	$result = mysqli_query($conn,"SELECT * FROM Customers WHERE customer_username='" . $_POST["uname"] . "' and customer_password = '". $_POST["pword"]."'");
 	$row  = mysqli_fetch_array($result);
 	if(is_array($row)) {
-		$_SESSION["username"] = $row["customer_username"];
+		$_SESSION["id"] = $row["customer_id"];
 	} else {
 		$message = "Invalid Username or Password!";
 	}
 }
-if(isset($_SESSION["username"])) {
+if(isset($_SESSION["id"])) {
 	header("Location:profile.php");
+	exit;
 }
 ?>
 <html lang="en">
