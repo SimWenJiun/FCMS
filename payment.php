@@ -1,4 +1,19 @@
-<!DOCTYPE html>
+<?php
+session_start();
+$total = $_COOKIE["total"];
+$bsqty = $_SESSION['bsqty'];
+$lsaqty = $_SESSION['lsaqty'];
+$lsbqty = $_SESSION['lsbqty'];
+$lscqty = $_SESSION['lscqty'];
+$dsaqty = $_SESSION['dsaqty'];
+$botdqty = $_SESSION['botdqty'];
+$bstotal = $_COOKIE["bstotal"];
+$lsatotal = $_COOKIE["lsatotal"];
+$lsbtotal = $_COOKIE["lsbtotal"];
+$lsctotal = $_COOKIE["lsctotal"];
+$dsatotal = $_COOKIE["dsatotal"];
+$botdtotal = $_COOKIE["botdtotal"];
+?>
 <html lang="en">
 	<head>
 		<meta name="DP2 - Group 3" content="FoodEdge Gourmet - Menu"/>
@@ -108,21 +123,29 @@
 
 		<div class="col-25">
 			<div class="container">
+			<?php ?>
 				<h4>Cart
 					<span class="price" style="color:black">
 						<i class="fa fa-shopping-cart"></i>
-						<b>6</b>
+						<b><?php echo $bsqty + $lsaqty + $lsbqty + $lscqty + $dsaqty + $botdqty ?></b>
 					</span>
 				</h4>
-				<p><a href="breakfastset.html">Breakfast Set</a> <span class="price">RM19.99</span></p>
-				<p><a href="lunchseta.html">Lunch Set A</a> <span class="price">RM24.99</span></p>
-				<p><a href="lunchsetb.html">Lunch Set B</a> <span class="price">RM28.99</span></p>
-				<p><a href="lunchsetc.html">Lunch Set C</a> <span class="price">RM22.99</span></p>
-				<p><a href="dinnerseta.html">Dinner Set</a> <span class="price">RM35.99</span></p>
-				<p><a href="beverageoftheday.html">Beverage of the day</a> <span class="price">RM10.99</span></p>
+				<?php if ($bsqty > 0) { ?>
+				<p><a href="breakfastset.html"><?php echo "Breakfast Set" ?></a> <span class="price"><?php echo "RM", $bstotal; }?></span></p>
+				<?php if ($lsaqty > 0) { ?>
+				<p><a href="lunchseta.html"><?php echo "Lunch Set A" ?></a> <span class="price"><?php echo "RM", $lsatotal; }?></span></p>
+				<?php if ($lsbqty > 0) { ?>
+				<p><a href="lunchsetb.html"><?php echo "Lunch Set B" ?></a> <span class="price"><?php echo "RM", $lsbtotal; }?></span></p>
+				<?php if ($lscqty > 0) { ?>
+				<p><a href="lunchsetc.html"><?php echo "Lunch Set C" ?></a> <span class="price"><?php echo "RM", $lsctotal; }?></span></p>
+				<?php if ($dsaqty > 0) { ?>
+				<p><a href="dinnerseta.html"><?php echo "Dinner Set" ?></a> <span class="price"><?php echo "RM", $dsatotal; }?></span></p>
+				<?php if ($botdqty > 0) { ?>
+				<p><a href="beverageoftheday.html"><?php echo "Beverage of the day" ?></a> <span class="price"><?php echo "RM", $botdtotal; }?></span></p>
 				<hr>
-				<p>Total <span class="price" style="color:black"><b>RM143.94</b></span></p>
+				<p>Total <span class="price" style="color:black"><b>RM<?php echo $total ?></b></span></p>
 				</div>
+			<?php ?>
 			</div>
 		</div>
 		

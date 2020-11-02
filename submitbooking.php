@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<?php
+?>
 <html lang="en">
 	<head>
 		<meta name="DP2 - Group 3" content="FoodEdge Gourmet - Submit Booking"/>
@@ -109,12 +110,14 @@
 				
 				<div id="noitemsselected">
 					<div id="sbtotalcostcontainer">
-						<h3 id="totalcosttitle">Total Cost: RM</h3><h3 id="totalcost"></h3>
+						<h3 id="totalcosttitle">Total Cost: RM</h3><h3 name="totalcost" id="totalcost"></h3>
 					</div>
 					
-					<form action="home.html" method="post">
+					<form action="" method="post">
 						<button formaction="editselection.html" id="backtoeditselectionbutton">Edit Selection</button>
-						<button onclick="sbtk()" formaction="payment.html" id="sbtkbutton">Submit Booking To Kitchen</button>
+					</form>
+					<form action="payment.php" method="post">
+						<button onclick="sbtk()" id="sbtkbutton">Submit Booking To Kitchen</button>
 					</form>
 				</div>
 			</div>

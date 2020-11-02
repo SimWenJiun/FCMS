@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+session_start();
+?>
 <html lang="en">
 	<head>
 		<meta name="DP2 - Group 3" content="FoodEdge Gourmet - Edit Selection"/>
@@ -42,6 +44,7 @@
 			<div id="editselection">
 				<h1>Selection</h1>
 				<br/>
+				<form action="selection.php" method="post">
 				
 				<table id="containeritem1" style="width:100%">
 					<tr>
@@ -215,10 +218,9 @@
 					<p>No Items Selected. Please Select Items from Food & Beverages Menu<p>
 				</div>
 				
-				<form action="home.html" method="post">
-					<button onclick="saveselections()" formaction="submitbooking.html" id="booknow">Book Now</button>
-					<button onclick="saveselections()" formaction="home.html" id="saveselection">Save Changes</button>
+					<button onclick="saveselections()" id="booknow">Book Now</button>
 				</form>
+					<button onclick="saveselections()" href="home.html" id="saveselection">Save Changes</button>
 			</div>
 		</div>
 		

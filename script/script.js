@@ -413,6 +413,7 @@ function loadbooking()
 		noitemsselected.style.display = "block";
 	}
 	
+	
 	document.getElementById("bstotal").innerHTML = bstotal.toFixed(2);
 	document.getElementById("lsatotal").innerHTML = lsatotal.toFixed(2);
 	document.getElementById("lsbtotal").innerHTML = lsbtotal.toFixed(2);
@@ -420,6 +421,14 @@ function loadbooking()
 	document.getElementById("dsatotal").innerHTML = dsatotal.toFixed(2);
 	document.getElementById("botdtotal").innerHTML = botdtotal.toFixed(2);
 	document.getElementById("totalcost").innerHTML = totalcost.toFixed(2);
+	
+	document.cookie = "total=" + totalcost.toFixed(2);
+	document.cookie = "bstotal=" + bstotal.toFixed(2);
+	document.cookie = "lsatotal=" + lsatotal.toFixed(2);
+	document.cookie = "lsbtotal=" + lsbtotal.toFixed(2);
+	document.cookie = "lsctotal=" + lsctotal.toFixed(2);
+	document.cookie = "dsatotal=" + dsatotal.toFixed(2);
+	document.cookie = "botdtotal=" + botdtotal.toFixed(2);
 }
 //Code Above For Submit Booking Page and Related Functions
 
