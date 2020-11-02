@@ -10,34 +10,7 @@
 	</head>
 
 	<body onload="loadbooking()">
-		<header>
-			<div id="logoholder"><a href="home.html"><img src="img/Logo.jpg" alt="FoodEdge Gourmet" id="logo"/></a></div>
-			
-			<div id="navigation">
-				<div id="home"><a href="home.html">Home</a></div>
-				
-				<div id="menu">
-					<ul>
-						<li><a href="menupage.html">Food & Beverages Menu</a>
-							<ul>							
-								<li><a href="breakfastset.html">Breakfast Set</a></li>
-								<li><a href="lunchseta.html">Lunch Set A</a></li>
-								<li><a href="lunchsetb.html">Lunch Set B</a></li>
-								<li><a href="lunchsetc.html">Lunch Set C</a></li>
-								<li><a href="dinnerseta.html">Dinner Set A</a></li>
-								<li><a href="beverageoftheday.html">Beverage of the day</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-				
-				<div id="selection"><a href="editselection.html">Selection</a></div>
-				
-				<div id="about"><a href="aboutus.html">About</a></div>
-				
-				<div id="profile"><a href="login.php">Profile</a></div>
-			</div>
-		</header>
+		<?php include('header.php');?>
 		
 		<div id="body">
 			<div id="submitbooking">
@@ -114,7 +87,7 @@
 					</div>
 					
 					<form action="" method="post">
-						<button formaction="editselection.html" id="backtoeditselectionbutton">Edit Selection</button>
+						<button formaction="editselection.php" id="backtoeditselectionbutton">Edit Selection</button>
 					</form>
 					<form action="payment.php" method="post">
 						<button onclick="sbtk()" id="sbtkbutton">Submit Booking To Kitchen</button>
@@ -123,14 +96,6 @@
 			</div>
 		</div>
 		
-		<footer>
-			<nav>
-				<a href="privacypolicy.html">Privacy Policy | </a>
-				<a href="contactus.html">Contact Us | </a>
-				<a href="aboutus.html">About Us</a>
-			</nav>
-			
-			<aside>© 2020 FoodEdge Gourmet. All Rights Reserved</aside>			
-		</footer>
+		<?php include('footer.php');?>
 	</body>
 </html>

@@ -23,47 +23,12 @@ $botdtotal = $_COOKIE["botdtotal"];
 	</head>
 
 	<body>
-		<header>
-			<div id="logoholder"><a href="home.html"><img src="img/Logo.jpg" alt="FoodEdge Gourmet" id="logo"/></a></div>
-			
-			<div id="navigation">
-				<div id="home"><a href="home.html">Home</a></div>
-				
-				<div id="aboutus">
-					<ul>
-						<li>About Us
-							<ul>
-								<li><a href="portfolio.html">Portfolio</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-				
-				<div id="services"><a href="services.html">Services</a></div>
-				
-				<div id="menu">
-					<ul>
-						<li><a href="menupage.html">Food & Beverages Menu</a>
-							<ul>							
-								<li><a href="breakfastset.html">Breakfast Set</a></li>
-								<li><a href="lunchseta.html">Lunch Set A</a></li>
-								<li><a href="lunchsetb.html">Lunch Set B</a></li>
-								<li><a href="lunchsetc.html">Lunch Set C</a></li>
-								<li><a href="dinnerseta.html">Dinner Set A</a></li>
-								<li><a href="beverageoftheday.html">Beverage of the day</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-				
-				<div id="profile"><a href="login.php">Profile</a></div>
-			</div>
-		</header>
+		<?php include('header.php');?>
 		
 		<div id="body" class="row">
 		<div class="col-75">
 			<div class="container">
-				<form name="paymentForm" method="post" action="paymentConfirmation.html" onsubmit="return validateForm()">
+				<form name="paymentForm" method="post" action="paymentConfirmation.php" onsubmit="return validateForm()">
 
 					<div class="row">
 						<div class="col-50">
@@ -131,17 +96,17 @@ $botdtotal = $_COOKIE["botdtotal"];
 					</span>
 				</h4>
 				<?php if ($bsqty > 0) { ?>
-				<p><a href="breakfastset.html"><?php echo "Breakfast Set" ?></a> <span class="price"><?php echo "RM", $bstotal; }?></span></p>
+				<p><a href="breakfastset.php"><?php echo "Breakfast Set" ?></a> <span class="price"><?php echo "RM", $bstotal; }?></span></p>
 				<?php if ($lsaqty > 0) { ?>
-				<p><a href="lunchseta.html"><?php echo "Lunch Set A" ?></a> <span class="price"><?php echo "RM", $lsatotal; }?></span></p>
+				<p><a href="lunchseta.php"><?php echo "Lunch Set A" ?></a> <span class="price"><?php echo "RM", $lsatotal; }?></span></p>
 				<?php if ($lsbqty > 0) { ?>
-				<p><a href="lunchsetb.html"><?php echo "Lunch Set B" ?></a> <span class="price"><?php echo "RM", $lsbtotal; }?></span></p>
+				<p><a href="lunchsetb.php"><?php echo "Lunch Set B" ?></a> <span class="price"><?php echo "RM", $lsbtotal; }?></span></p>
 				<?php if ($lscqty > 0) { ?>
-				<p><a href="lunchsetc.html"><?php echo "Lunch Set C" ?></a> <span class="price"><?php echo "RM", $lsctotal; }?></span></p>
+				<p><a href="lunchsetc.php"><?php echo "Lunch Set C" ?></a> <span class="price"><?php echo "RM", $lsctotal; }?></span></p>
 				<?php if ($dsaqty > 0) { ?>
-				<p><a href="dinnerseta.html"><?php echo "Dinner Set" ?></a> <span class="price"><?php echo "RM", $dsatotal; }?></span></p>
+				<p><a href="dinnerseta.php"><?php echo "Dinner Set" ?></a> <span class="price"><?php echo "RM", $dsatotal; }?></span></p>
 				<?php if ($botdqty > 0) { ?>
-				<p><a href="beverageoftheday.html"><?php echo "Beverage of the day" ?></a> <span class="price"><?php echo "RM", $botdtotal; }?></span></p>
+				<p><a href="beverageoftheday.php"><?php echo "Beverage of the day" ?></a> <span class="price"><?php echo "RM", $botdtotal; }?></span></p>
 				<hr>
 				<p>Total <span class="price" style="color:black"><b>RM<?php echo $total ?></b></span></p>
 				</div>
@@ -149,15 +114,7 @@ $botdtotal = $_COOKIE["botdtotal"];
 			</div>
 		</div>
 		
-		<footer>
-			<nav>
-				<a href="privacypolicy.html">Privacy Policy | </a>
-				<a href="contactus.html">Contact Us | </a>
-				<a href="aboutus.html">About Us</a>
-			</nav>
-			
-			<aside>© 2020 FoodEdge Gourmet. All Rights Reserved</aside>
-		</footer>
+		<?php include('footer.php');?>
 		
 		<script>
 		function validateForm() {

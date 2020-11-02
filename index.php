@@ -8,34 +8,7 @@
 	</head>
 
 	<body>
-		<header>
-			<div id="logoholder"><a href="index.html"><img src="img/Logo.jpg" alt="FoodEdge Gourmet" id="logo"/></a></div>
-			
-			<div id="navigation">
-				<div id="home"><a href="index.html">Home</a></div>
-				
-				<div id="menu">
-					<ul>
-						<li><a href="menupage.html">Food & Beverages Menu</a>
-							<ul>							
-								<li><a href="breakfastset.html">Breakfast Set</a></li>
-								<li><a href="lunchseta.html">Lunch Set A</a></li>
-								<li><a href="lunchsetb.html">Lunch Set B</a></li>
-								<li><a href="lunchsetc.html">Lunch Set C</a></li>
-								<li><a href="dinnerseta.html">Dinner Set A</a></li>
-								<li><a href="beverageoftheday.html">Beverage of the day</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-				
-				<div id="selection"><a href="editselection.html">Selection</a></div>
-				
-				<div id="about"><a href="aboutus.html">About</a></div>
-				
-				<div id="profile"><a href="login.php">Profile</a></div>
-			</div>
-		</header>
+		<?php include('header.php');?>
 		
 		<div id="bodyhome">
 			<h1>Welcome To FoodEdge Gourmet</h1>
@@ -60,28 +33,28 @@
 				<div id="foodbutton">
 				  <img id="foodbuttonimage" src="img/smallbreakfast.jpg" alt="Breakfast Set">
 				  <div id="foodbuttonbox">
-					<div id="foodbuttontext" onclick="location.href='breakfastset.html';" >Breakfast Set Details</div>
+					<div id="foodbuttontext" onclick="location.href='breakfastset.php';" >Breakfast Set Details</div>
 				  </div>
 				</div>
 				
 				<div id="foodbutton">
 				  <img id="foodbuttonimage" src="img/smalllunchA.jpg" alt="Lunch Set A">
 				  <div id="foodbuttonbox">
-					<div id="foodbuttontext" onclick="location.href='lunchseta.html';" >Lunch Set A Details</div>
+					<div id="foodbuttontext" onclick="location.href='lunchseta.php';" >Lunch Set A Details</div>
 				  </div>
 				</div>
 				
 				<div id="foodbutton">
 				  <img id="foodbuttonimage" src="img/smalldinner.jpg" alt="Dinner Set A">
 				  <div id="foodbuttonbox">
-					<div id="foodbuttontext" onclick="location.href='dinnerseta.html';" >Dinner Set A Details</div>
+					<div id="foodbuttontext" onclick="location.href='dinnerseta.php';" >Dinner Set A Details</div>
 				  </div>
 				</div>
 				
 				<div id="foodbutton">
 				  <img id="foodbuttonimage" src="img/smallbeverages.jpg" alt="Beverage Of The Day">
 				  <div id="foodbuttonbox">
-					<div id="foodbuttontext" onclick="location.href='beverageoftheday.html';" >Beverage Of The Day Details</div>
+					<div id="foodbuttontext" onclick="location.href='beverageoftheday.php';" >Beverage Of The Day Details</div>
 				  </div>
 				</div>
 			</div>
@@ -100,14 +73,6 @@
 			
 		</div>
 		
-		<footer>
-			<nav>
-				<a href="privacypolicy.html">Privacy Policy | </a>
-				<a href="contactus.html">Contact Us | </a>
-				<a href="aboutus.html">About Us</a>
-			</nav>
-			
-			<aside>© 2020 FoodEdge Gourmet. All Rights Reserved</aside>
-		</footer>
+		<?php include('footer.php');?>
 	</body>
 </html>
