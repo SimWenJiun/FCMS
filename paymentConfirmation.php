@@ -17,6 +17,7 @@
 				<h2>Thank you for booking with us</h2>
 				</br>
 				<p>For further information, please contact us at <a href="KevinMalone@FoodEdge.com" id="emailP">KevinMalone@FoodEdge.com</a></p>
+				<button type="button" id="paymentSummary" class="btn"><a href="paymentSummary.php">View payment summary</a></button>
 				<button type="button" id="backToMenu" class="btn"><a href=".php">Back to Home Page</a></button>
 			</div>
 		</div>
