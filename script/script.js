@@ -432,8 +432,6 @@ function loadbooking()
 }
 //Code Above For Submit Booking Page and Related Functions
 
-
-
 /* Edit User page */
 var loadFile = function(event) {
 	var image = document.getElementById('output');
