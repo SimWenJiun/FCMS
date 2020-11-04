@@ -811,3 +811,8 @@ span.price {
 	color: blue;
 	font-size: 15px;
 }
+
+.listborder th, .listborder td{
+	padding: 10px;
+	border: 1px solid black; 
+}
