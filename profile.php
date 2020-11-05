@@ -60,6 +60,7 @@ if(isset($_SESSION["id"])) {
 					<span class="profcontent"><?php echo $row["customer_address"]; ?></span></p>
 				</div>
 				<br>
+				<button id="signup"><a href="orderstatus.php">View your order</a></button>
 				<button id="signup"><a href="logout.php">Log Out</a></button>
 			</div>
 		<?php }
