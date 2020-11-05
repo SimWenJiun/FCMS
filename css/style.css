@@ -742,7 +742,7 @@ span.price {
 	border-radius: 10px;
 }
 
-#sbcontaineritem1, #sbcontaineritem2, #sbcontaineritem3, #sbcontaineritem4, #sbcontaineritem5, #sbcontaineritem6, #sbtotalcostcontainer {
+#sbcontaineritem1, #sbcontaineritem2, #sbcontaineritem3, #sbcontaineritem4, #sbcontaineritem5, #sbcontaineritem6, #sbtotalcostcontainer, #orderdatecontainer, #orderaddresscontainer {
 	background-color: #EDEBEB;
 	border-radius: 10px;
 	margin-top: 10px;

@@ -402,15 +402,21 @@ function loadbooking()
 	
 	var emptyselectiontoggle = document.getElementById("emptyselection");
 	var noitemsselected = document.getElementById("noitemsselected");
+	var orderdatecontainer = document.getElementById("orderdatecontainer");
+	var orderaddresscontainer = document.getElementById("orderaddresscontainer");
 	if(containercount  == 0)
 	{
 		emptyselectiontoggle.style.display = "block";
 		noitemsselected.style.display = "none";
+		orderdatecontainer.style.display = "none";
+		orderaddresscontainer.style.display = "none";
 	}
 	else
 	{
 		emptyselectiontoggle.style.display = "none";
 		noitemsselected.style.display = "block";
+		orderdatecontainer.style.display = "block";
+		orderaddresscontainer.style.display = "block";
 	}
 	
 	
