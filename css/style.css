@@ -820,3 +820,75 @@ span.price {
 .totalstyle{
 	border: none; 
 }
+
+/*Order Status*/
+#statusbody {
+	font-family:Calibri;
+	color:black;
+	background-color: #FFFFFF;
+	border: 1px solid #E71825;
+	height: auto;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	padding: 5% 25%;
+	line-height: 30px;
+}
+
+#statusbody ul{
+	list-style-position: inside;
+}
+
+
+.statustitle, .statuscontent {
+	font-size: 20px;
+}
+
+.statustitle {
+	font-weight: bold;
+	color: #E71825;
+}
+
+/*Order History*/
+#historybody {
+	font-family:Calibri;
+	color:black;
+	background-color: #FFFFFF;
+	border: 1px solid #E71825;
+	height: 350px;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	padding: 5% 15%;
+	line-height: 30px;
+}
+
+#orderhistory {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#orderhistory td, #orderhistory th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+#orderhistory tr:nth-child(even)
+{
+	background-color: #f2f2f2;
+}
+
+#orderhistory tr:hover {
+	background-color: #ddd;
+}
+
+#orderhistory th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #E71825;
+	color: white;
+}
+
