@@ -1,9 +1,14 @@
 <?php
 session_start();
 $message="";
+$totalamt = 0;
 	$conn = mysqli_connect("sql12.freesqldatabase.com", "sql12369317", "KGUuPpDYfu", "sql12369317");
 	$result = mysqli_query($conn,"SELECT * FROM Customers");
-	$row  = mysqli_fetch_all($result);
+	$cust  = mysqli_fetch_all($result);
+	$result = mysqli_query($conn, "SELECT * FROM Orders");
+	$order = mysqli_fetch_all($result);
+	$result = mysqli_query($conn, "SELECT * FROM Payment");
+	$payment = mysqli_fetch_all($result);
 ?>
 <html lang="en">
 	<head>
@@ -60,28 +65,112 @@ $message="";
 					</tr>
 					<tr>
 						<td>
-							<?php foreach ($row as $id) { echo "</br>", $id[0], "</br></br>"; } ?>
+							<?php foreach ($cust as $id) { echo "</br>", $id[0], "</br></br>"; } ?>
 						</td>
 						<td>
-							<?php foreach ($row as $fname) { echo "</br>", $fname[1], "</br></br>"; } ?>
+							<?php foreach ($cust as $fname) { echo "</br>", $fname[1], "</br></br>"; } ?>
 						</td>
 						<td>
-							<?php foreach ($row as $lname) { echo "</br>", $lname[2], "</br></br>"; } ?>
+							<?php foreach ($cust as $lname) { echo "</br>", $lname[2], "</br></br>"; } ?>
 						</td>
 						<td>
-							<?php foreach ($row as $uname) { echo "</br>", $uname[3], "</br></br>"; } ?>
+							<?php foreach ($cust as $uname) { echo "</br>", $uname[3], "</br></br>"; } ?>
 						</td>
 						<td>
-							<?php foreach ($row as $pnumber) { echo "</br>", $pnumber[4], "</br></br>"; } ?>
+							<?php foreach ($cust as $pnumber) { echo "</br>", $pnumber[4], "</br></br>"; } ?>
 						</td>
 						<td>
-							<?php foreach ($row as $email) { echo "</br>", $email[5], "</br></br>"; } ?>
+							<?php foreach ($cust as $email) { echo "</br>", $email[5], "</br></br>"; } ?>
 						</td>
 						<td>
-							<?php foreach ($row as $address) { echo "</br>", $address[7], "</br></br>"; } ?>
+							<?php foreach ($cust as $address) { echo "</br>", $address[7], "</br></br>"; } ?>
 						</td>
 						<td>
-							<?php foreach ($row as $membership) { echo "</br>", $membership[8], "</br></br>"; } ?>
+							<?php foreach ($cust as $membership) { echo "</br>", $membership[8], "</br></br>"; } ?>
+						</td>
+					</tr>
+				</table>
+			</p>
+			
+			<h2>Orders</h2>
+			
+			<p id="homepageparagraph">
+				<table class="listborder">
+					<tr>
+						<th>
+							<p>Order ID</p>
+						</th>
+						<th>
+							<p>Customer ID</p>
+						</th>
+						<th>
+							<p>Payment ID</p>
+						</th>
+						<th>
+							<p>Menu Item</p>
+						</th>
+					</tr>
+					<tr>
+						<td>
+							<?php foreach ($order as $orderid) { echo "</br>", $orderid[0], "</br></br>"; } ?>
+						</td>
+						<td>
+							<?php foreach ($order as $custid) { echo "</br>", $custid[1], "</br></br>"; } ?>
+						</td>
+						<td>
+							<?php foreach ($order as $paymentid) { echo "</br>", $paymentid[2], "</br></br>"; } ?>
+						</td>
+						<td>
+							<?php foreach ($order as $items) { echo "</br>", $items[3], "</br></br>"; } ?>
+						</td>
+					</tr>
+				</table>
+			</p>
+			
+			<h2>Payment</h2>
+			
+			<p id="homepageparagraph">
+				<table class="listborder">
+					<tr>
+						<th>
+							<p>Payment ID</p>
+						</th>
+						<th>
+							<p>Customer ID</p>
+						</th>
+						<th>
+							<p>Payment Date</p>
+						</th>
+						<th>
+							<p>Payment Method</p>
+						</th>
+						<th>
+							<p>Payment Amount</p>
+						</th>
+					</tr>
+					<tr>
+						<td>
+							<?php foreach ($payment as $paymentid) { echo "</br>", $paymentid[0], "</br></br>"; } ?>
+						</td>
+						<td>
+							<?php foreach ($payment as $custid) { echo "</br>", $custid[1], "</br></br>"; } ?>
+						</td>
+						<td>
+							<?php foreach ($payment as $paymentdate) { echo "</br>", $paymentdate[2], "</br></br>"; } ?>
+						</td>
+						<td>
+							<?php foreach ($payment as $paymentmeth) { echo "</br>", $paymentmeth[3], "</br></br>"; } ?>
+						</td>
+						<td>
+							<?php foreach ($payment as $paymentamt) { echo "</br>", $paymentamt[4], "</br></br>"; } ?>
+						</td>
+					</tr>
+					<tr>
+						<th colspan="4">
+							<?php echo "Total" ?>
+						</th>
+						<td>
+							<?php foreach ($payment as $paymentamt) { $totalamt += $paymentamt[4]; echo "</br>", $totalamt, "</br></br>"; } ?>
 						</td>
 					</tr>
 				</table>

@@ -816,3 +816,7 @@ span.price {
 	padding: 10px;
 	border: 1px solid black; 
 }
+
+.totalstyle{
+	border: none; 
+}
