@@ -75,6 +75,16 @@ function loadselection()
 {
 	var containercount = 0;
 	
+	if(localStorage.deliverydate != "" || typeof(localStorage.getItem("deliverydate"))!='undefined')
+	{
+		document.getElementById("orderdeliverydate").value = localStorage.deliverydate;
+	}
+	
+	if(localStorage.deliveryaddress != "" || typeof(localStorage.getItem("deliveryaddress"))!='undefined')
+	{
+		document.getElementById("orderdeliveryaddress").value = localStorage.deliveryaddress;
+	}	
+	
 	var bscontainer = document.getElementById("containeritem1");
 	var bsqty = document.getElementById("bsqty");
 	if(localStorage.bsqty == 0 || typeof(localStorage.getItem("bsqty"))=='undefined')
@@ -163,17 +173,24 @@ function loadselection()
 	var emptyselectiontoggle = document.getElementById("emptyselection");
 	var saveselectiontoggle = document.getElementById("saveselection");
 	var booknowtoggle = document.getElementById("booknow");
+	var selectiondatecontainertoggle = document.getElementById("selectiondatecontainer");
+	var selectionaddresscontainertoggle = document.getElementById("selectionaddresscontainer");
+	
 	if(containercount  == 0)
 	{
 		emptyselectiontoggle.style.display = "block";
 		saveselectiontoggle.style.display = "none";
 		booknowtoggle.style.display = "none";
+		selectiondatecontainertoggle.style.display = "none";
+		selectionaddresscontainertoggle.style.display = "none";
 	}
 	else
 	{
 		emptyselectiontoggle.style.display = "none";
 		saveselectiontoggle.style.display = "block";
 		booknowtoggle.style.display = "block";
+		selectiondatecontainertoggle.style.display = "block";
+		selectionaddresscontainertoggle.style.display = "block";
 	}
 }
 
@@ -186,6 +203,8 @@ function saveselections()
 	localStorage.dsaqty = document.getElementById('dsaqty').value;
 	localStorage.bsqty = document.getElementById('bsqty').value;
 	localStorage.botdqty = document.getElementById('botdqty').value;
+	localStorage.deliverydate = document.getElementById('orderdeliverydate').value;
+	localStorage.deliveryaddress = document.getElementById('orderdeliveryaddress').value;
 }
 
 function incqty1()
@@ -301,6 +320,16 @@ function decqty6()
 //Code Below For Submit Booking Page and Related Functions
 function loadbooking()
 {
+	if(localStorage.deliverydate != "" || typeof(localStorage.getItem("deliverydate"))!='undefined')
+	{
+		document.getElementById("orderdate").innerHTML = localStorage.deliverydate;
+	}
+	
+	if(localStorage.deliveryaddress != "" || typeof(localStorage.getItem("deliveryaddress"))!='undefined')
+	{
+		document.getElementById("orderaddress").innerHTML = localStorage.deliveryaddress;
+	}	
+	
 	var totalcost = 0;
 	var containercount = 0;
 	
@@ -549,10 +578,4 @@ function validateForm() {
 		alert("CVV must be filled out");
 		return false;
 	}
-}
-
-//Submit booking to kitchen function below
-function sbtk ()
-{
-	
 }

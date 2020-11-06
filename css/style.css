@@ -273,6 +273,14 @@ header div{
 	border-collapse: collapse;
 }
 
+#selectiondatecontainer, #selectionaddresscontainer {
+	border: 1px solid #E71825;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	text-align: left;
+}
+
 #containeritem1 tr td img, #containeritem2 tr td img, #containeritem3 tr td img, #containeritem4 tr td img, #containeritem5 tr td img, #containeritem6 tr td img {
 	padding-left: 20px;
 	padding-top: 20px;
