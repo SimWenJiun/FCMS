@@ -7,6 +7,9 @@ if(count($_POST)>0) {
 	$row  = mysqli_fetch_array($result);
 	if(is_array($row)) {
 		$_SESSION["id"] = $row["customer_id"];
+		$_SESSION["email"] = $row["customer_email"];
+		$_SESSION["username"] = $row["customer_username"];
+		$_SESSION["phone"] = $row["customer_phone"];
 	} else {
 		$message = "Invalid Username or Password!";
 	}
