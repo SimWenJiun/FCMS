@@ -579,3 +579,11 @@ function validateForm() {
 		return false;
 	}
 }
+
+/*Operation menu page*/
+/*
+sidebarmenu
+*/
+
+
+
