@@ -5,17 +5,14 @@ include("connection.php");
 error_reporting(0);
 session_start();
 
-
-
-
 if(isset($_POST['submit']))           //if upload btn is pressed
 {
-		if(empty($_POST['d_name'])||empty($_POST['type'])||$_POST['price']=='')
+		if(empty($_POST['menu_item'])||empty($_POST['item_type'])||$_POST['item_price']=='')
 		{	
 											$error = 	'<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>All fields Must be Fillup!</strong>
-															</div>';					
+															</div>';
 		}
 	else
 		{
@@ -42,36 +39,17 @@ if(isset($_POST['submit']))           //if upload btn is pressed
 		
 									else
 										{
-												$sql = "INSERT INTO Menu(menu_item,item_type,item_price,item_pic) VALUE('".$_POST['d_name']."','".$_POST['type']."','".$_POST['price']."','".$fnew."')";  // store the submited data ino the database :images
+												$sql = "update Menu set item_id='$_POST[menu_item]',item_type='$_POST[item_type]',item_price='$_POST[item_price]',img='$fnew'
+												where item_id='$_GET[menu_upd]'";  // update the submited data ino the database :images
 												mysqli_query($db, $sql); 
 												move_uploaded_file($temp, $store);
 			  
 													$success = 	'<div class="alert alert-success alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>Congrats!</strong> New Menu Added Successfully.
+																<strong>Record</strong>Updated.
 															</div>';
-                
-	
 										}
 					}
-					elseif($extension == '')
-					{
-						$error = 	'<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>select image</strong>
-															</div>';
-					}
-					else{
-					
-											$error = 	'<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>invalid extension!</strong>png, jpg, Gif are accepted.
-															</div>';
-						
-	   
-						}               
-	   
-	   
 	   }
 }
 ?>
@@ -88,10 +66,9 @@ if(isset($_POST['submit']))           //if upload btn is pressed
 		<link rel="icon" href="img/Icon.png">
 </head>
 
-<body>
-		
-		
-		<div class="left-sidebar">
+<body class="fix-header">
+<!-- Left Sidebar  -->
+        <div class="left-sidebar">
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
@@ -114,7 +91,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                                
                             </ul>
                         </li>
-                      <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
+                       <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
 								<li><a href="all_menu.php">All Menues</a></li>
 								<li><a href="add_menu.php">Add Menu</a></li>
@@ -127,7 +104,8 @@ if(isset($_POST['submit']))           //if upload btn is pressed
 								<li><a href="all_orders.php">All Orders</a></li>
 								  
                             </ul>
-                        </li>                        
+                        </li>
+                         
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -135,20 +113,27 @@ if(isset($_POST['submit']))           //if upload btn is pressed
             <!-- End Sidebar scroll-->
         </div>
         <!-- End Left Sidebar  -->
-        <!-- Page wrapper  -->
+		 <!-- Page wrapper  -->
         <div class="page-wrapper" style="height:1200px;">
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Dashboard</h3> </div>                
+                    <h3 class="text-primary">Dashboard</h3> </div>
+                <div class="col-md-7 align-self-center">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item active">Dashboard</li>
+                    </ol>
+                </div>
             </div>
             <!-- End Bread crumb -->
             <!-- Container fluid  -->
             <div class="container-fluid">
-                <!-- Start Page Content -->                 
+                <!-- Start Page Content -->
+                  
 									
 									<?php  echo $error;
-									        echo $success; ?>		
+									        echo $success; ?>
 					    <div class="col-lg-12">
                         <div class="card card-outline-primary">
                             <div class="card-header">
@@ -157,20 +142,23 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                             <div class="card-body">
                                 <form action='' method='post'  enctype="multipart/form-data">
                                     <div class="form-body">
-                                       
+                                        <?php $qml ="select * from Menu where item_id='$_GET[menu_upd]'";
+													$rest=mysqli_query($db, $qml); 
+													$roww=mysqli_fetch_array($rest);
+														?>
                                         <hr>
                                         <div class="row p-t-20">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label class="control-label">Dish Name</label>
-                                                    <input type="text" name="d_name" class="form-control" placeholder="Breakfast">
+                                                    <label class="control-label">Menu Name</label>
+                                                    <input type="text" name="d_name" value="<?php echo $roww['menu_item'];?>" class="form-control" placeholder="Breakfast Set">
                                                    </div>
                                             </div>
                                             <!--/span-->
                                             <div class="col-md-6">
                                                 <div class="form-group has-danger">
-                                                    <label class="control-label">About</label>
-                                                    <input type="text" name="type" class="form-control form-control-danger" placeholder="slogan">
+                                                    <label class="control-label">Type</label>
+                                                    <input type="text" name="about" value="<?php echo $roww['item_type'];?>" class="form-control form-control-danger" placeholder="slogan">
                                                     </div>
                                             </div>
                                             <!--/span-->
@@ -179,8 +167,8 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                                         <div class="row p-t-20">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label class="control-label">price </label>
-                                                    <input type="text" name="price" class="form-control" placeholder="$">
+                                                    <label class="control-label">Price </label>
+                                                    <input type="text" name="price" value="<?php echo $roww['item_price'];?>"  class="form-control" placeholder="$">
                                                    </div>
                                             </div>
                                             <!--/span-->
@@ -200,7 +188,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                                 </form>
                             </div>
                         </div>
-                    </div>					
+                    </div>
                 </div>
                 <!-- End PAge Content -->
             </div>
@@ -211,8 +199,8 @@ if(isset($_POST['submit']))           //if upload btn is pressed
         </div>
         <!-- End Page wrapper  -->
     </div>
-	<!-- End Wrapper -->
-    <!-- All Jquery -->
+    <!-- End Wrapper -->
+	<!-- All Jquery -->
     <script src="script/lib/jquery/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="script/lib/bootstrap/js/popper.min.js"></script>
@@ -224,8 +212,8 @@ if(isset($_POST['submit']))           //if upload btn is pressed
 	<!--Menu sidebar -->
     <script src="script/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
-    <script src="script/script.js"></script>
 	<script src="script/scripts.js"></script>
 
 </body>
+
 </html>

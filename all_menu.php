@@ -17,7 +17,7 @@ session_start();
 		<link rel="icon" href="img/Icon.png">
 </head>
 
-<body class="fix-header">
+<body class="fix-header fix-sidebar">
 <!-- Left Sidebar  -->
         <div class="left-sidebar">
             <!-- Sidebar scroll-->
@@ -65,80 +65,90 @@ session_start();
         </div>
         <!-- End Left Sidebar  -->
         <!-- Page wrapper  -->
-        <div class="page-wrapper" style="height:1200px;">
+        <div class="page-wrapper">
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
                     <h3 class="text-primary">Dashboard</h3> </div>
-               
+                
             </div>
             <!-- End Bread crumb -->
             <!-- Container fluid  -->
             <div class="container-fluid">
                 <!-- Start Page Content -->
-                     <div class="row">
-					 <div class="col-md-3">
-                        <div class="card p-30">
-                            <div class="media">
-                                <div class="media-left meida media-middle">
-                                    <span><i class="fa fa-cutlery f-s-40" aria-hidden="true"></i></span>
-                                </div>
-                                <div class="media-body media-text-right">
-                                    <h2><?php $sql="select * from Menu";
-												$result=mysqli_query($db,$sql); 
-													$rws=mysqli_num_rows($result);
-													
-													echo $rws;?></h2>
-                                    <p class="m-b-0">Menu</p>
+                <div class="row">
+                    <div class="col-12">
+						     <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">All Menu data</h4>
+								
+                                <div class="table-responsive m-t-40">
+                                    <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+											 <th>Menu Item</th>
+                                                <th>Menu Type</th>
+                                                <th>Price</th>
+                                                <th>Image</th>
+                                               <th>Action</th>
+												  
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+										
+                                           
+                                               	<?php
+												$sql="SELECT * FROM Menu order by item_id desc";
+												$query=mysqli_query($db,$sql);
+												
+													if(!mysqli_num_rows($query) > 0 )
+														{
+															echo '<td colspan="11"><center>No Dish-Data!</center></td>';
+														}
+													else
+														{				
+																	while($rows=mysqli_fetch_array($query))
+																		{
+																				$mql="select * from Menu where item_id='".$rows['item_id']."'";
+																				$newquery=mysqli_query($db,$mql);
+																				$fetch=mysqli_fetch_array($newquery);
+																				
+																				
+																					echo '<tr><td>'.$fetch['menu_item'].'</td>
+																					
+																								<td>'.$rows['item_type'].'</td>
+																								<td>$'.$rows['item_price'].'</td>
+																								
+																								
+																								<td><div class="col-md-3 col-lg-8 m-b-10">
+																								<center><img src="img/menu_item/'.$rows['item_pic'].'" class="img-responsive  radius" style="max-height:100px;max-width:150px;" /></center>
+																								</div></td>
+																								
+																							
+																									 <td><a href="delete_menu.php?menu_del='.$rows['item_id'].'" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
+																									 <a href="update_menu.php?menu_upd='.$rows['item_id'].'" class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-settings"></i></a>
+																									</td></tr>';
+																		}	
+														}
+											?>         
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
-                    </div>
-					
-                    <div class="col-md-3">
-                        <div class="card p-30">
-                            <div class="media">
-                                <div class="media-left meida media-middle">
-                                    <span><i class="fa fa-user f-s-40 color-danger"></i></span>
-                                </div>
-                                <div class="media-body media-text-right">
-                                    <h2><?php $sql="select * from Customers";
-												$result=mysqli_query($db,$sql); 
-													$rws=mysqli_num_rows($result);
-													
-													echo $rws;?></h2>
-                                    <p class="m-b-0">Customer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-					
-					<div class="col-md-3">
-                        <div class="card p-30">
-                            <div class="media">
-                                <div class="media-left meida media-middle"> 
-                                    <span><i class="fa fa-shopping-cart f-s-40" aria-hidden="true"></i></span>
-                                </div>
-                                <div class="media-body media-text-right">
-                                    <h2><?php $sql="select * from Orders";
-												$result=mysqli_query($db,$sql); 
-													$rws=mysqli_num_rows($result);
-													
-													echo $rws;?></h2>
-                                    <p class="m-b-0">Orders</p>
-                                </div>
+						 </div>
+                      
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- End PAge Content -->
             </div>
-            <!-- End Container fluid  -->
         </div>
         <!-- End Page wrapper  -->
     </div>
     <!-- End Wrapper -->
-    <!-- All Jquery -->
+	<!-- All Jquery -->
     <script src="script/lib/jquery/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="script/lib/bootstrap/js/popper.min.js"></script>
