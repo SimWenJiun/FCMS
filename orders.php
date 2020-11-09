@@ -22,52 +22,36 @@ $totalamt = 0;
 		<?php include('management_header.php');?>
 		
 		<div id="bodyhome">
-			<h1>Statistics</h1>
-			<br>
-			<h2>Payment</h2>
+			<h1>Orders</h1>
 			<br>
 			<p id="homepageparagraph">
 				<table class="listborder">
 					<tr>
 						<th>
-							<p>Payment ID</p>
+							<p>Order ID</p>
 						</th>
 						<th>
 							<p>Customer ID</p>
 						</th>
 						<th>
-							<p>Payment Date</p>
+							<p>Payment ID</p>
 						</th>
 						<th>
-							<p>Payment Method</p>
-						</th>
-						<th>
-							<p>Payment Amount</p>
+							<p>Menu Item</p>
 						</th>
 					</tr>
 					<tr>
 						<td>
-							<?php foreach ($payment as $paymentid) { echo "</br>", $paymentid[0], "</br></br>"; } ?>
+							<?php foreach ($order as $orderid) { echo "</br>", $orderid[0], "</br></br>"; } ?>
 						</td>
 						<td>
-							<?php foreach ($payment as $custid) { echo "</br>", $custid[1], "</br></br>"; } ?>
+							<?php foreach ($order as $custid) { echo "</br>", $custid[1], "</br></br>"; } ?>
 						</td>
 						<td>
-							<?php foreach ($payment as $paymentdate) { echo "</br>", $paymentdate[2], "</br></br>"; } ?>
+							<?php foreach ($order as $paymentid) { echo "</br>", $paymentid[2], "</br></br>"; } ?>
 						</td>
 						<td>
-							<?php foreach ($payment as $paymentmeth) { echo "</br>", $paymentmeth[3], "</br></br>"; } ?>
-						</td>
-						<td>
-							<?php foreach ($payment as $paymentamt) { echo "</br>", $paymentamt[4], "</br></br>"; } ?>
-						</td>
-					</tr>
-					<tr>
-						<th colspan="4">
-							<?php echo "Total" ?>
-						</th>
-						<td>
-							<?php foreach ($payment as $paymentamt) { $totalamt += $paymentamt[4]; echo "</br>", $totalamt, "</br></br>"; } ?>
+							<?php foreach ($order as $items) { echo "</br>", $items[3], "</br></br>"; } ?>
 						</td>
 					</tr>
 				</table>
