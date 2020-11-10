@@ -859,7 +859,7 @@ span.price {
 }
 
 /*Order History*/
-#historybody {
+#historybody, #vieworderbody {
 	font-family:Calibri;
 	color:black;
 	background-color: #FFFFFF;
