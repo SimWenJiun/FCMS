@@ -1,14 +1,6 @@
 <?php
 session_start();
 $message="";
-$totalamt = 0;
-	$conn = mysqli_connect("sql12.freesqldatabase.com", "sql12369317", "KGUuPpDYfu", "sql12369317");
-	$result = mysqli_query($conn,"SELECT * FROM Customers");
-	$cust  = mysqli_fetch_all($result);
-	$result = mysqli_query($conn, "SELECT * FROM Orders");
-	$order = mysqli_fetch_all($result);
-	$result = mysqli_query($conn, "SELECT * FROM Payment");
-	$payment = mysqli_fetch_all($result);
 ?>
 <html lang="en">
 	<head>
@@ -21,9 +13,36 @@ $totalamt = 0;
 	<body>
 		<?php include('management_header.php');?>
 		
-		<div id="bodyhome">
+		<div id="regbody">
 			<h1>FoodEdge Gourmet Catering System Management</h1>
 			<br>
+			<h2>Add Management Account</h2>
+			<br>
+			<form action="add_management.php" method="post">
+					<label for="fname"><b>Username</b></label><br>
+					<input type="text" name="uname" id="uname"><br>
+					
+					<label for="lname"><b>Password</b></label><br>
+					<input type="text" name="pword" id="pword"><br>
+					
+				
+				<button type="submit" id="signupbut">Add</button>
+				<div class="message"><?php if($message!="") { foreach ($message as $err) { echo $err, '<br/>'; } } ?></div>
+			</form>
+			<br>
+			<h2>Add Operation Account</h2>
+			<br>
+			<form action="add_operation.php" method="post">
+					<label for="fname"><b>Username</b></label><br>
+					<input type="text" name="uname" id="uname"><br>
+					
+					<label for="lname"><b>Password</b></label><br>
+					<input type="text" name="pword" id="pword"><br>
+					
+				
+				<button type="submit" id="signupbut">Add</button>
+				<div class="message"><?php if($message!="") { foreach ($message as $err) { echo $err, '<br/>'; } } ?></div>
+			</form>
 			
 			
 			
