@@ -56,7 +56,7 @@ if(isset($_SESSION["id"])) {
 					<input type="password" name="pword" id="password">
 					
 					<button type="submit" id="loginbut">Login</button>
-					<span id="forgot"><a href="">Forgot password?</a></span>
+					<span id="forgot"><a href="reset.php">Forgot password?</a></span>
 					
 				</form>
 				<button id="signup"><a href="registration.php">Sign Up</a></button>
