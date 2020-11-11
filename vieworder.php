@@ -25,6 +25,7 @@
 					<th>Price Paid</th>
 					<th>Date</th>
 					<th>Order Status</th>
+					<th></th>
 				</tr>
 
 			<?php
@@ -32,9 +33,9 @@
 				$result = mysqli_query($conn, $query);
 				$rownum = mysqli_num_rows($result);
 				
-				if(!$rownum != 1)
+				if(!$rownum != 0)
 				{
-					echo "<td colspan='5'><center>No Order data found!</center></td>";
+					echo "<td colspan='6'><center>No Order data found!</center></td>";
 				}
 				else
 				{	
@@ -46,6 +47,7 @@
 						echo "<td>RM ".$row['totalcost']."</td>";
 						echo "<td>".$row['deliverydate']."</td>";
 						echo "<td>".$row['orderstatus']."</td>";
+						echo '<td><a href="processorder.php?order_id='.$row['orderid'].'">View</a></td>';
 						echo "</tr>";
 					}
 				}
