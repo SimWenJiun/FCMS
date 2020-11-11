@@ -681,6 +681,11 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   background-color: #45a049;
 }
 
+span.quantityPay{
+	color: red;
+	font-size:15px;
+}
+
 span.price {
   float: right;
   color: grey;
