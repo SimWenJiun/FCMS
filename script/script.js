@@ -1,73 +1,73 @@
 //Code Below For Selection Page and Related Functions
-function botdselected() 
+function itemselected1() 
 {
-	if (localStorage.botdqty) 
+	if (localStorage.selectionquantity1) 
 	{
-	  localStorage.botdqty = Number(localStorage.botdqty)+1;
+	  localStorage.selectionquantity1 = Number(localStorage.selectionquantity1)+1;
 	} 
 	else 
 	{
-	  localStorage.botdqty = 1;
+	  localStorage.selectionquantity1 = 1;
 	}
 }
 
-function bsselected() 
+function itemselected2() 
 {
-	if (localStorage.bsqty) 
+	if (localStorage.selectionquantity2) 
 	{
-	  localStorage.bsqty = Number(localStorage.bsqty)+1;
+	  localStorage.selectionquantity2 = Number(localStorage.selectionquantity2)+1;
 	} 
 	else 
 	{
-	  localStorage.bsqty = 1;
+	  localStorage.selectionquantity2 = 1;
 	}
 }
 
-function dsaselected() 
+function itemselected3() 
 {
-	if (localStorage.dsaqty) 
+	if (localStorage.selectionquantity3) 
 	{
-	  localStorage.dsaqty = Number(localStorage.dsaqty)+1;
+	  localStorage.selectionquantity3 = Number(localStorage.selectionquantity3)+1;
 	} 
 	else 
 	{
-	  localStorage.dsaqty = 1;
+	  localStorage.selectionquantity3 = 1;
 	}
 }
 
-function lsaselected() 
+function itemselected4() 
 {
-	if (localStorage.lsaqty) 
+	if (localStorage.selectionquantity4) 
 	{
-	  localStorage.lsaqty = Number(localStorage.lsaqty)+1;
+	  localStorage.selectionquantity4 = Number(localStorage.selectionquantity4)+1;
 	} 
 	else 
 	{
-	  localStorage.lsaqty = 1;
+	  localStorage.selectionquantity4 = 1;
 	}
 }
 
-function lsbselected() 
+function itemselected5() 
 {
-	if (localStorage.lsbqty) 
+	if (localStorage.selectionquantity5) 
 	{
-	  localStorage.lsbqty = Number(localStorage.lsbqty)+1;
+	  localStorage.selectionquantity5 = Number(localStorage.selectionquantity5)+1;
 	} 
 	else 
 	{
-	  localStorage.lsbqty = 1;
+	  localStorage.selectionquantity5 = 1;
 	}
 }
 
-function lscselected() 
+function itemselected6() 
 {
-	if (localStorage.lscqty) 
+	if (localStorage.selectionquantity6) 
 	{
-	  localStorage.lscqty = Number(localStorage.lscqty)+1;
+	  localStorage.selectionquantity6 = Number(localStorage.selectionquantity6)+1;
 	} 
 	else 
 	{
-	  localStorage.lscqty = 1;
+	  localStorage.selectionquantity6 = 1;
 	}
 }
 
@@ -86,87 +86,87 @@ function loadselection()
 	}	
 	
 	var bscontainer = document.getElementById("containeritem1");
-	var bsqty = document.getElementById("bsqty");
-	if(localStorage.bsqty == 0 || typeof(localStorage.getItem("bsqty"))=='undefined')
+	var selectionquantity1 = document.getElementById("selectionquantity1");
+	if(localStorage.selectionquantity1 == 0 || typeof(localStorage.getItem("selectionquantity1"))=='undefined')
 	{
 		bscontainer.style.display = "none";
-		bsqty.value = 0;
+		selectionquantity1.value = 0;
 	}
 	else
 	{
 		bscontainer.style.display = "block";
-		bsqty.value = localStorage.bsqty;
+		selectionquantity1.value = localStorage.selectionquantity1;
 		containercount++;
 	}
 	
 	
 	var lsacontainer = document.getElementById("containeritem2");
-	var lsasqty = document.getElementById("lsaqty");
-	if(localStorage.lsaqty == 0 || typeof(localStorage.getItem("lsaqty"))=='undefined')
+	var lsasqty = document.getElementById("selectionquantity2");
+	if(localStorage.selectionquantity2 == 0 || typeof(localStorage.getItem("selectionquantity2"))=='undefined')
 	{
 		lsacontainer.style.display = "none";
-		lsaqty.value = 0;
+		selectionquantity2.value = 0;
 	}
 	else
 	{
 		lsacontainer.style.display = "block";
-		lsaqty.value = localStorage.lsaqty;
+		selectionquantity2.value = localStorage.selectionquantity2;
 		containercount++;
 	}
 	
 	var lsbcontainer = document.getElementById("containeritem3");
-	var lsbsqty = document.getElementById("lsbqty");
-	if(localStorage.lsbqty == 0 || typeof(localStorage.getItem("lsbqty"))=='undefined')
+	var lsselectionquantity1 = document.getElementById("selectionquantity3");
+	if(localStorage.selectionquantity3 == 0 || typeof(localStorage.getItem("selectionquantity3"))=='undefined')
 	{
 		lsbcontainer.style.display = "none";
-		lsbqty.value = 0;
+		selectionquantity3.value = 0;
 	}
 	else
 	{
 		lsbcontainer.style.display = "block";
-		lsbqty.value = localStorage.lsbqty;
+		selectionquantity3.value = localStorage.selectionquantity3;
 		containercount++;
 	}
 	
 	var lsccontainer = document.getElementById("containeritem4");
-	var lscsqty = document.getElementById("lscqty");
-	if(localStorage.lscqty == 0 || typeof(localStorage.getItem("lscqty"))=='undefined')
+	var lscsqty = document.getElementById("selectionquantity4");
+	if(localStorage.selectionquantity4 == 0 || typeof(localStorage.getItem("selectionquantity4"))=='undefined')
 	{
 		lsccontainer.style.display = "none";
-		lscqty.value = 0;
+		selectionquantity4.value = 0;
 	}
 	else
 	{
 		lsccontainer.style.display = "block";
-		lscqty.value = localStorage.lscqty;
+		selectionquantity4.value = localStorage.selectionquantity4;
 		containercount++;
 	}
 	
 	var dsacontainer = document.getElementById("containeritem5");
-	var dsasqty = document.getElementById("dsaqty");
-	if(localStorage.dsaqty == 0 || typeof(localStorage.getItem("dsaqty"))=='undefined')
+	var dsasqty = document.getElementById("selectionquantity5");
+	if(localStorage.selectionquantity5 == 0 || typeof(localStorage.getItem("selectionquantity5"))=='undefined')
 	{
 		dsacontainer.style.display = "none";
-		dsaqty.value = 0;
+		selectionquantity5.value = 0;
 	}
 	else
 	{
 		dsacontainer.style.display = "block";
-		dsaqty.value = localStorage.dsaqty;
+		selectionquantity5.value = localStorage.selectionquantity5;
 		containercount++;
 	}
 	
 	var botdcontainer = document.getElementById("containeritem6");
-	var botdsqty = document.getElementById("botdqty");
-	if(localStorage.botdqty == 0 || typeof(localStorage.getItem("botdqty"))=='undefined')
+	var botdsqty = document.getElementById("selectionquantity6");
+	if(localStorage.selectionquantity6 == 0 || typeof(localStorage.getItem("selectionquantity6"))=='undefined')
 	{
 		botdcontainer.style.display = "none";
-		botdqty.value = 0;
+		selectionquantity6.value = 0;
 	}
 	else
 	{
 		botdcontainer.style.display = "block";
-		botdqty.value = localStorage.botdqty;
+		selectionquantity6.value = localStorage.selectionquantity6;
 		containercount++;
 	}
 	
@@ -196,123 +196,184 @@ function loadselection()
 
 function saveselections()
 {
-
-	localStorage.lsaqty = document.getElementById('lsaqty').value;
-	localStorage.lsbqty = document.getElementById('lsbqty').value;
-	localStorage.lscqty = document.getElementById('lscqty').value;
-	localStorage.dsaqty = document.getElementById('dsaqty').value;
-	localStorage.bsqty = document.getElementById('bsqty').value;
-	localStorage.botdqty = document.getElementById('botdqty').value;
+	localStorage.selectionquantity2 = document.getElementById('selectionquantity2').value;
+	localStorage.selectionquantity3 = document.getElementById('selectionquantity3').value;
+	localStorage.selectionquantity4 = document.getElementById('selectionquantity4').value;
+	localStorage.selectionquantity5 = document.getElementById('selectionquantity5').value;
+	localStorage.selectionquantity1 = document.getElementById('selectionquantity1').value;
+	localStorage.selectionquantity6 = document.getElementById('selectionquantity6').value;
 	localStorage.deliverydate = document.getElementById('orderdeliverydate').value;
 	localStorage.deliveryaddress = document.getElementById('orderdeliveryaddress').value;
+	
+	var data;
+	
+	data = 'selectionname1=' + document.getElementById("selectionname1").innerHTML;
+	document.cookie = data;
+	
+	data = 'selectionprice1=' + document.getElementById("selectionprice1").innerHTML;
+	document.cookie = data;
+	
+	data = 'selectionquantity1=' + document.getElementById("selectionquantity1").value;
+	document.cookie = data;
+	
+	data = 'selectionname2=' + document.getElementById("selectionname2").innerHTML;
+	document.cookie = data;
+	
+	data = 'selectionprice2=' + document.getElementById("selectionprice2").innerHTML;
+	document.cookie = data;
+	
+	data = 'selectionquantity2=' + document.getElementById("selectionquantity2").value;
+	document.cookie = data;
+	
+	data = 'selectionname3=' + document.getElementById("selectionname3").innerHTML;
+	document.cookie = data;
+	
+	data = 'selectionprice3=' + document.getElementById("selectionprice3").innerHTML;
+	document.cookie = data;
+	
+	data = 'selectionquantity3=' + document.getElementById("selectionquantity3").value;
+	document.cookie = data;
+	
+	data = 'selectionname4=' + document.getElementById("selectionname4").innerHTML;
+	document.cookie = data;
+	
+	data = 'selectionprice4=' + document.getElementById("selectionprice4").innerHTML;
+	document.cookie = data;
+	
+	data = 'selectionquantity4=' + document.getElementById("selectionquantity4").value;
+	document.cookie = data;
+	
+	data = 'selectionname5=' + document.getElementById("selectionname5").innerHTML;
+	document.cookie = data;
+	
+	data = 'selectionprice5=' + document.getElementById("selectionprice5").innerHTML;
+	document.cookie = data;
+	
+	data = 'selectionquantity5=' + document.getElementById("selectionquantity5").value;
+	document.cookie = data;
+	
+	data = 'selectionname6=' + document.getElementById("selectionname6").innerHTML;
+	document.cookie = data;
+	
+	data = 'selectionprice6=' + document.getElementById("selectionprice6").innerHTML;
+	document.cookie = data;
+	
+	data = 'selectionquantity6=' + document.getElementById("selectionquantity6").value;
+	document.cookie = data;
+	
+	data = 'orderdeliverydate=' + document.getElementById("orderdeliverydate").value;
+	document.cookie = data;
+	
+	data = 'orderdeliveryaddress=' + document.getElementById("orderdeliveryaddress").value;
+	document.cookie = data;
 }
 
 function incqty1()
 {
-	var temp = document.getElementById("bsqty").value;
+	var temp = document.getElementById("selectionquantity1").value;
 	if(temp < 999)
 	{
 		temp = ++temp;
-		document.getElementById("bsqty").value = new Number(temp);
+		document.getElementById("selectionquantity1").value = new Number(temp);
 	}
 }
 function incqty2()
 {
-	var temp = document.getElementById("lsaqty").value;
+	var temp = document.getElementById("selectionquantity2").value;
 	if(temp < 999)
 	{
 		temp = ++temp;
-		document.getElementById("lsaqty").value = new Number(temp);
+		document.getElementById("selectionquantity2").value = new Number(temp);
 	}
 }
 function incqty3()
 {
-	var temp = document.getElementById("lsbqty").value;
+	var temp = document.getElementById("selectionquantity3").value;
 	if(temp < 999)
 	{
 		temp = ++temp;
-		document.getElementById("lsbqty").value = new Number(temp);
+		document.getElementById("selectionquantity3").value = new Number(temp);
 	}
 }
 function incqty4()
 {
-	var temp = document.getElementById("lscqty").value;
+	var temp = document.getElementById("selectionquantity4").value;
 	if(temp < 999)
 	{
 		temp = ++temp;
-		document.getElementById("lscqty").value = new Number(temp);
+		document.getElementById("selectionquantity4").value = new Number(temp);
 	}
 }
 function incqty5()
 {
-	var temp = document.getElementById("dsaqty").value;
+	var temp = document.getElementById("selectionquantity5").value;
 	if(temp < 999)
 	{
 		temp = ++temp;
-		document.getElementById("dsaqty").value = new Number(temp);
+		document.getElementById("selectionquantity5").value = new Number(temp);
 	}
 }
 function incqty6()
 {
-	var temp = document.getElementById("botdqty").value;
+	var temp = document.getElementById("selectionquantity6").value;
 	if(temp < 999)
 	{
 		temp = ++temp;
-		document.getElementById("botdqty").value = new Number(temp);
+		document.getElementById("selectionquantity6").value = new Number(temp);
 	}
 }
 function decqty1()
 {
-	var temp = document.getElementById("bsqty").value;
+	var temp = document.getElementById("selectionquantity1").value;
 	if(temp > 0)
 	{
 		temp = --temp;
-		document.getElementById("bsqty").value = new Number(temp);
+		document.getElementById("selectionquantity1").value = new Number(temp);
 	}
 }
 function decqty2()
 {
-	var temp = document.getElementById("lsaqty").value;
+	var temp = document.getElementById("selectionquantity2").value;
 	if(temp > 0)
 	{
 		temp = --temp;
-		document.getElementById("lsaqty").value = new Number(temp);
+		document.getElementById("selectionquantity2").value = new Number(temp);
 	}
 }
 function decqty3()
 {
-	var temp = document.getElementById("lsbqty").value;
+	var temp = document.getElementById("selectionquantity3").value;
 	if(temp > 0)
 	{
 		temp = --temp;
-		document.getElementById("lsbqty").value = new Number(temp);
+		document.getElementById("selectionquantity3").value = new Number(temp);
 	}
 }
 function decqty4()
 {
-	var temp = document.getElementById("lscqty").value;
+	var temp = document.getElementById("selectionquantity4").value;
 	if(temp > 0)
 	{
 		temp = --temp;
-		document.getElementById("lscqty").value = new Number(temp);
+		document.getElementById("selectionquantity4").value = new Number(temp);
 	}
 }
 function decqty5()
 {
-	var temp = document.getElementById("dsaqty").value;
+	var temp = document.getElementById("selectionquantity5").value;
 	if(temp > 0)
 	{
 		temp = --temp;
-		document.getElementById("dsaqty").value = new Number(temp);
+		document.getElementById("selectionquantity5").value = new Number(temp);
 	}
 }
 function decqty6()
 {
-	var temp = document.getElementById("botdqty").value;
+	var temp = document.getElementById("selectionquantity6").value;
 	if(temp > 0)
 	{
 		temp = --temp;
-		document.getElementById("botdqty").value = new Number(temp);
+		document.getElementById("selectionquantity6").value = new Number(temp);
 	}
 }
 //Code Above For Selection Page and Related Functions
@@ -335,97 +396,97 @@ function loadbooking()
 	
 	var bscontainer = document.getElementById("sbcontaineritem1");
 	var bsprice = 19.99;
-	var bstotal = 0;
-	if(localStorage.bsqty == 0 || typeof(localStorage.getItem("bsqty"))=='undefined')
+	var itemtotal1 = 0;
+	if(localStorage.selectionquantity1 == 0 || typeof(localStorage.getItem("selectionquantity1"))=='undefined')
 	{
 		bscontainer.style.display = "none";
 	}
 	else
 	{
 		bscontainer.style.display = "block";
-		bstotal = bsprice * localStorage.bsqty;
-		totalcost = totalcost + bstotal;
-		document.getElementById("bsqtydiv").innerHTML = localStorage.bsqty;
+		itemtotal1 = bsprice * localStorage.selectionquantity1;
+		totalcost = totalcost + itemtotal1;
+		document.getElementById("selectionquantity1div").innerHTML = localStorage.selectionquantity1;
 		containercount++;
 	}
 	
 	var lsacontainer = document.getElementById("sbcontaineritem2");
 	var lsaprice = 24.99;
-	var lsatotal = 0;
-	if(localStorage.lsaqty == 0 || typeof(localStorage.getItem("lsaqty"))=='undefined')
+	var itemtotal2 = 0;
+	if(localStorage.selectionquantity2 == 0 || typeof(localStorage.getItem("selectionquantity2"))=='undefined')
 	{
 		lsacontainer.style.display = "none";
 	}
 	else
 	{
 		lsacontainer.style.display = "block";
-		lsatotal = lsaprice * localStorage.lsaqty;
-		totalcost = totalcost + lsatotal;
-		document.getElementById("lsaqtydiv").innerHTML = localStorage.lsaqty;
+		itemtotal2 = lsaprice * localStorage.selectionquantity2;
+		totalcost = totalcost + itemtotal2;
+		document.getElementById("selectionquantity2div").innerHTML = localStorage.selectionquantity2;
 		containercount++;
 	}
 	
 	var lsbcontainer = document.getElementById("sbcontaineritem3");
 	var lsbprice = 28.99;
-	var lsbtotal = 0;
-	if(localStorage.lsbqty == 0 || typeof(localStorage.getItem("lsbqty"))=='undefined')
+	var itemtotal3 = 0;
+	if(localStorage.selectionquantity3 == 0 || typeof(localStorage.getItem("selectionquantity3"))=='undefined')
 	{
 		lsbcontainer.style.display = "none";
 	}
 	else
 	{
 		lsbcontainer.style.display = "block";
-		lsbtotal = lsbprice * localStorage.lsbqty;
-		totalcost = totalcost + lsbtotal;
-		document.getElementById("lsbqtydiv").innerHTML = localStorage.lsbqty;
+		itemtotal3 = lsbprice * localStorage.selectionquantity3;
+		totalcost = totalcost + itemtotal3;
+		document.getElementById("selectionquantity3div").innerHTML = localStorage.selectionquantity3;
 		containercount++;
 	}
 	
 	var lsccontainer = document.getElementById("sbcontaineritem4");
 	var lscprice = 22.99;
-	var lsctotal = 0;
-	if(localStorage.lscqty == 0 || typeof(localStorage.getItem("lscqty"))=='undefined')
+	var itemtotal4 = 0;
+	if(localStorage.selectionquantity4 == 0 || typeof(localStorage.getItem("selectionquantity4"))=='undefined')
 	{
 		lsccontainer.style.display = "none";
 	}
 	else
 	{
 		lsccontainer.style.display = "block";
-		lsctotal = lscprice * localStorage.lscqty;
-		totalcost = totalcost + lsctotal;
-		document.getElementById("lscqtydiv").innerHTML = localStorage.lscqty;
+		itemtotal4 = lscprice * localStorage.selectionquantity4;
+		totalcost = totalcost + itemtotal4;
+		document.getElementById("selectionquantity4div").innerHTML = localStorage.selectionquantity4;
 		containercount++;
 	}
 	
 	var dsacontainer = document.getElementById("sbcontaineritem5");
 	var dsaprice = 35.99;
-	var dsatotal = 0;
-	if(localStorage.dsaqty == 0 || typeof(localStorage.getItem("dsaqty"))=='undefined')
+	var itemtotal5 = 0;
+	if(localStorage.selectionquantity5 == 0 || typeof(localStorage.getItem("selectionquantity5"))=='undefined')
 	{
 		dsacontainer.style.display = "none";
 	}
 	else
 	{
 		dsacontainer.style.display = "block";
-		dsatotal = dsaprice * localStorage.dsaqty;
-		totalcost = totalcost + dsatotal;
-		document.getElementById("dsaqtydiv").innerHTML = localStorage.dsaqty;
+		itemtotal5 = dsaprice * localStorage.selectionquantity5;
+		totalcost = totalcost + itemtotal5;
+		document.getElementById("selectionquantity5div").innerHTML = localStorage.selectionquantity5;
 		containercount++;
 	}
 	
 	var botdcontainer = document.getElementById("sbcontaineritem6");
 	var botdprice = 10.99;
-	var botdtotal = 0;
-	if(localStorage.botdqty == 0 || typeof(localStorage.getItem("botdqty"))=='undefined')
+	var itemtotal6 = 0;
+	if(localStorage.selectionquantity6 == 0 || typeof(localStorage.getItem("selectionquantity6"))=='undefined')
 	{
 		botdcontainer.style.display = "none";
 	}
 	else
 	{
 		botdcontainer.style.display = "block";
-		botdtotal = botdprice * localStorage.botdqty;
-		totalcost = totalcost + botdtotal;
-		document.getElementById("botdqtydiv").innerHTML = localStorage.botdqty;
+		itemtotal6 = botdprice * localStorage.selectionquantity6;
+		totalcost = totalcost + itemtotal6;
+		document.getElementById("selectionquantity6div").innerHTML = localStorage.selectionquantity6;
 		containercount++;
 	}
 	
@@ -448,22 +509,21 @@ function loadbooking()
 		orderaddresscontainer.style.display = "block";
 	}
 	
-	
-	document.getElementById("bstotal").innerHTML = bstotal.toFixed(2);
-	document.getElementById("lsatotal").innerHTML = lsatotal.toFixed(2);
-	document.getElementById("lsbtotal").innerHTML = lsbtotal.toFixed(2);
-	document.getElementById("lsctotal").innerHTML = lsctotal.toFixed(2);
-	document.getElementById("dsatotal").innerHTML = dsatotal.toFixed(2);
-	document.getElementById("botdtotal").innerHTML = botdtotal.toFixed(2);
+	document.getElementById("itemtotal1").innerHTML = itemtotal1.toFixed(2);
+	document.getElementById("itemtotal2").innerHTML = itemtotal2.toFixed(2);
+	document.getElementById("itemtotal3").innerHTML = itemtotal3.toFixed(2);
+	document.getElementById("itemtotal4").innerHTML = itemtotal4.toFixed(2);
+	document.getElementById("itemtotal5").innerHTML = itemtotal5.toFixed(2);
+	document.getElementById("itemtotal6").innerHTML = itemtotal6.toFixed(2);
 	document.getElementById("totalcost").innerHTML = totalcost.toFixed(2);
 	
 	document.cookie = "total=" + totalcost.toFixed(2);
-	document.cookie = "bstotal=" + bstotal.toFixed(2);
-	document.cookie = "lsatotal=" + lsatotal.toFixed(2);
-	document.cookie = "lsbtotal=" + lsbtotal.toFixed(2);
-	document.cookie = "lsctotal=" + lsctotal.toFixed(2);
-	document.cookie = "dsatotal=" + dsatotal.toFixed(2);
-	document.cookie = "botdtotal=" + botdtotal.toFixed(2);
+	document.cookie = "itemtotal1=" + itemtotal1.toFixed(2);
+	document.cookie = "itemtotal2=" + itemtotal2.toFixed(2);
+	document.cookie = "itemtotal3=" + itemtotal3.toFixed(2);
+	document.cookie = "itemtotal4=" + itemtotal4.toFixed(2);
+	document.cookie = "itemtotal5=" + itemtotal5.toFixed(2);
+	document.cookie = "itemtotal6=" + itemtotal6.toFixed(2);
 }
 //Code Above For Submit Booking Page and Related Functions
 

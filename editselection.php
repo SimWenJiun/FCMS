@@ -11,20 +11,19 @@ session_start();
 	</head>
 
 	<body onload="loadselection()">
-		<?php include('header.php');?>
-		
+		<?php include('header.php');?>		
 		<div id="body">
 			<div id="editselection">
 				<h1>Selection</h1>
 				<br/>
-				<form action="selection.php" method="post">
+				<form action="booking.php" method="post">
 					<table id="containeritem1" style="width:100%">
 						<tr>
 							<td>
 								<img src="img/smallbreakfast.jpg" alt="Item Image" height="100px"/>
 								<ul>							
-									<li>Breakfast Set</li>
-									<li>RM19.99</li>
+									<li id="selectionname1">Breakfast Set</li>
+									<li>RM<p id="selectionprice1">19.99</p></li>
 								</ul>
 							</td>
 							<td>
@@ -37,7 +36,7 @@ session_start();
 									<td>
 									  <tr>
 										<td><img src="img/negative.png" alt="reduce" id="reduceqty" height="20px" onclick="decqty1()"/></td>
-										<td><input type="number" name="bsqty" id="bsqty" min="0" max="999" required="required"></td>
+										<td><input type="number" name="selectionquantity1" id="selectionquantity1" min="0" max="999" required="required"></td>
 										<td><img src="img/positive.png" alt="add" id="increaseqty" height="20px" onclick="incqty1()"/></td>
 									  </tr>
 									</td>
@@ -51,8 +50,8 @@ session_start();
 							<td>
 								<img src="img/smalllunchA.jpg" alt="Item Image" height="100px"/>
 								<ul>							
-									<li>Lunch Set A</li>
-									<li>RM24.99</li>
+									<li id="selectionname2">Lunch Set A</li>
+									<li>RM<p id="selectionprice2">24.99</p></li>
 								</ul>
 							</td>
 							<td>
@@ -65,7 +64,7 @@ session_start();
 									<td>
 									  <tr>
 										<td><img src="img/negative.png" alt="reduce" id="reduceqty" height="20px" onclick="decqty2()"/></td>
-										<td><input type="number" name="lsaqty" id="lsaqty" min="0" max="999" required="required"></td>
+										<td><input type="number" name="selectionquantity2" id="selectionquantity2" min="0" max="999" required="required"></td>
 										<td><img src="img/positive.png" alt="add" id="increaseqty" height="20px" onclick="incqty2()"/></td>
 									  </tr>
 									</td>
@@ -79,8 +78,8 @@ session_start();
 							<td>
 								<img src="img/smalllunchB.jpg" alt="Item Image" height="100px"/>
 								<ul>							
-									<li>Lunch Set B</li>
-									<li>RM28.99</li>
+									<li id="selectionname3">Lunch Set B</li>
+									<li>RM<p id="selectionprice3">28.99</p></li>
 								</ul>
 							</td>
 							<td>
@@ -93,7 +92,7 @@ session_start();
 									<td>
 									  <tr>
 										<td><img src="img/negative.png" alt="reduce" id="reduceqty" height="20px" onclick="decqty3()"/></td>
-										<td><input type="number" name="lsbqty" id="lsbqty" min="0" max="999" required="required"></td>
+										<td><input type="number" name="selectionquantity3" id="selectionquantity3" min="0" max="999" required="required"></td>
 										<td><img src="img/positive.png" alt="add" id="increaseqty" height="20px" onclick="incqty3()"/></td>
 									  </tr>
 									</td>
@@ -107,8 +106,8 @@ session_start();
 							<td>
 								<img src="img/smalllunchC.jpg" alt="Item Image" height="100px"/>
 								<ul>							
-									<li>Lunch Set C (100% Vegan Friendly)</li>
-									<li>RM22.99</li>
+									<li id="selectionname4">Lunch Set C (100% Vegan Friendly)</li>
+									<li>RM<p id="selectionprice4">22.99</p></li>
 								</ul>
 							</td>
 							<td>
@@ -121,7 +120,7 @@ session_start();
 									<td>
 									  <tr>
 										<td><img src="img/negative.png" alt="reduce" id="reduceqty" height="20px" onclick="decqty4()"/></td>
-										<td><input type="number" name="lscqty" id="lscqty" min="0" max="999" required="required"></td>
+										<td><input type="number" name="selectionquantity4" id="selectionquantity4" min="0" max="999" required="required"></td>
 										<td><img src="img/positive.png" alt="add" id="increaseqty" height="20px" onclick="incqty4()"/></td>
 									  </tr>
 									</td>
@@ -135,8 +134,8 @@ session_start();
 							<td>
 								<img src="img/smalldinner.jpg" alt="Item Image" height="100px"/>
 								<ul>							
-									<li>Dinner Set A</li>
-									<li>RM35.99</li>
+									<li id="selectionname5">Dinner Set A</li>
+									<li>RM<p id="selectionprice5">35.99</p></li>
 								</ul>
 							</td>
 							<td>
@@ -149,7 +148,7 @@ session_start();
 									<td>
 									  <tr>
 										<td><img src="img/negative.png" alt="reduce" id="reduceqty" height="20px" onclick="decqty5()"/></td>
-										<td><input type="number" name="dsaqty" id="dsaqty" min="0" max="999" required="required"></td>
+										<td><input type="number" name="selectionquantity5" id="selectionquantity5" min="0" max="999" required="required"></td>
 										<td><img src="img/positive.png" alt="add" id="increaseqty" height="20px" onclick="incqty5()"/></td>
 									  </tr>
 									</td>
@@ -163,8 +162,8 @@ session_start();
 							<td>
 								<img src="img/smallbeverages.jpg" alt="Item Image" height="100px"/>
 								<ul>							
-									<li>Beverage of the day</li>
-									<li>RM10.99</li>
+									<li id="selectionname6">Beverage of the day</li>
+									<li>RM<p id="selectionprice6">10.99</p></li>
 								</ul>
 							</td>
 							<td>
@@ -177,7 +176,7 @@ session_start();
 									<td>
 									  <tr>
 										<td><img src="img/negative.png" alt="reduce" id="reduceqty" height="20px" onclick="decqty6()"/></td>
-										<td><input type="number" name="botdqty" id="botdqty" min="0" max="999" required="required"></td>
+										<td><input type="number" name="selectionquantity6" id="selectionquantity6" min="0" max="999" required="required"></td>
 										<td><img src="img/positive.png" alt="add" id="increaseqty" height="20px" onclick="incqty6()"/></td>
 									  </tr>
 									</td>
@@ -209,5 +208,6 @@ session_start();
 		</div>
 		
 		<?php include('footer.php');?>
-	</body>
+	</body>	
 </html>
+

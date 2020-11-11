@@ -254,7 +254,7 @@ header div{
 	border: 1px solid #E71825;
 }
 
-#botdqty, #lsaqty, #lsbqty, #lscqty, #dsaqty, #bsqty {
+#selectionquantity1, #selectionquantity2, #selectionquantity3, #selectionquantity4, #selectionquantity5, #selectionquantity6 {
 	text-align:center;
 	width: 80px;
 }
@@ -898,5 +898,9 @@ span.price {
 	text-align: left;
 	background-color: #E71825;
 	color: white;
+}
+
+#selectionprice1, #selectionprice2, #selectionprice3, #selectionprice4, #selectionprice5, #selectionprice6 {
+	display: inline-block;
 }
 

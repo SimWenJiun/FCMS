@@ -42,7 +42,7 @@
 					</div>
 					<div id="enquire">
 						<form action="editselection.php" method="post">
-							<button onclick="lscselected()" formaction="editselection.php" id="enquirenow">Add to selection</button>
+							<button onclick="itemselected4()" formaction="editselection.php" id="enquirenow">Add to selection</button>
 						</form>
 					</div>
 				</div>
