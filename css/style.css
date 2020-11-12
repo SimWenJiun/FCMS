@@ -254,7 +254,7 @@ header div{
 	border: 1px solid #E71825;
 }
 
-#selectionquantity1, #selectionquantity2, #selectionquantity3, #selectionquantity4, #selectionquantity5, #selectionquantity6 {
+#botdqty, #lsaqty, #lsbqty, #lscqty, #dsaqty, #bsqty {
 	text-align:center;
 	width: 80px;
 }
@@ -681,11 +681,6 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   background-color: #45a049;
 }
 
-span.quantityPay{
-	color: red;
-	font-size:15px;
-}
-
 span.price {
   float: right;
   color: grey;
@@ -864,7 +859,7 @@ span.price {
 }
 
 /*Order History*/
-#historybody, #vieworderbody {
+#historybody {
 	font-family:Calibri;
 	color:black;
 	background-color: #FFFFFF;
@@ -903,25 +898,5 @@ span.price {
 	text-align: left;
 	background-color: #E71825;
 	color: white;
-}
-
-#processorderbody {
-	font-family:Calibri;
-	color:black;
-	background-color: #FFFFFF;
-	border: 1px solid #E71825;
-	height: auto;
-	margin-top: 20px;
-	margin-left: 20px;
-	margin-right: 20px;
-	margin-bottom: 20px;
-	padding: 5% 15%;
-	line-height: 30px;
-}
-
-/******/
-
-#selectionprice1, #selectionprice2, #selectionprice3, #selectionprice4, #selectionprice5, #selectionprice6 {
-	display: inline-block;
 }
 

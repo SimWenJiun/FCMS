@@ -10,7 +10,7 @@ session_start();
 
 if(isset($_POST['submit']))           //if upload btn is pressed
 {
-		if(empty($_POST['d_name'])||empty($_POST['type'])||$_POST['price']=='')
+		if(empty($_POST['d_name'])||empty($_POST['type'])||$_POST['price']==''||empty($_POST['php_name']))
 		{	
 											$error = 	'<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -42,7 +42,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
 		
 									else
 										{
-												$sql = "INSERT INTO Menu(menu_item,item_type,item_price,item_pic) VALUE('".$_POST['d_name']."','".$_POST['type']."','".$_POST['price']."','".$fnew."')";  // store the submited data ino the database :images
+												$sql = "INSERT INTO Menu(menu_item,item_type,item_price,item_pic,phpname) VALUE('".$_POST['d_name']."','".$_POST['type']."','".$_POST['price']."','".$_POST['php_name']."','".$fnew."')";  // store the submited data ino the database :images
 												mysqli_query($db, $sql); 
 												move_uploaded_file($temp, $store);
 			  
@@ -191,6 +191,14 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                                                     </div>
                                             </div>
                                         </div>
+										
+										<div class="row p-t-20">
+										<div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="control-label">PHP file name </label>
+                                                    <input type="text" name="php_name" class="form-control" placeholder="breakfast.php">
+                                                   </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-actions">

@@ -3,8 +3,8 @@ $message = array();;
 if(count($_POST)>0) {
 	$conn = mysqli_connect("sql12.freesqldatabase.com", "sql12369317", "KGUuPpDYfu", "sql12369317");
 	$email = mysqli_query($conn,"SELECT * FROM Customers WHERE customer_email='" . $_POST["email"] . "'");
-	$username = mysqli_query($conn,"SELECT * FROM Customers WHERE customer_username='" . $_POST["username"] . "'");
-	$phone = mysqli_query($conn,"SELECT * FROM Customers WHERE customer_phone='" . $_POST["phone"] . "'");
+	$username = mysqli_query($conn,"SELECT * FROM Customers WHERE customer_email='" . $_POST["email"] . "'");
+	$phone = mysqli_query($conn,"SELECT * FROM Customers WHERE customer_email='" . $_POST["email"] . "'");
 	$cemail  = mysqli_fetch_array($email);
 	$cusername  = mysqli_fetch_array($username);
 	$cphone  = mysqli_fetch_array($phone);

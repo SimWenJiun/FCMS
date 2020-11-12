@@ -38,7 +38,7 @@
 					</div>
 					<div id="enquire">
 						<form action="editselection.php" method="post">
-							<button onclick="itemselected6()" formaction="editselection.php" id="enquirenow">Add to selection</button>
+							<button onclick="botdselected()" formaction="editselection.php" id="enquirenow">Add to selection</button>
 						</form>
 					</div>
 				</div>

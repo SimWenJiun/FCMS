@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+include("connection.php");
+error_reporting(0);
+session_start();
+
+?>
 	<head>
 		<meta name="DP2 - Group 3" content="FoodEdge Gourmet - Menu"/>
 		<link href="css/style.css" rel="stylesheet" type="text/css"/>
@@ -11,44 +17,37 @@
 	<body>
 		<?php include('header.php');?>
 		
+		
 		<div id="body" class="rowmenu">
 			<div id="menubody">
+			<?php
+				$sql="SELECT * FROM Menu order by item_id desc";
+				$query=mysqli_query($db,$sql);
+				if(!mysqli_num_rows($query) > 0 )
+				{
+					echo '<h3><center>No Dish-Data!</center></h3>';
+				}
+				else
+				{				
+					while($rows=mysqli_fetch_array($query))
+					{
+						$mql="select * from Menu where item_id='".$rows['item_id']."'";
+						$newquery=mysqli_query($db,$mql);
+						$fetch=mysqli_fetch_array($newquery);
+			  
+			  
+			  echo'
 			  <div id="foodbutton">
-				<img src="img/breakfast.jpg" style="width:100%" onclick="openModal();currentSlide(1)" id="foodbuttonimage" class="hover-shadow cursor"><a href="breakfastset.php">
+				<img src="img/menu_item/'.$rows['item_pic'].'" style="width:100%" onclick="openModal();currentSlide(1)" id="foodbuttonimage" class="hover-shadow cursor"><a href="'.$rows['phpname'].'">
 				<div id="foodbuttonbox">
-					<div id="foodbuttontext">Breakfast Set</div>
+					<div id="foodbuttontext">'.$fetch['menu_item'].'</div>
 				</div>
-			  </div>
-			  <div id="foodbutton">
-				<img src="img/lunchA.jpg" style="width:100%" onclick="openModal();currentSlide(2)" id="foodbuttonimage" class="hover-shadow cursor"><a href="lunchseta.php">
-				<div id="foodbuttonbox">
-					<div id="foodbuttontext">Lunch Set A</div>
-				</div>
-			  </div>
-			  <div id="foodbutton">
-				<img src="img/lunchB.jpeg" style="width:100%" onclick="openModal();currentSlide(3)" id="foodbuttonimage" class="hover-shadow cursor"><a href="lunchsetb.php">
-				<div id="foodbuttonbox">
-					<div id="foodbuttontext">Lunch Set B</div>
-				</div>
-			  </div>
-			  <div id="foodbutton">
-				<img src="img/lunchC.jpg" style="width:100%" onclick="openModal();currentSlide(4)" id="foodbuttonimage" class="hover-shadow cursor"><a href="lunchsetc.php">
-				<div id="foodbuttonbox">
-					<div id="foodbuttontext">Lunch Set C</div>
-				</div>
-			  </div>
-			  <div id="foodbutton">
-				<img src="img/dinner.jpg" style="width:100%" onclick="openModal();currentSlide(5)" id="foodbuttonimage" class="hover-shadow cursor"><a href="dinnerseta.php">
-				<div id="foodbuttonbox">
-					<div id="foodbuttontext">Dinner Set</div>
-				</div>
-			  </div>
-			  <div id="foodbutton">
-				<img src="img/beverages.jpg" style="width:100%" onclick="openModal();currentSlide(6)" id="foodbuttonimage" class="hover-shadow cursor"><a href="beverageoftheday.php">
-				<div id="foodbuttonbox">
-					<div id="foodbuttontext">Beverage of the day</div>
-				</div>
-			  </div>
+				 
+			  </div>';
+					}
+				}
+			?>
+			  
 			</div>
 		
 		</div>

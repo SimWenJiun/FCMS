@@ -19,13 +19,116 @@ $totalamt = 0;
 	</head>
 
 	<body>
-		<?php include('management_header.php');?>
+		<?php include('header.php');?>
 		
 		<div id="bodyhome">
-			<h1>Statistics</h1>
-			<br>
+			<h1>FoodEdge Gourmet Catering System</h1>
+			
+			<p id="homepageparagraph">
+				FoodEdge Gourmet Catering focuses on food and beverage catering
+				services for corporate, seminar, weddings and any events in Kuching
+				for nearly 5 years. Our aim is to deliver outstanding service with
+				a commitment to quality, safety and health whether in the workplace,
+				schools and colleges, hospitals, at leisure, on the move or in remote
+				environment.
+			</p><br>
+			
+			<h2>Customers</h2>
+			
+			<p id="homepageparagraph">
+				<table class="listborder">
+					<tr>
+						<th>
+							<p>ID</p>
+						</th>
+						<th>
+							<p>First Name</p>
+						</th>
+						<th>
+							<p>Last Name</p>
+						</th>
+						<th>
+							<p>Username</p>
+						</th>
+						<th>
+							<p>Phone Number</p>
+						</th>
+						<th>
+							<p>Email Address</p>
+						</th>
+						<th>
+							<p>Address</p>
+						</th>
+						<th>
+							<p>Membership Status</p>
+						</th>
+					</tr>
+					<tr>
+						<td>
+							<?php foreach ($cust as $id) { echo "</br>", $id[0], "</br></br>"; } ?>
+						</td>
+						<td>
+							<?php foreach ($cust as $fname) { echo "</br>", $fname[1], "</br></br>"; } ?>
+						</td>
+						<td>
+							<?php foreach ($cust as $lname) { echo "</br>", $lname[2], "</br></br>"; } ?>
+						</td>
+						<td>
+							<?php foreach ($cust as $uname) { echo "</br>", $uname[3], "</br></br>"; } ?>
+						</td>
+						<td>
+							<?php foreach ($cust as $pnumber) { echo "</br>", $pnumber[4], "</br></br>"; } ?>
+						</td>
+						<td>
+							<?php foreach ($cust as $email) { echo "</br>", $email[5], "</br></br>"; } ?>
+						</td>
+						<td>
+							<?php foreach ($cust as $address) { echo "</br>", $address[7], "</br></br>"; } ?>
+						</td>
+						<td>
+							<?php foreach ($cust as $membership) { echo "</br>", $membership[8], "</br></br>"; } ?>
+						</td>
+					</tr>
+				</table>
+			</p>
+			
+			<h2>Orders</h2>
+			
+			<p id="homepageparagraph">
+				<table class="listborder">
+					<tr>
+						<th>
+							<p>Order ID</p>
+						</th>
+						<th>
+							<p>Customer ID</p>
+						</th>
+						<th>
+							<p>Payment ID</p>
+						</th>
+						<th>
+							<p>Menu Item</p>
+						</th>
+					</tr>
+					<tr>
+						<td>
+							<?php foreach ($order as $orderid) { echo "</br>", $orderid[0], "</br></br>"; } ?>
+						</td>
+						<td>
+							<?php foreach ($order as $custid) { echo "</br>", $custid[1], "</br></br>"; } ?>
+						</td>
+						<td>
+							<?php foreach ($order as $paymentid) { echo "</br>", $paymentid[2], "</br></br>"; } ?>
+						</td>
+						<td>
+							<?php foreach ($order as $items) { echo "</br>", $items[3], "</br></br>"; } ?>
+						</td>
+					</tr>
+				</table>
+			</p>
+			
 			<h2>Payment</h2>
-			<br>
+			
 			<p id="homepageparagraph">
 				<table class="listborder">
 					<tr>
