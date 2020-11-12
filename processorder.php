@@ -2,12 +2,6 @@
 	session_start();
 	$conn = mysqli_connect("sql12.freesqldatabase.com", "sql12369317", "KGUuPpDYfu", "sql12369317");
 	
-	if(isset($_GET['update']))
-	{
-		echo '<script language="javascript">';
-		echo 'alert("Status successfully updated")';
-		echo '</script>';
-	}
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +23,8 @@
 				<?php
 					$query = "SELECT * FROM Orders WHERE orderid='".$_GET['order_id']."'";
 					$result = mysqli_query($conn, $query);
-					$row = mysqli_fetch_array($result)
+					$row = mysqli_fetch_array($result);
+					$id = $row['orderid'];
 				?>
 				<tr>
 					<th>Order ID</th>
@@ -73,15 +68,58 @@
 				<tr>
 					<th>Order Status</th>
 					<td>
-						<select name="status" required="required">
-							<option value="pending">pending</option>
-							<option value="confirmed">confirmed</option>
-							<option value="delivered">delivered</option>
-							<option value="cancelled">cancelled</option>
-						</select>
-						<?php echo $row['orderstatus']; ?>
-						<form method="get">
+						<form action="processingorder.php" method="post">
+						<?php
+							$ostatus = $row['orderstatus'];
+							if ($ostatus == 'pending')
+							{
+								echo '<select name="status" required="required">';
+								echo '<option value="pending" selected>pending</option>';
+								echo '<option value="confirmed">confirmed</option>';
+								echo '<option value="delivered">delivered</option>';
+								echo '<option value="cancelled">cancelled</option>';
+								echo '</select>';
+							}
+							else if ($ostatus == 'confirmed')
+							{
+								echo '<select name="status" required="required">';
+								echo '<option value="pending">pending</option>';
+								echo '<option value="confirmed" selected>confirmed</option>';
+								echo '<option value="delivered">delivered</option>';
+								echo '<option value="cancelled">cancelled</option>';
+								echo '</select>';								
+							}
+							else if ($ostatus == 'delivered')
+							{
+								echo '<select name="status" required="required">';
+								echo '<option value="pending">pending</option>';
+								echo '<option value="confirmed">confirmed</option>';
+								echo '<option value="delivered" selected>delivered</option>';
+								echo '<option value="cancelled">cancelled</option>';
+								echo '</select>';								
+							}
+							else if ($ostatus == 'cancelled')
+							{
+								echo '<select name="status" required="required">';
+								echo '<option value="pending">pending</option>';
+								echo '<option value="confirmed">confirmed</option>';
+								echo '<option value="delivered">delivered</option>';
+								echo '<option value="cancelled" selected>cancelled</option>';
+								echo '</select>';							
+							}
+							else
+							{
+								echo '<select name="status" required="required">';
+								echo '<option value="" selected></option>';
+								echo '<option value="pending">pending</option>';
+								echo '<option value="confirmed">confirmed</option>';
+								echo '<option value="delivered">delivered</option>';
+								echo '<option value="cancelled">cancelled</option>';
+								echo '</select>';							
+							}
+						?>
 						<input type="submit" name="update" value="Update">
+						<input type="hidden" name="orderid" value="<?php echo $id;?>">
 						</form>
 					</td>
 				</tr>

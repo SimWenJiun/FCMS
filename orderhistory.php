@@ -3,11 +3,11 @@
 	$conn = mysqli_connect("sql12.freesqldatabase.com", "sql12369317", "KGUuPpDYfu", "sql12369317");
 	if(isset($_SESSION["id"]))
 	{
-		$result = mysqli_query($conn, "SELECT * FROM Orders WHERE customer_id='" . $_SESSION["id"] . "'");
+		$result = mysqli_query($conn, "SELECT * FROM Customers WHERE customer_id='" . $_SESSION["id"] . "'");
 	}
-	$result;
-	$message = "";
-
+	$row = mysqli_fetch_array($result);
+	$email = 'customer@gmail.com';
+	$orderresult = mysqli_query($conn, "SELECT * FROM Orders WHERE customeremail='" . $email . "'");
 ?>
 
 <!DOCTYPE html>
@@ -31,49 +31,30 @@
 					<th>Date</th>
 					<th>Price Paid</th>
 					<th>Order Status</th>
+					<th>Action</th>
 				</tr>
-				<tr>
-					<td>2268</td>
-					<td>16/11/2020</td>
-					<td>RM 87.96</td>
-					<td>Confirmed</td>
-				</tr>
-				<tr>
-					<td>2140</td>
-					<td>2/11/2020</td>
-					<td>RM 129.99</td>
-					<td>Delivered</td>
-				</tr>
-								<tr>
-					<td>1687</td>
-					<td>31/10/2020</td>
-					<td>RM 29.99</td>
-					<td>Delivered</td>
-				</tr>
-								<tr>
-					<td>1548</td>
-					<td>25/10/2020</td>
-					<td>RM 59.99</td>
-					<td>Delivered</td>
-				</tr>
-			<!--?php
-				while ($row = $result -> fetch_row())
-				{
-					echo "<tr>";
-					echo "<td>".$row[0]."</td>";
-					echo "<td>".$row[4]."</td>";
-					echo "<td>RM ".$row[2]."</td>";
-					echo "<td>".$row[5]."</td>";
-					echo "</tr>";
-				}
-				/*
-				if (empty($row))
-				{
-					$message = "<p>No order records found!</p>";
-				}
-				echo $message;
-				*/
-			?-->
+
+				<?php
+					$rownum = mysqli_num_rows($orderresult);
+					
+					if(!$rownum != 0)
+					{
+						echo "<td colspan='4'><center>No Order data found!</center></td>";
+					}
+					else
+					{
+						while ($orderrow = mysqli_fetch_array($orderresult))
+						{
+							echo "<tr>";
+							echo "<td>".$orderrow['orderid']."</td>";
+							echo "<td>".$orderrow['deliverydate']."</td>";
+							echo "<td>RM ".$orderrow['totalcost']."</td>";
+							echo "<td>".$orderrow['orderstatus']."</td>";
+							echo '<td><a href="orderstatus.php?order_id='.$orderrow['orderid'].'">View</a></td>';
+							echo "</tr>";
+						}
+					}
+				?>
 			</table>
 		</div>
 		

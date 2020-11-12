@@ -1,14 +1,6 @@
 <?php
 	session_start();
 	$conn = mysqli_connect("sql12.freesqldatabase.com", "sql12369317", "KGUuPpDYfu", "sql12369317");
-	if(isset($_SESSION["id"]))
-	{
-		$result = mysqli_query($conn, "SELECT * FROM Orders WHERE customer_id='" . $_SESSION["id"] . "'");
-	}
-	$result;
-	$row;
-	$message = "";
-
 ?>
 
 <!DOCTYPE html>
@@ -22,33 +14,36 @@
 
 	<body>
 		<?php include('header.php');?>
-		<!--?php
-			if (mysqli_num_rows($result) > 0) 
-			{
-				$row = mysqli_fetch_array($result);
-			}
-		?-->
+		<?php
+			$query = "SELECT * FROM Orders WHERE orderid='".$_GET['order_id']."'";
+			$result = mysqli_query($conn, $query);
+			$row = mysqli_fetch_array($result);
+		?>
 		<div id="statusbody">
-			<h1>Your Current Order Detail<h1>
+			<h1>Order Detail<h1>
 			<hr><br>
 			<p><span class="statustitle">Order ID:</span><br>
-			<span class="statuscontent">2268</span><!--?php echo $row["order_id"]; ?--></p>
+			<span class="statuscontent"><?php echo $row["orderid"]; ?></span></p>
 			<p><span class="statustitle">Date of Delivery:</span><br>
-			<span class="statuscontent">16/11/2020</span><!--?php echo $row["order_date"]; ?--></p>
+			<span class="statuscontent"><?php echo $row["deliverydate"]; ?></span></p>
+			<p><span class="statustitle">Delivery Address:</span><br>
+			<span class="statuscontent"><?php echo $row["deliveryaddress"]; ?></span></p>
 			<p><span class="statustitle">Ordered Items:</span><br>
 			<ul>
-				<li><span class="statuscontent">Lunch Set A</span></li>
-				<li><span class="statuscontent">Lunch Set B</span></li>
-				<li><span class="statuscontent">Lunch Set C</span></li>
-				<li><span class="statuscontent">Beverage of the day</span></li>
+				<li><span class="statuscontent"><?php echo $row['item1name'] . " x " . $row['item1quantity']; ?></span></li>
+				<li><span class="statuscontent"><?php echo $row['item2name'] . " x " . $row['item2quantity']; ?></span></li>
+				<li><span class="statuscontent"><?php echo $row['item3name'] . " x " . $row['item3quantity']; ?></span></li>
+				<li><span class="statuscontent"><?php echo $row['item4name'] . " x " . $row['item4quantity']; ?></span></li>
+				<li><span class="statuscontent"><?php echo $row['item5name'] . " x " . $row['item5quantity']; ?></span></li>
+				<li><span class="statuscontent"><?php echo $row['item6name'] . " x " . $row['item6quantity']; ?></span></li>
 			</ul>
-			<!--?php echo $row["menu_item"]; ?--></p>
+			</p>
 			<p><span class="statustitle">Price Paid:</span><br>
-			<span class="statuscontent">RM 87.96</span><!--?php echo $row["payment_id"]; ?--></p>
+			<span class="statuscontent">RM <?php echo $row["totalcost"]; ?></span></p>
 			<p><span class="statustitle">Order Status:</span><br>
-			<span class="statuscontent">Comfirmed</span><!--?php echo $row["order_status"]; ?--></p>
+			<span class="statuscontent"><?php echo $row["orderstatus"]; ?></span></p>
 			<br>
-			<button id="signup"><a href="orderhistory.php">View Order History</a></button>
+			<button id="signup"><a href="orderhistory.php">Back to Order History</a></button>
 		</div>
 		
 		<?php include('footer.php');?>

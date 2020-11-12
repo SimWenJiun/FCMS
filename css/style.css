@@ -859,12 +859,12 @@ span.price {
 }
 
 /*Order History*/
-#historybody {
+#historybody, #vieworderbody {
 	font-family:Calibri;
 	color:black;
 	background-color: #FFFFFF;
 	border: 1px solid #E71825;
-	height: 350px;
+	height: auto;
 	margin-top: 20px;
 	margin-left: 20px;
 	margin-right: 20px;
@@ -900,3 +900,16 @@ span.price {
 	color: white;
 }
 
+#processorderbody {
+	font-family:Calibri;
+	color:black;
+	background-color: #FFFFFF;
+	border: 1px solid #E71825;
+	height: auto;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	padding: 5% 15%;
+	line-height: 30px;
+}
