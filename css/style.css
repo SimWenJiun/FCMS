@@ -189,6 +189,13 @@ header div{
 /*Add fonts and other styles below*/
 
 /*menu page*/
+#menutitle{
+	position:hidden;
+	text-align:center;
+	margin:auto;
+	padding:10px;
+}
+
 #menubody{
 	display:grid;
 	margin:auto;

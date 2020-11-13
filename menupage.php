@@ -17,8 +17,9 @@ session_start();
 	<body>
 		<?php include('header.php');?>
 		
-		
+		<h3 id="menutitle">FoodEdge Gourmet Today's Menu</h3>
 		<div id="body" class="rowmenu">
+		
 			<div id="menubody">
 			<?php
 				$sql="SELECT * FROM Menu order by item_id desc";
