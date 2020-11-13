@@ -69,7 +69,7 @@ session_start();
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
                     <h3 class="text-primary">Dashboard</h3> </div>
-                
+               
             </div>
             <!-- End Bread crumb -->
             <!-- Container fluid  -->
@@ -77,58 +77,56 @@ session_start();
                 <!-- Start Page Content -->
                 <div class="row">
                     <div class="col-12">
-						     <div class="card">
+                        
+                       
+                        <div class="card">
                             <div class="card-body">
-								
+                                <h4 class="card-title">All Registered operation users</h4>
+                             
                                 <div class="table-responsive m-t-40">
-                                    <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                    <table id="myTable" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-											 <th>Menu Item</th>
-                                                <th>Menu Type</th>
-                                                <th>Price</th>
-                                                <th>Image</th>
-                                               <th>Action</th>
-												  
+                                                <th>Username</th>
+												 <th>Reg-Date</th>
+												  <th>Action</th>
+												 
                                             </tr>
                                         </thead>
                                         <tbody>
-										
                                            
-                                               	<?php
-												$sql="SELECT * FROM Menu order by item_id desc";
+											
+											<?php
+												$sql="SELECT * FROM Operation order by operation_id desc";
 												$query=mysqli_query($db,$sql);
 												
 													if(!mysqli_num_rows($query) > 0 )
 														{
-															echo '<td colspan="11"><center>No Dish-Data!</center></td>';
+															echo '<td colspan="7"><center>No User-Data!</center></td>';
 														}
 													else
 														{				
 																	while($rows=mysqli_fetch_array($query))
 																		{
-																				$mql="select * from Menu where item_id='".$rows['item_id']."'";
-																				$newquery=mysqli_query($db,$mql);
-																				$fetch=mysqli_fetch_array($newquery);
-																				
-																				
-																					echo '<tr><td>'.$fetch['menu_item'].'</td>
 																					
-																								<td>'.$rows['item_type'].'</td>
-																								<td>$'.$rows['item_price'].'</td>
-																								
-																								
-																								<td><div class="col-md-3 col-lg-8 m-b-10">
-																								<center><img src="img/menu_item/'.$rows['item_pic'].'" class="img-responsive  radius" style="max-height:100px;max-width:150px;" /></center>
-																								</div></td>
-																								
-																							
-																									 <td><a href="delete_menu.php?menu_del='.$rows['item_id'].'" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
+																				
+																				
+																					echo ' <tr><td>'.$rows['username'].'</td>
+																								<td>'.$rows['date'].'</td>
+																									 <td><a href="delete_operationuser.php?user_del='.$rows['operation_id'].'" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
 																									 
 																									</td></tr>';
+																					 
+																						
+																						
 																		}	
 														}
-											?>         
+												
+											
+											?>
+                                             
+                                            
+                                           
                                         </tbody>
                                     </table>
                                 </div>
