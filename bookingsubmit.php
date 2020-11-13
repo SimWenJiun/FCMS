@@ -2,7 +2,7 @@
 	$selectionname1 = $_COOKIE["selectionname1"];
 	$selectionprice1 = $_COOKIE["selectionprice1"];
 	$selectionquantity1 = $_COOKIE["selectionquantity1"];
-	$selectiontotal1 = $selectionprice1 * (int)$selectionquantity1;
+	$selectiontotal1 = (float)$selectionprice1 * (int)$selectionquantity1;
 
 	$selectionname2 = $_COOKIE["selectionname2"];
 	$selectionprice2 = $_COOKIE["selectionprice2"];
@@ -43,8 +43,7 @@
 
 	$insert = mysqli_query($dbconn,
 	"INSERT INTO Orders
-	(
-		orderid, 
+	( 
 		item1name, 
 		item1price, 
 		item1quantity, 
@@ -71,7 +70,7 @@
 	) 
 
 	VALUES
-	(	1,
+	(
 		'$selectionname1', 
 		'$selectionprice1', 
 		'$selectionquantity1', 

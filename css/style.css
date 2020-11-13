@@ -254,7 +254,7 @@ header div{
 	border: 1px solid #E71825;
 }
 
-#botdqty, #lsaqty, #lsbqty, #lscqty, #dsaqty, #bsqty {
+#selectionquantity1, #selectionquantity2, #selectionquantity3, #selectionquantity4, #selectionquantity5, #selectionquantity6 {
 	text-align:center;
 	width: 80px;
 }
@@ -864,7 +864,7 @@ span.price {
 	color:black;
 	background-color: #FFFFFF;
 	border: 1px solid #E71825;
-	height: auto;
+	height: 350px;
 	margin-top: 20px;
 	margin-left: 20px;
 	margin-right: 20px;
@@ -900,6 +900,10 @@ span.price {
 	color: white;
 }
 
+#selectionprice1, #selectionprice2, #selectionprice3, #selectionprice4, #selectionprice5, #selectionprice6 {
+	display: inline-block;
+}
+
 #processorderbody {
 	font-family:Calibri;
 	color:black;
@@ -913,3 +917,4 @@ span.price {
 	padding: 5% 15%;
 	line-height: 30px;
 }
+
