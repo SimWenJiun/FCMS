@@ -16,6 +16,7 @@ $totalamt = 0;
 		<link href="css/style.css" rel="stylesheet" type="text/css"/>
 		<title>FoodeEdge Gourmet - Business Statistics</title>
 		<link rel="icon" href="img/Icon.png">
+		<script src="script/script.js"></script>
 	</head>
 
 	<body>
@@ -175,6 +176,33 @@ $totalamt = 0;
 					</tr>
 				</table>
 			</p>
+			
+			<h2>Monthly Profit/Loss</h2>
+			<form action="monthlypl.php" method="get">
+				<label for="item1costtomake"><b>Cost to Make a Breakfast Set: </b></label>
+				<input type="number" name="item1costtomake" id="item1costtomake" required>
+				</br>
+				<label for="item2costtomake"><b>Cost to Make a Lunch Set A: </b></label>
+				<input type="number" name="item2costtomake" id="item2costtomake" required>
+				</br>
+				<label for="item3costtomake"><b>Cost to Make a Lunch Set B: </b></label>
+				<input type="number" name="item3costtomake" id="item3costtomake" required>
+				</br>
+				<label for="item4costtomake"><b>Cost to Make a Lunch Set C: </b></label>
+				<input type="number" name="item4costtomake" id="item4costtomake" required>
+				</br>
+				<label for="item5costtomake"><b>Cost to Make a Dinner Set A: </b></label>
+				<input type="number" name="item5costtomake" id="item5costtomake" required>
+				</br>
+				<label for="item6costtomake"><b>Cost to Make a Beverage Of The Day: </b></label>
+				<input type="number" name="item6costtomake" id="item6costtomake" required>
+				</br>
+				<label for="costperdelivery"><b>Cost Per Delivery: </b></label>
+				<input type="number" name="costperdelivery" id="costperdelivery" required>
+				
+				<input type="submit" id="viewprofit"/>
+				</br>
+			</form>
 			
 			
 		</div>

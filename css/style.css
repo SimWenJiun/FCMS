@@ -918,3 +918,21 @@ span.price {
 	line-height: 30px;
 }
 
+#MonthlyPL thead tr th{
+	padding-left: 25px;
+	padding-right: 25px;
+	border: 2px solid #000000;
+}
+
+#MonthlyPL tbody tr td{
+	border: 2px solid #000000;
+	text-align: center;
+}
+
+#MonthlyPLFinal tr td {
+	padding-left: 25px;
+	padding-right: 25px;
+	border: 2px solid #000000;
+	text-align: center;
+}
+

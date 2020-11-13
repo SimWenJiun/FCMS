@@ -32,6 +32,9 @@
 	$orderdeliverydate = $_COOKIE["orderdeliverydate"];
 	$orderdeliveryaddress = $_COOKIE["orderdeliveryaddress"];
 	$total = $selectiontotal1 + $selectiontotal2 + $selectiontotal3 + $selectiontotal4 + $selectiontotal5 + $selectiontotal6;
+	
+	$orderplaceddate = date("Y-m-d");
+	$orderplacedtime = date("H:i");
 
 	//to connect to db
 	$dbconn = mysqli_connect("sql12.freesqldatabase.com", "sql12369317", "KGUuPpDYfu", "sql12369317");
@@ -66,7 +69,10 @@
 		deliveryaddress, 
 		totalcost, 
 		paymentstatus, 
-		customeremail
+		customeremail,
+		orderstatus,
+		dateplaced,
+		timeplaced
 	) 
 
 	VALUES
@@ -93,7 +99,10 @@
 		'$orderdeliveryaddress', 
 		'$total',
 		'unpaid',
-		'customer@gmail.com'
+		'customer@gmail.com',
+		'pending',
+		'$orderplaceddate',
+		'$orderplacedtime'
 	)");
 
 	if(!$insert)
