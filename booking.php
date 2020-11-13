@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html lang="en">
 	<head>
 		<meta name="DP2 - Group 3" content="FoodEdge Gourmet - Submit Booking"/>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 	$selectionname1 = $_COOKIE["selectionname1"];
 	$selectionprice1 = $_COOKIE["selectionprice1"];
 	$selectionquantity1 = $_COOKIE["selectionquantity1"];
@@ -35,6 +36,8 @@
 	
 	$orderplaceddate = date("Y-m-d");
 	$orderplacedtime = date("H:i");
+	
+	$customeremail = $_SESSION["email"];
 
 	//to connect to db
 	$dbconn = mysqli_connect("sql12.freesqldatabase.com", "sql12369317", "KGUuPpDYfu", "sql12369317");
@@ -99,7 +102,7 @@
 		'$orderdeliveryaddress', 
 		'$total',
 		'unpaid',
-		'customer@gmail.com',
+		'$customeremail',
 		'pending',
 		'$orderplaceddate',
 		'$orderplacedtime'

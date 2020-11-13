@@ -1,5 +1,10 @@
 <?php
 session_start();
 unset($_SESSION["id"]);
+unset($_SESSION["email"]);
+unset($_SESSION["username"]);
+unset($_SESSION["phone"]);
+unset($_SESSION["management"]);
+unset($_SESSION["operation"]);
 header("Location:index.php");
 ?>
