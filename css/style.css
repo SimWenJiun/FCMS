@@ -63,7 +63,7 @@ header div{
 	padding-left: 50px;
 }
 
-#home, #services, #profile, #selection {
+#home, #aboutus, #profile, #selection {
 	background-color: #E71825;
 	width: auto;
 	height: 20px;
@@ -79,7 +79,7 @@ header div{
 	padding-bottom: 5px;
 }
 
-#menu ul, #aboutus ul {
+#menu ul {
 	list-style: none;
 }
 
@@ -98,26 +98,13 @@ header div{
 	padding-bottom: 5px;
 }
 
-#aboutus ul li {
-	width: 120px;
-	background-color: #E71825;
-	height: 20px;
-	line-height: 20px;
-	position: relative;
-	text-align: center;
-	font-size: 20px;
-	color: #FFFFFF;
-	font-family: Calibri;
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
 
-#menu ul li:hover, #aboutus ul li:hover {
+#menu ul li:hover {
 	background-color: #FFFFFF;
 	color: #000000;
 }
 
-#home:hover, #services:hover, #profile:hover, #selection:hover {
+#home:hover, #aboutus:hover, #profile:hover, #selection:hover {
 	background-color: #FFFFFF;
 	color: #000000;
 }
@@ -127,13 +114,6 @@ header div{
 }
 
 #menu ul li:hover>ul {
-	display: block;
-	margin-left: 0px;
-	text-decoration: none;
-	margin-top: 5px;
-}
-
-#aboutus ul li:hover>ul {
 	display: block;
 	margin-left: 0px;
 	text-decoration: none;
@@ -223,11 +203,7 @@ header div{
 	width: 100%;
 }
 
-#loginbut:hover {
-	opacity: 0.8;
-}
-
-#signup:hover {
+#loginbut:hover, #signup:hover, #backtoprofile:hover {
 	opacity: 0.8;
 }
 
@@ -388,25 +364,6 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 
 .proftitle {
 	font-weight: bold;
-	color: #E71825;
-}
-
-.profcontent {
-
-}
-
-#profpic img {
-	height: 250px;
-	width: 250px;
-	border-radius: 100%;
-	border: 5px solid #E71825;
-}
-
-#profpic {
-	text-align: center;
-}
-
-#profpic p a:hover {
 	color: #E71825;
 }
 
@@ -871,7 +828,7 @@ span.price {
 	color:black;
 	background-color: #FFFFFF;
 	border: 1px solid #E71825;
-	height: 350px;
+	height: auto;
 	margin-top: 20px;
 	margin-left: 20px;
 	margin-right: 20px;
@@ -880,7 +837,7 @@ span.price {
 	line-height: 30px;
 }
 
-#orderhistory {
+#orderhistory, #oporderhistory, #oporderprocess {
 	border-collapse: collapse;
 	width: 100%;
 }
@@ -890,13 +847,36 @@ span.price {
 	padding: 8px;
 }
 
+#oporderhistory td, #oporderhistory th, #oporderprocess th, #oporderprocess td {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
 #orderhistory tr:nth-child(even)
+{
+	background-color: #f2f2f2;
+}
+
+#oporderhistory tr:nth-child(even)
+{
+	background-color: #f2f2f2;
+}
+
+#oporderprocess th
 {
 	background-color: #f2f2f2;
 }
 
 #orderhistory tr:hover {
 	background-color: #ddd;
+}
+
+#oporderhistory tr:hover {
+	background-color: #ddd;
+}
+
+#oporderprocess tr:hover {
+	background-color: #f2f2f2;
 }
 
 #orderhistory th {
@@ -907,13 +887,64 @@ span.price {
 	color: white;
 }
 
+#oporderhistory th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	color: #606060;
+	font-weight: bold;
+}
+
+#oporderprocess th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	color: #606060;
+	font-weight: bold;	
+}
+
+#statuslist select{
+	background-color: #0563af;
+	color: white;
+	padding: 12px;
+	width: 250px;
+	border: none;
+	font-size: 18px;
+	box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+	-webkit-appearance: button;
+	appearance: button;
+	outline: none;
+}
+
+#statuslist input{
+	background-color: #00cc00;
+	color: white;
+	padding: 9.5px;
+	width: 250px;
+	border: none;
+	font-size: 18px;
+	box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+	-webkit-appearance: button;
+	appearance: button;
+	outline: none;
+	border-radius: 10px;
+}
+
+#statuslist input:hover{
+	box-shadow: 0 5px 5px 0 grey;
+}
+
+#statuslist select option {
+	padding: 30px;
+}
+
 #selectionprice1, #selectionprice2, #selectionprice3, #selectionprice4, #selectionprice5, #selectionprice6 {
 	display: inline-block;
 }
 
 #processorderbody {
-	font-family:Calibri;
-	color:black;
+	font-family: Calibri;
+	color: black;
 	background-color: #FFFFFF;
 	border: 1px solid #E71825;
 	height: auto;
@@ -924,6 +955,60 @@ span.price {
 	padding: 5% 15%;
 	line-height: 30px;
 }
+
+#contactusbody {
+	font-family:Calibri;
+	color:black;
+	background-color: #FFFFFF;
+	border: 1px solid #E71825;
+	height: auto;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	padding: 5% 20%;
+	line-height: 30px;
+	font-size: 18px;
+}
+
+#contactusbody h1 {
+	margin-bottom: 5px;
+}
+
+#contactlist {
+	padding-left: 8%;
+	margin-top: 5px;
+}
+
+#contactusbody h3 {
+	margin-top: 5px;
+}
+
+#contactemail {
+	font-size: 18px;
+}
+
+#contactemail:hover {
+	color: #E71825;
+}
+
+#vieworder {
+	font-size:18px;
+}
+
+#vieworder:hover {
+	color: #E71825;
+}
+
+.greentext {
+	color: green;
+}
+
+.redtext {
+	color: red;
+}
+
+/**------------**/
 
 #MonthlyPL thead tr th{
 	padding-left: 25px;

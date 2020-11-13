@@ -22,12 +22,6 @@ if(isset($_SESSION["id"])) {
 				$row = mysqli_fetch_array($result) ?>
 			<h1>Hi <?php echo $row["customer_firstname"]; ?>,</h1>
 			<p id="profdesc">Welcome to your FoodEdge Gourmet Profile page.</p>
-			<figure id="profpic">
-				<a href="editprofile.php" id="profedit">
-					<img src="img/kevin.png" alt="Profile picture" title="Edit profile">
-				</a>
-				<p><a href="editprofile.php">Edit Profile</a></p>
-			</figure>
 			<div id="profcontainer">
 				<div id="profmember">
 					<h2>Membership</h2>

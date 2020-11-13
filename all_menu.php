@@ -30,6 +30,7 @@ session_start();
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="operation_dashboard.php">Dashboard</a></li>
+								<li><a href="logout.php">Logout</a></li>
                                 
                             </ul>
                         </li>
@@ -51,7 +52,7 @@ session_start();
                         </li>
 						 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="hide-menu">Orders</span></a>
                             <ul aria-expanded="false" class="collapse">
-								<li><a href="all_orders.php">All Orders</a></li>
+								<li><a href="vieworder.php">All Orders</a></li>
 								  
                             </ul>
                         </li>

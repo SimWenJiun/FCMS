@@ -1,9 +1,11 @@
 <footer>
+	<br>
 	<nav>
-		<a href="privacypolicy.php">Privacy Policy | </a>
+		<a href="index.php">Home | </a>
 		<a href="contactus.php">Contact Us | </a>
 		<a href="aboutus.php">About Us</a>
 	</nav>
 	
-	<aside>© 2020 FoodEdge Gourmet. All Rights Reserved</aside>			
+	<aside>© 2020 FoodEdge Gourmet. All Rights Reserved</aside>
+	<br>
 </footer>

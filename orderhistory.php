@@ -6,7 +6,7 @@
 		$result = mysqli_query($conn, "SELECT * FROM Customers WHERE customer_id='" . $_SESSION["id"] . "'");
 	}
 	$row = mysqli_fetch_array($result);
-	$email = 'customer@gmail.com';
+	$email = $row['customer_email'];
 	$orderresult = mysqli_query($conn, "SELECT * FROM Orders WHERE customeremail='" . $email . "'");
 ?>
 
@@ -49,13 +49,22 @@
 							echo "<td>".$orderrow['orderid']."</td>";
 							echo "<td>".$orderrow['deliverydate']."</td>";
 							echo "<td>RM ".$orderrow['totalcost']."</td>";
-							echo "<td>".$orderrow['orderstatus']."</td>";
-							echo '<td><a href="orderstatus.php?order_id='.$orderrow['orderid'].'">View</a></td>';
+							if($orderrow['orderstatus'] == 'confirmed' || $orderrow['orderstatus'] == 'delivered')
+								{
+									echo "<td style='color:green;'>".$orderrow['orderstatus']."</td>";
+								}
+								else
+								{
+									echo "<td style='color:red;'>".$orderrow['orderstatus']."</td>";
+								}
+							echo '<td><a href="orderstatus.php?order_id='.$orderrow['orderid'].'" id="vieworder">view</a></td>';
 							echo "</tr>";
 						}
 					}
 				?>
 			</table>
+			<br>
+			<button id="signup"><a href="profile.php">Go back to your profile</a></button>
 		</div>
 		
 		<?php include('footer.php');?>
