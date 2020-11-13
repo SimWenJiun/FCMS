@@ -1,18 +1,38 @@
 <?php
-session_start();
-$total = $_COOKIE["total"];
-$bsqty = $_SESSION['bsqty'];
-$lsaqty = $_SESSION['lsaqty'];
-$lsbqty = $_SESSION['lsbqty'];
-$lscqty = $_SESSION['lscqty'];
-$dsaqty = $_SESSION['dsaqty'];
-$botdqty = $_SESSION['botdqty'];
-$bstotal = $_COOKIE["bstotal"];
-$lsatotal = $_COOKIE["lsatotal"];
-$lsbtotal = $_COOKIE["lsbtotal"];
-$lsctotal = $_COOKIE["lsctotal"];
-$dsatotal = $_COOKIE["dsatotal"];
-$botdtotal = $_COOKIE["botdtotal"];
+	session_start();
+	$selectionname1 = $_COOKIE["selectionname1"];
+	$selectionprice1 = $_COOKIE["selectionprice1"];
+	$selectionquantity1 = $_COOKIE["selectionquantity1"];
+	$selectiontotal1 = $selectionprice1 * (int)$selectionquantity1;
+
+	$selectionname2 = $_COOKIE["selectionname2"];
+	$selectionprice2 = $_COOKIE["selectionprice2"];
+	$selectionquantity2 = $_COOKIE["selectionquantity2"];
+	$selectiontotal2 = (float)$selectionprice2 * (int)$selectionquantity2;
+
+	$selectionname3 = $_COOKIE["selectionname3"];
+	$selectionprice3 = $_COOKIE["selectionprice3"];
+	$selectionquantity3 = $_COOKIE["selectionquantity3"];
+	$selectiontotal3 = (float)$selectionprice3 * (int)$selectionquantity3;
+
+	$selectionname4 = $_COOKIE["selectionname4"];
+	$selectionprice4 = $_COOKIE["selectionprice4"];
+	$selectionquantity4 = $_COOKIE["selectionquantity4"];
+	$selectiontotal4 = (float)$selectionprice4 * (int)$selectionquantity4;
+
+	$selectionname5 = $_COOKIE["selectionname5"];
+	$selectionprice5 = $_COOKIE["selectionprice5"];
+	$selectionquantity5 = $_COOKIE["selectionquantity5"];
+	$selectiontotal5 = (float)$selectionprice5 * (int)$selectionquantity5;
+
+	$selectionname6 = $_COOKIE["selectionname6"];
+	$selectionprice6 = $_COOKIE["selectionprice6"];
+	$selectionquantity6 = $_COOKIE["selectionquantity6"];
+	$selectiontotal6 = (float)$selectionprice6 * (int)$selectionquantity6;
+
+	$orderdeliverydate = $_COOKIE["orderdeliverydate"];
+	$orderdeliveryaddress = $_COOKIE["orderdeliveryaddress"];
+	$total = $selectiontotal1 + $selectiontotal2 + $selectiontotal3 + $selectiontotal4 + $selectiontotal5 + $selectiontotal6;
 ?>
 <html lang="en">
 	<head>
@@ -27,43 +47,38 @@ $botdtotal = $_COOKIE["botdtotal"];
 		
 		<div id="body" class="row">
 		
-		<div class="ReceiptT">
-			<h1>Receipt</h1>
-		</div>
-			
 		<div class="col-25">
+			<div class="ReceiptT">
+				<h1>Receipt</h1>
+			</div>
 			<div class="container">
 			<?php ?>
 				<h4>Product
-					<span class="quantityPay" style="color:black">
-						<i class="fa fa-qty"></i>
-						<b>Quantity</b>
-					</span>
 					<span class="price" style="color:black">
 						<i class="fa fa-price"></i>
 						<b>Price</b>
 					</span>
 				</h4>
-				<?php if ($bsqty > 0) { ?>
-				<p><?php echo "Breakfast Set" ?><span class="quantityPay"><?php echo $bsqty; }?></span> <span class="price"><?php echo "RM", $bstotal; }?></span></p>
+				<?php if ($selectionquantity1 > 0) { ?>
+				<p><?php echo "Breakfast Set" ?><span class="quantityPay" style="color:red"><?php echo "x", $selectionquantity1; ?></span> <span class="price"><?php echo "RM", $selectiontotal1; }?></span></p>
 				<hr>
-				<?php if ($lsaqty > 0) { ?>
-				<p><?php echo "Lunch Set A" ?> <span class="quantityPay"><?php echo $lsaqty; }?></span><span class="price"><?php echo "RM", $lsatotal; }?></span></p>
+				<?php if ($selectionquantity2 > 0) { ?>
+				<p><?php echo "Lunch Set A" ?> <span class="quantityPay" style="color:red"><?php echo "x", $selectionquantity2; ?></span><span class="price"><?php echo "RM", $selectiontotal2; }?></span></p>
 				<hr>
-				<?php if ($lsbqty > 0) { ?>
-				<p><?php echo "Lunch Set B" ?> <span class="quantityPay"><?php echo $lsbqty; }?></span><span class="price"><?php echo "RM", $lsbtotal; }?></span></p>
+				<?php if ($selectionquantity3 > 0) { ?>
+				<p><?php echo "Lunch Set B" ?> <span class="quantityPay" style="color:red"><?php echo "x", $selectionquantity3; ?></span><span class="price"><?php echo "RM", $selectiontotal3; }?></span></p>
 				<hr>
-				<?php if ($lscqty > 0) { ?>
-				<p><?php echo "Lunch Set C" ?> <span class="quantityPay"><?php echo $lscqty; }?></span><span class="price"><?php echo "RM", $lsctotal; }?></span></p>
+				<?php if ($selectionquantity4 > 0) { ?>
+				<p><?php echo "Lunch Set C" ?> <span class="quantityPay" style="color:red"><?php echo "x", $selectionquantity4; ?></span><span class="price"><?php echo "RM", $selectiontotal4; }?></span></p>
 				<hr>
-				<?php if ($dsaqty > 0) { ?>
-				<p><?php echo "Dinner Set" ?> <span class="quantityPay"><?php echo $dsaqty; }?></span><span class="price"><?php echo "RM", $dsatotal; }?></span></p>
+				<?php if ($selectionquantity5 > 0) { ?>
+				<p><?php echo "Dinner Set" ?> <span class="quantityPay" style="color:red"><?php echo "x", $selectionquantity5; ?></span><span class="price"><?php echo "RM", $selectiontotal5; }?></span></p>
 				<hr>
-				<?php if ($botdqty > 0) { ?>
-				<p><?php echo "Beverage of the day" ?> <span class="quantityPay"><?php echo $botdqty; }?></span><span class="price"><?php echo "RM", $botdtotal; }?></span></p>
+				<?php if ($selectionquantity6 > 0) { ?>
+				<p><?php echo "Beverage of the day" ?> <span class="quantityPay" style="color:red"><?php echo "x", $selectionquantity6; ?></span><span class="price"><?php echo "RM", $selectiontotal6; }?></span></p>
 				<hr>
 				<p>Total <span class="price" style="color:black"><b>RM<?php echo $total ?></b></span></p>
-				</div>
+			</div>
 			<?php ?>
 			</div>
 		</div>
