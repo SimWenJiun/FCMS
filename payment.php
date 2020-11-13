@@ -48,16 +48,16 @@
 		<div id="body" class="row">
 		<div class="col-75">
 			<div class="container">
-				<form name="paymentForm" method="post" action="paymentConfirmation.php" onsubmit="return validateForm()">
+				<form name="paymentForm" method="post" action="paymentSubmit.php" onsubmit="return validateForm()">
 
 					<div class="row">
 						<div class="col-50">
 							<h3>Billing Address</h3>
 							<label for="fname"><i class="fa fa-user"></i> Full Name*</label>
-							<input type="text" id="name" name="name" placeholder="Kevin Malone" >
+							<input type="text" id="customer_name" name="customer_name" placeholder="Kevin Malone" >
 							
 							<label for="email"><i class="fa fa-envelope"></i> Email*</label>
-							<input type="text" id="email" name="email" placeholder="kevinmalone@gmail.com" >
+							<input type="text" id="customer_email" name="customer_email" placeholder="kevinmalone@gmail.com" >
 							
 							<label for="adr"><i class="fa fa-address-card-o"></i> Address*</label>
 							<input type="text" id="adr" name="address" placeholder="456 Lorong 7 Jalan Batu Kawa" >
@@ -82,16 +82,16 @@
 							</div>
 						
 							<label for="cname">Name on Card*</label>
-							<input type="text" id="cname" name="cardname" placeholder="Kelvin Malone" >
+							<input type="text" id="card_name" name="card_name" placeholder="Kelvin Malone" >
 						
 							<label for="ccnum">Credit card number*</label>
-							<input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" >
+							<input type="text" id="card_number" name="card_number" placeholder="1111-2222-3333-4444" >
 						
 							<label for="expmonth">Exp Month*</label>
-							<input type="text" id="expmonth" name="expmonth" placeholder="September" >
+							<input type="text" id="expiry_month" name="expiry_month" placeholder="September" >
 
 							<label for="expyear">Exp Year*</label>
-							<input type="text" id="expyear" name="expyear" placeholder="2018" >
+							<input type="text" id="expiry_year" name="expiry_year" placeholder="2018" >
 						
 							<label for="cvv">CVV*</label>
 							<input type="text" id="cvv" name="cvv" placeholder="352" >
@@ -128,7 +128,7 @@
 				<?php if ($selectionquantity6 > 0) { ?>
 				<p><a href="beverageoftheday.php"><?php echo "Beverage of the day" ?></a> <span class="price"><?php echo "RM", $selectiontotal6; }?></span></p>
 				<hr>
-				<p>Total <span class="price" style="color:black"><b>RM<?php echo $total ?></b></span></p>
+				<p>Total <span class="price" id="payment_amount" name="payment_amount" style="color:black"><b>RM<?php echo $total ?></b></span></p>
 				</div>
 			<?php ?>
 			</div>
