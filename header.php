@@ -4,20 +4,7 @@
 	<div id="navigation">
 		<div id="home"><a href="index.php">Home</a></div>
 		
-		<div id="menu">
-			<ul>
-				<li><a href="menupage.php">Food & Beverages Menu</a>
-					<ul>							
-						<li><a href="breakfastset.php">Breakfast Set</a></li>
-						<li><a href="lunchseta.php">Lunch Set A</a></li>
-						<li><a href="lunchsetb.php">Lunch Set B</a></li>
-						<li><a href="lunchsetc.php">Lunch Set C</a></li>
-						<li><a href="dinnerseta.php">Dinner Set A</a></li>
-						<li><a href="beverageoftheday.php">Beverage of the day</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
+		<div id="menu"><a href="menupage.php">Food & Beverages Menu</a></div>
 		
 		<div id="selection"><a href="editselection.php">Selection</a></div>
 		

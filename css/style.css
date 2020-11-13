@@ -63,7 +63,7 @@ header div{
 	padding-left: 50px;
 }
 
-#home, #aboutus, #profile, #selection {
+#home, #menu, #aboutus, #profile, #selection {
 	background-color: #E71825;
 	width: auto;
 	height: 20px;
@@ -79,46 +79,14 @@ header div{
 	padding-bottom: 5px;
 }
 
-#menu ul {
-	list-style: none;
-}
 
 
-#menu ul li{
-	width: 240px;
-	background-color: #E71825;
-	height: 20px;
-	line-height: 20px;
-	position: relative;
-	text-align: center;
-	font-size: 20px;
-	color: #FFFFFF;
-	font-family: Calibri;
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
-
-
-#menu ul li:hover {
+#home:hover, #menu:hover, #aboutus:hover, #profile:hover, #selection:hover {
 	background-color: #FFFFFF;
 	color: #000000;
 }
 
-#home:hover, #aboutus:hover, #profile:hover, #selection:hover {
-	background-color: #FFFFFF;
-	color: #000000;
-}
 
-#menu ul ul, #aboutus ul ul {
-	display: none;
-}
-
-#menu ul li:hover>ul {
-	display: block;
-	margin-left: 0px;
-	text-decoration: none;
-	margin-top: 5px;
-}
 
 #logo {
 	display: block;
