@@ -169,8 +169,8 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                                             <!--/span-->
                                             <div class="col-md-6">
                                                 <div class="form-group has-danger">
-                                                    <label class="control-label">About</label>
-                                                    <input type="text" name="type" class="form-control form-control-danger" placeholder="slogan">
+                                                    <label class="control-label">Type</label>
+                                                    <input type="text" name="type" class="form-control form-control-danger" placeholder="Food/Beverage">
                                                     </div>
                                             </div>
                                             <!--/span-->
