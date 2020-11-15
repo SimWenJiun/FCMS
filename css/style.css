@@ -271,6 +271,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 	
 #product_details ul li{
 	position:relative;
+	list-style-type: none;
 }
 
 #enquirenow{
