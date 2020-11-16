@@ -8,7 +8,7 @@
 		
 		<div id="selection"><a href="editselection.php">Selection</a></div>
 		
-		<div id="services"><a href="paymentSummary.php">Order</a></div>
+		<div id="order"><a href="paymentSummary.php">Order</a></div>
 		
 		<div id="aboutus"><a href="aboutus.php">About Us</a></div>
 		

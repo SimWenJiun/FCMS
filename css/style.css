@@ -63,7 +63,7 @@ header div{
 	padding-left: 50px;
 }
 
-#home, #menu, #aboutus, #profile, #selection {
+#home, #menu, #aboutus, #profile, #selection, #order {
 	background-color: #E71825;
 	width: auto;
 	height: 20px;
@@ -81,7 +81,7 @@ header div{
 
 
 
-#home:hover, #menu:hover, #aboutus:hover, #profile:hover, #selection:hover {
+#home:hover, #menu:hover, #aboutus:hover, #profile:hover, #selection:hover, #order:hover{
 	background-color: #FFFFFF;
 	color: #000000;
 }
