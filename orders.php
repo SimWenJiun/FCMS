@@ -31,13 +31,16 @@ $totalamt = 0;
 							<p>Order ID</p>
 						</th>
 						<th>
-							<p>Customer ID</p>
+							<p>Customer Email</p>
 						</th>
 						<th>
-							<p>Payment ID</p>
+							<p>Payment Status</p>
 						</th>
 						<th>
-							<p>Menu Item</p>
+							<p>Order Status</p>
+						</th>
+						<th>
+							<p>Total</p>
 						</th>
 					</tr>
 					<tr>
@@ -45,13 +48,16 @@ $totalamt = 0;
 							<?php foreach ($order as $orderid) { echo "</br>", $orderid[0], "</br></br>"; } ?>
 						</td>
 						<td>
-							<?php foreach ($order as $custid) { echo "</br>", $custid[1], "</br></br>"; } ?>
+							<?php foreach ($order as $custid) { echo "</br>", $custid[23], "</br></br>"; } ?>
 						</td>
 						<td>
-							<?php foreach ($order as $paymentid) { echo "</br>", $paymentid[2], "</br></br>"; } ?>
+							<?php foreach ($order as $paymentid) { echo "</br>", $paymentid[22], "</br></br>"; } ?>
 						</td>
 						<td>
-							<?php foreach ($order as $items) { echo "</br>", $items[3], "</br></br>"; } ?>
+							<?php foreach ($order as $items) { echo "</br>", $items[24], "</br></br>"; } ?>
+						</td>
+						<td>
+							<?php foreach ($order as $items) { echo "</br>", $items[21], "</br></br>"; } ?>
 						</td>
 					</tr>
 				</table>

@@ -20,7 +20,7 @@ $totalamt = 0;
 	</head>
 
 	<body>
-		<?php include('header.php');?>
+		<?php include('management_header.php');?>
 		
 		<div id="bodyhome">
 			<h1>FoodEdge Gourmet Catering System</h1>
@@ -171,7 +171,7 @@ $totalamt = 0;
 							<?php echo "Total" ?>
 						</th>
 						<td>
-							<?php foreach ($payment as $paymentamt) { $totalamt += $paymentamt[4]; echo "</br>", $totalamt, "</br></br>"; } ?>
+							<?php foreach ($payment as $paymentamt) { $totalamt += $paymentamt[15]; echo "</br>", $totalamt, "</br></br>"; } ?>
 						</td>
 					</tr>
 				</table>
